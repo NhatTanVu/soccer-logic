@@ -1,2 +1,2 @@
-# soccer-logic
+# Soccer Logic
 Soccer Matches Management System
