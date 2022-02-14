@@ -1,0 +1,437 @@
+/* Header */
+header {
+    margin-bottom: 2rem;
+    position: relative;
+    padding: 0 1rem;
+    background-color: var(--white);
+    box-shadow: 0 3px 2px var(--box-shadow-color);
+}
+
+    header > .navigation-bar {
+        --gap: 0;
+        justify-content: space-between;
+    }
+
+        header > .navigation-bar > .left {
+            align-items: center;
+        }
+
+            header > .navigation-bar > .left > #menu {
+                display: none;
+            }
+
+            header > .navigation-bar > .left > .logo {
+                margin-right: 2rem;
+                height: 2rem;
+                align-items: center;
+                color: var(--active-text-color);
+                text-decoration: inherit;
+            }
+
+                header > .navigation-bar > .left > .logo > img {
+                    height: 100%;
+                }
+
+            header > .navigation-bar > .left > ul.navigation-menu {
+                color: var(--navigation-menu-color);
+                text-transform: none;
+                font-weight: normal;
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                font-size: 1.2rem;
+            }
+
+                header > .navigation-bar > .left > ul.navigation-menu > li {
+                    margin-right: 2rem;
+                    margin-left: 0;
+                    display: inline-block;
+                }
+
+                    header > .navigation-bar > .left > ul.navigation-menu > li > a {
+                        display: inline-block;
+                        line-height: 4rem;
+                        padding-bottom: 0.25rem;
+                        color: inherit;
+                        text-decoration: inherit; /* no underline */
+                    }
+
+                        header > .navigation-bar > .left > ul.navigation-menu > li.active > a,
+                        header > .navigation-bar > .left > ul.navigation-menu > li > a:hover,
+                        header > .navigation-bar > .left > ul.navigation-menu > li > a:focus {
+                            padding-bottom: 0;
+                            border-bottom: 0.25rem solid var(--active-text-color);
+                        }
+
+            header > .navigation-bar > .left > .overlay,
+            header > .navigation-bar > .left > #menu-close-button {
+                display: none;
+            }
+
+        header > .navigation-bar > .right {
+            align-items: center;
+            padding-bottom: 0.25rem;
+        }
+
+            header > .navigation-bar > .right > button {
+                display: inline-block;
+                margin-right: 1rem;
+                line-height: 2.25rem;
+                vertical-align: middle;
+                background-color: inherit;
+            }
+
+            header > .navigation-bar > .right > #view-cart-button > span > svg.cart {
+                height: 1.25rem;
+                aspect-ratio: 1;
+                vertical-align: middle;
+            }
+
+            header > .navigation-bar > .right > #view-cart-button > span > .cart-num-of-products {
+                position: absolute;
+                top: -0.2rem;
+                right: -0.3rem;
+                width: 1.1875rem;
+                font-weight: bold;
+                font-size: 0.625rem;
+                line-height: 0.8125rem;
+                color: var(--white);
+                background-color: var(--active-text-color);
+                border-radius: 0.40625rem;
+            }
+
+            header > .navigation-bar > .right > #view-cart-button:hover > svg.cart,
+            header > .navigation-bar > .right > #view-cart-button:focus > svg.cart {
+                fill: var(--very-dark-blue);
+            }
+
+            header > .navigation-bar > .right > a {
+                display: inline-block;
+                line-height: 4rem;
+                vertical-align: middle;
+            }
+
+                header > .navigation-bar > .right > a > .avatar {
+                    height: 3.125rem;
+                    aspect-ratio: 1;
+                    vertical-align: middle;
+                    margin: 0.25rem;
+                }
+
+                header > .navigation-bar > .right > a:hover > .avatar,
+                header > .navigation-bar > .right > a:focus > .avatar {
+                    border: 0.25rem solid var(--active-text-color);
+                    border-radius: 1.8125rem;
+                    height: 3.625rem;
+                    margin: 0;
+                }
+
+    header > .line {
+        border-bottom: 0.0625rem solid var(--gray);
+    }
+
+    header > #cart-popup {
+        --gap: 0;
+        position: absolute;
+        bottom: -14.8125rem;
+        right: -4.75rem;
+        min-width: 22.5rem;
+        height: 16rem;
+        z-index: 10;
+        background-color: var(--white);
+        border-radius: 0.625rem;
+        box-shadow: 0px 20px 50px -20px var(--box-shadow-color);
+        display: none;
+    }
+
+        header > #cart-popup > .title {
+            flex: 0 0 4.1875rem;
+            border-bottom: 0.0625rem solid var(--gray);
+            align-items: center;
+        }
+
+            header > #cart-popup > .title > div {
+                margin-left: 1.5rem;
+                line-height: 1rem;
+                color: var(--very-dark-blue);
+                font-weight: bold;
+            }
+
+        header > #cart-popup > .content > #empty-cart {
+            color: var(--dark-grayish-blue);
+            font-weight: bold;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header > #cart-popup > .content > #full-cart {
+            padding: 1.5rem 1.5rem 2rem 1.5rem;
+            flex: 1;
+        }
+
+            header > #cart-popup > .content > #full-cart > .full-cart-content {
+                align-items: center;
+                --gap: 0;
+                height: 3.25rem;
+                margin-bottom: 1.5rem;
+            }
+
+            header > #cart-popup > .content > #full-cart > #checkout-cart-button {
+                font-weight: bold;
+                border-radius: 0.625rem;
+                background-color: var(--active-text-color);
+                color: var(--white);
+                line-height: 1rem;
+                padding-top: 1.375rem;
+                padding-bottom: 1.125rem;
+                width: 100%;
+            }
+
+                header > #cart-popup > .content > #full-cart > #checkout-cart-button:hover,
+                header > #cart-popup > .content > #full-cart > #checkout-cart-button:focus {
+                    background-color: var(--hover-orange);
+                }
+
+svg.cart {
+    fill: var(--dark-grayish-blue);
+}
+
+    svg.cart:hover,
+    svg.cart:focus,
+    svg.remove-cart-item:hover,
+    svg.remove-cart-item:focus {
+        fill: var(--very-dark-blue);
+    }
+
+svg.remove-cart-item {
+    fill: #C3CAD9;
+}
+
+/* Main */
+main > section.match {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    box-shadow: 0 3px 2px var(--box-shadow-color);
+}
+
+    main > section.match > time {
+        font-size: 1.8rem;
+        display: block;
+        padding-bottom: 2rem;
+        color: var(--active-text-color);
+    }
+
+    main > section.match > ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid var(--separator-color);
+    }
+
+        main > section.match > ul > li {
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px dotted var(--separator-color);
+        }
+
+            main > section.match > ul > li > div {
+                align-items: center;
+                gap: 1rem;
+                justify-content: center;
+            }
+
+                main > section.match > ul > li > div:first-of-type {
+                    flex: 0 0 40%;
+                }
+
+                    main > section.match > ul > li > div:first-of-type > span {
+                        font-size: 1.5rem;
+                        color: var(--active-text-color);
+                    }
+
+                    main > section.match > ul > li > div:first-of-type > .score {
+                        padding: 0.5rem;
+                        font-size: 1.3rem;
+                        color: var(--white);
+                        background-color: var(--active-text-color);
+                    }
+
+                        main > section.match > ul > li > div:first-of-type > .score > span {
+                            padding: 0 0.5rem;
+                            color: var(--active-text-color);
+                            position: relative;
+                        }
+
+                            main > section.match > ul > li > div:first-of-type > .score > span:before {
+                                content: " ";
+                                display: block;
+                                width: 0.1rem;
+                                height: 2.1rem;
+                                background: hsla(0,0%,100%,.2);
+                                position: absolute;
+                                top: -0.15rem;
+                                left: 50%;
+                            }
+
+                    main > section.match > ul > li > div:first-of-type > img {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+
+                main > section.match > ul > li > div:nth-of-type(2) {
+                    justify-content: start;
+                    flex: 1;
+                }
+
+                    main > section.match > ul > li > div:nth-of-type(2) > img {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    header {
+        margin-top: 1rem;
+        margin-bottom: 1.4rem;
+    }
+
+        header > .navigation-bar > .left > #menu {
+            height: 1rem;
+            display: block;
+        }
+
+        header > .navigation-bar > .left > .logo {
+            margin: 0 0 0 1.066rem;
+            height: 1.33rem;
+        }
+
+        header > .navigation-bar > .left > ul.navigation-menu {
+            display: none;
+        }
+
+            header > .navigation-bar > .left > ul.navigation-menu.mobile {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 16.66rem;
+                height: 100vh;
+                background-color: var(--white);
+                z-index: 13;
+                display: flex;
+                flex-direction: column;
+                padding: 6.133rem 0 0 1.666rem;
+            }
+
+                header > .navigation-bar > .left > ul.navigation-menu.mobile > li {
+                    margin-right: 0;
+                }
+
+                    header > .navigation-bar > .left > ul.navigation-menu.mobile > li > a {
+                        line-height: 1.733rem;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        color: var(--very-dark-blue);
+                        padding-top: 0.5415rem;
+                        padding-bottom: 0.5415rem;
+                        padding-left: 0.5rem;
+                        width: 100%;
+                    }
+
+                        header > .navigation-bar > .left > ul.navigation-menu.mobile > li > a:focus,
+                        header > .navigation-bar > .left > ul.navigation-menu.mobile > li > a:hover {
+                            border-left: 0.25rem solid var(--active-text-color);
+                            padding-left: 0.25rem;
+                            border-bottom: 0;
+                        }
+
+        header > .navigation-bar > .left > .overlay.mobile {
+            display: block;
+            z-index: 12;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--black);
+            opacity: 0.75;
+        }
+
+        header > .navigation-bar > .left > #menu-close-button.mobile {
+            position: fixed;
+            top: 1.6rem;
+            left: 1.6rem;
+            display: block;
+            z-index: 13;
+            background-color: transparent;
+        }
+
+        header > .navigation-bar > .right {
+            padding-bottom: 0;
+        }
+
+            header > .navigation-bar > .right > #view-cart-button {
+                margin-right: 1.466rem;
+                line-height: inherit;
+            }
+
+                header > .navigation-bar > .right > #view-cart-button > span > svg.cart {
+                    height: 1.33rem;
+                }
+
+            header > .navigation-bar > .right > a {
+                line-height: inherit;
+            }
+
+                header > .navigation-bar > .right > a > .avatar {
+                    height: 1.6rem;
+                }
+
+                header > .navigation-bar > .right > a:hover > .avatar,
+                header > .navigation-bar > .right > a:focus > .avatar {
+                    height: 2.1rem;
+                }
+
+        header > .line {
+            border-bottom: 0;
+        }
+
+        header > #cart-popup {
+            bottom: unset;
+            right: -1.133rem;
+            top: 4.266rem;
+            width: 24rem;
+            height: 17.066rem;
+            border-radius: 0.666rem;
+        }
+
+            header > #cart-popup > .title {
+                flex: 0 0 4.466rem;
+            }
+
+            header > #cart-popup > .content > #full-cart {
+                padding: 1.6rem 1.6rem 2.133rem 1.6rem;
+            }
+
+                header > #cart-popup > .content > #full-cart > .full-cart-content {
+                    height: 3.4rem;
+                    margin-bottom: 1.6rem;
+                }
+
+                header > #cart-popup > .content > #full-cart > #checkout-cart-button {
+                    border-radius: 0.666rem;
+                    line-height: 1.066rem;
+                    padding-top: 1.466rem;
+                    padding-bottom: 1.2rem;
+                }
+
+    main {
+    }
+}

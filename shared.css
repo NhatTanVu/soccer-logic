@@ -1,0 +1,123 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+:root {
+    /* Colors */
+    --orange: hsl(26, 100%, 55%); /* #FF7E1B */
+    --hover-orange: hsl(26, 100%, 71%); /* #FFAB6A */
+    --pale-orange: hsl(25, 100%, 94%); /* #FFEEE2 */
+    --very-dark-blue: hsl(220, 13%, 13%); /* #1D2026 */
+    --dark-grayish-blue: hsl(219, 9%, 45%); /* #69707D */
+    --grayish-blue: hsl(220, 14%, 75%); /* #B6BCC8 */
+    --light-grayish-blue: hsl(223, 64%, 98%); /* #F6F8FD */
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%); /*  (with 75% opacity for lightbox background) */
+    --gray: hsl(219, 35%, 92%); /* #E4E9F2 */
+
+    --background-color: #F3F4F7;
+    --text-color: #959FA8;
+    --active-text-color: #172C41;
+    --navigation-menu-color: #A0A8B1;
+    --box-shadow-color: #BDBDBD;
+    --separator-color: #EFEFEF;
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+/* ------------------- */
+/* General             */
+/* ------------------- */
+html {
+    font-size: 1.12vw; /* 16px for 1440px-viewport */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    font-weight: 400;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.container {
+    text-align: left;
+    padding: 0 1rem;
+    --gap: 0;
+}
+
+button {
+    border: none;
+    outline: none;
+    width: fit-content;
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+}
+
+    button:hover,
+    button:focus {
+        cursor: pointer;
+    }
+
+h1 {
+    font-size: 2rem;
+}
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    html {
+        font-size: 4vmin; /* 15px for 375px-viewport */
+    }
+
+    body {
+        line-height: 1.667rem; /* 25px */
+    }
+
+    .container {
+        padding: 0 1.6rem 5.866rem 1.6rem;
+    }
+}
