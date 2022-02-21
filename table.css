@@ -134,111 +134,100 @@ header {
             }
 
 /* Main */
-main > section.matches {
-    padding: 2rem;
-    margin-bottom: 2rem;
+main > table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+    overflow: hidden;
 }
 
-    main > section.matches > time {
-        font-size: 1.8rem;
-        display: block;
-        padding-bottom: 2rem;
-        color: var(--active-text-color);
+    main > table > thead {
+        background-color: var(--active-row-background-color);
+        color: var(--white);
+        font-weight: normal;
     }
 
-    main > section.matches > ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        border-top: 1px solid var(--separator-color);
-    }
-
-        main > section.matches > ul > li {
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem;
-            border-bottom: 1px dotted var(--separator-color);
+        main > table > thead > tr > th {
+            font-weight: normal;
         }
 
-            main > section.matches > ul > li:hover,
-            main > section.matches > ul > li:focus {
-                background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%);
-                color: var(--white);
+            main > table > thead > tr > th > .short {
+                display: none;
             }
 
-            main > section.matches > ul > li > i {
-                transition: padding-right 0.2s;
-                padding-right: 0.5rem;
+    main > table tr > * {
+        padding: 0.75rem 0.625rem;
+    }
+
+        main > table tr > *.team {
+            text-align: left;
+        }
+
+            main > table tr > *.team * {
+                vertical-align: middle;
             }
 
-            main > section.matches > ul > li:hover,
-            main > section.matches > ul > li:focus {
-                cursor: pointer;
+            main > table tr > *.team > a {
+                text-decoration: none;
+                color: inherit;
             }
 
-                main > section.matches > ul > li:hover > i,
-                main > section.matches > ul > li:focus > i {
-                    padding-right: 0;
-                }
-
-            main > section.matches > ul > li > div {
-                align-items: center;
-                gap: 1rem;
-                justify-content: center;
-            }
-
-                main > section.matches > ul > li > div:first-of-type {
-                    flex: 0 0 40%;
-                }
-
-                    main > section.matches > ul > li > div:first-of-type > span {
-                        font-size: 1.5rem;
-                        color: var(--active-text-color);
-                    }
-
-            main > section.matches > ul > li:hover > div:first-of-type > span,
-            main > section.matches > ul > li:focus > div:first-of-type > span {
-                color: var(--white);
-            }
-
-            main > section.matches > ul > li > div:first-of-type > .score {
-                padding: 0.5rem;
-                font-size: 1.3rem;
-                color: var(--white);
-                background-color: var(--active-text-color);
-            }
-
-                main > section.matches > ul > li > div:first-of-type > .score > span {
-                    padding: 0 0.5rem;
-                    color: var(--active-text-color);
-                    position: relative;
-                }
-
-                    main > section.matches > ul > li > div:first-of-type > .score > span:before {
-                        content: " ";
-                        display: block;
-                        width: 0.1rem;
-                        height: 2.1rem;
-                        background: hsla(0,0%,100%,.2);
-                        position: absolute;
-                        top: -0.15rem;
-                        left: 50%;
-                    }
-
-            main > section.matches > ul > li > div:first-of-type > img {
-                width: 2rem;
-                height: 2rem;
-            }
-
-            main > section.matches > ul > li > div:nth-of-type(2) {
-                justify-content: start;
-                flex: 1;
-            }
-
-                main > section.matches > ul > li > div:nth-of-type(2) > img {
+                main > table tr > *.team > a > img {
                     width: 2rem;
                     height: 2rem;
+                    margin-right: 1rem;
                 }
+
+        main > table tr > *.form {
+            display: flex;
+            justify-content: center;
+        }
+
+        main > table tr > *.point {
+            color: var(--active-text-color);
+            font-weight: bold;
+        }
+
+    main > table tbody > tr {
+        border-bottom: 1px solid var(--separator-color);
+    }
+
+a.bubble {
+    width: 2.5rem;
+    height: 2.5rem;
+    text-decoration: none;
+    color: inherit;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+    a.bubble.win {
+        background-color: #13cf00;
+    }
+
+        a.bubble.win::after {
+            content: 'W';
+        }
+
+    a.bubble.lose {
+        background-color: #d81920;
+    }
+
+        a.bubble.lose::after {
+            content: 'L';
+        }
+
+    a.bubble.draw {
+        background-color: #76766f;
+    }
+
+        a.bubble.draw::after {
+            content: 'D';
+        }
 
 /* ------------------- */
 /* Mobile view         */
@@ -381,4 +370,3 @@ main > section.matches {
 
     main {
     }
-}

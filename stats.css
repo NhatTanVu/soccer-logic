@@ -1,0 +1,412 @@
+/* Header */
+body > header {
+    margin-bottom: 2rem;
+    position: relative;
+    padding: 0 1rem;
+    background-color: var(--white);
+    box-shadow: 0 3px 2px var(--box-shadow-color);
+}
+
+    body > header > .navigation-bar {
+        --gap: 0;
+        justify-content: space-between;
+    }
+
+        body > header > .navigation-bar > .left {
+            align-items: center;
+        }
+
+            body > header > .navigation-bar > .left > #menu {
+                display: none;
+            }
+
+            body > header > .navigation-bar > .left > .logo {
+                margin-right: 2rem;
+                height: 2rem;
+                align-items: center;
+                color: var(--active-text-color);
+                text-decoration: inherit;
+            }
+
+                body > header > .navigation-bar > .left > .logo > img {
+                    height: 100%;
+                }
+
+            body > header > .navigation-bar > .left > ul.navigation-menu {
+                color: var(--navigation-menu-color);
+                text-transform: none;
+                font-weight: normal;
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                font-size: 1.2rem;
+            }
+
+                body > header > .navigation-bar > .left > ul.navigation-menu > li {
+                    margin-right: 2rem;
+                    margin-left: 0;
+                    display: inline-block;
+                }
+
+                    body > header > .navigation-bar > .left > ul.navigation-menu > li > a {
+                        display: inline-block;
+                        line-height: 4rem;
+                        padding-bottom: 0.25rem;
+                        color: inherit;
+                        text-decoration: inherit; /* no underline */
+                    }
+
+                        body > header > .navigation-bar > .left > ul.navigation-menu > li.active > a,
+                        body > header > .navigation-bar > .left > ul.navigation-menu > li > a:hover,
+                        body > header > .navigation-bar > .left > ul.navigation-menu > li > a:focus {
+                            padding-bottom: 0;
+                            border-bottom: 0.25rem solid var(--active-text-color);
+                        }
+
+            body > header > .navigation-bar > .left > .overlay,
+            body > header > .navigation-bar > .left > #menu-close-button {
+                display: none;
+            }
+
+        body > header > .navigation-bar > .right {
+            align-items: center;
+            padding-bottom: 0.25rem;
+        }
+
+            body > header > .navigation-bar > .right > button {
+                display: inline-block;
+                margin-right: 1rem;
+                line-height: 2.25rem;
+                vertical-align: middle;
+                background-color: inherit;
+            }
+
+            body > header > .navigation-bar > .right > a {
+                display: inline-block;
+                line-height: 4rem;
+                vertical-align: middle;
+            }
+
+                body > header > .navigation-bar > .right > a > .avatar {
+                    height: 3.125rem;
+                    aspect-ratio: 1;
+                    vertical-align: middle;
+                    margin: 0.25rem;
+                }
+
+                body > header > .navigation-bar > .right > a:hover > .avatar,
+                body > header > .navigation-bar > .right > a:focus > .avatar {
+                    border: 0.25rem solid var(--active-text-color);
+                    border-radius: 1.8125rem;
+                    height: 3.625rem;
+                    margin: 0;
+                }
+
+    body > header > .line {
+        /*border-bottom: 0.0625rem solid var(--gray);*/
+    }
+
+    body > header > #cart-popup {
+        --gap: 0;
+        position: absolute;
+        bottom: -14.8125rem;
+        right: -4.75rem;
+        min-width: 22.5rem;
+        height: 16rem;
+        z-index: 10;
+        background-color: var(--white);
+        border-radius: 0.625rem;
+        box-shadow: 0px 20px 50px -20px var(--box-shadow-color);
+        display: none;
+    }
+
+        body > header > #cart-popup > .title {
+            flex: 0 0 4.1875rem;
+            /*border-bottom: 0.0625rem solid var(--gray);*/
+            align-items: center;
+        }
+
+            body > header > #cart-popup > .title > div {
+                margin-left: 1.5rem;
+                line-height: 1rem;
+                /*color: var(--very-dark-blue);*/
+                font-weight: bold;
+            }
+
+/* Main */
+main > section {
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+main > section > header > h3 {
+    padding-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: var(--active-text-color);
+}
+
+    main .card > header > h4 {
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-weight: normal;
+    }
+
+main > section > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1rem;
+    justify-content: space-between;
+}
+
+main > section .statsHero {
+    position: relative;
+    background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%);
+    color: var(--white);
+    border-radius: 3px;
+    padding: 1rem;
+    margin: 0 1rem;
+}
+
+    main > section .statsHero .statName {
+        font-size: 1.3rem;
+    }
+
+    main > section .statsHero .statNameSecondary,
+    main > section .statsRow .statNameSecondary {
+        font-size: 0.9rem;
+        font-weight: normal;
+    }
+
+    main > section .statsHero a,
+    main > section .statsRow a {
+        display: block;
+    }
+
+    main > section .statsHero > .statInfo > .stat {
+        font-size: 1.5rem;
+        color: var(--active-text-color);
+    }
+
+    main > section .statsHero > .statInfo > :not(:last-child) {
+        margin-bottom: 0.25rem;
+    }
+
+    main > section .statsHero > a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1rem;
+    }
+
+        main > section .statsHero > a > .badge-image {
+            width: 7.25rem;
+            height: 7.25rem;
+        }
+
+    main > section .statsHero .heroBadgeContainer {
+        bottom: .7rem;
+        right: .7rem;
+        aspect-ratio: 1;
+        height: 30%;
+        position: absolute;
+        border-radius: 100%;
+        background: #fff;
+        z-index: 10;
+    }
+
+        main > section .statsHero .heroBadgeContainer .badge-image {
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 60%;
+            height: 60%;
+            margin: 0;
+        }
+
+    main > section .statsHero .imgCropContainer .statCardImg {
+        position: absolute;
+        right: 1rem;
+        bottom: 0;
+        max-width: 60%;
+        max-height: 95%;
+        -o-object-fit: contain;
+        object-fit: contain;
+    }
+
+main > section .statsRow {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--separator-color);
+}
+
+    main > section .statsRow .statName {
+        font-size: 1.1rem;
+    }
+
+    main > section .statsRow > .pos {
+        margin-right: 0.5rem;
+        color: var(--active-text-color);
+    }
+
+    main > section .statsRow > .statsBadge {
+        margin-right: 0.5rem;
+    }
+
+    main > section .statsRow > .teamInfo > .statName {
+        color: var(--active-text-color);
+    }
+
+    main > section .statsRow > .stat {
+        font-size: 1.1rem;
+        color: var(--active-text-color);
+        margin-left: auto;
+    }
+
+    main > section .statsRow .badge-image {
+        width: 3rem;
+        height: 3rem;
+    }
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    body > header {
+        margin-top: 1rem;
+        margin-bottom: 1.4rem;
+    }
+
+        body > header > .navigation-bar > .left > #menu {
+            height: 1rem;
+            display: block;
+        }
+
+        body > header > .navigation-bar > .left > .logo {
+            margin: 0 0 0 1.066rem;
+            height: 1.33rem;
+        }
+
+        body > header > .navigation-bar > .left > ul.navigation-menu {
+            display: none;
+        }
+
+            body > header > .navigation-bar > .left > ul.navigation-menu.mobile {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 16.66rem;
+                height: 100vh;
+                background-color: var(--white);
+                z-index: 13;
+                display: flex;
+                flex-direction: column;
+                padding: 6.133rem 0 0 1.666rem;
+            }
+
+                body > header > .navigation-bar > .left > ul.navigation-menu.mobile > li {
+                    margin-right: 0;
+                }
+
+                    body > header > .navigation-bar > .left > ul.navigation-menu.mobile > li > a {
+                        line-height: 1.733rem;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        /*color: var(--very-dark-blue);*/
+                        padding-top: 0.5415rem;
+                        padding-bottom: 0.5415rem;
+                        padding-left: 0.5rem;
+                        width: 100%;
+                    }
+
+                        body > header > .navigation-bar > .left > ul.navigation-menu.mobile > li > a:focus,
+                        body > header > .navigation-bar > .left > ul.navigation-menu.mobile > li > a:hover {
+                            border-left: 0.25rem solid var(--active-text-color);
+                            padding-left: 0.25rem;
+                            border-bottom: 0;
+                        }
+
+        body > header > .navigation-bar > .left > .overlay.mobile {
+            display: block;
+            z-index: 12;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--black);
+            opacity: 0.75;
+        }
+
+        body > header > .navigation-bar > .left > #menu-close-button.mobile {
+            position: fixed;
+            top: 1.6rem;
+            left: 1.6rem;
+            display: block;
+            z-index: 13;
+            background-color: transparent;
+        }
+
+        body > header > .navigation-bar > .right {
+            padding-bottom: 0;
+        }
+
+            body > header > .navigation-bar > .right > #view-cart-button {
+                margin-right: 1.466rem;
+                line-height: inherit;
+            }
+
+                body > header > .navigation-bar > .right > #view-cart-button > span > svg.cart {
+                    height: 1.33rem;
+                }
+
+            body > header > .navigation-bar > .right > a {
+                line-height: inherit;
+            }
+
+                body > header > .navigation-bar > .right > a > .avatar {
+                    height: 1.6rem;
+                }
+
+                body > header > .navigation-bar > .right > a:hover > .avatar,
+                body > header > .navigation-bar > .right > a:focus > .avatar {
+                    height: 2.1rem;
+                }
+
+        body > header > .line {
+            border-bottom: 0;
+        }
+
+        body > header > #cart-popup {
+            bottom: unset;
+            right: -1.133rem;
+            top: 4.266rem;
+            width: 24rem;
+            height: 17.066rem;
+            border-radius: 0.666rem;
+        }
+
+            body > header > #cart-popup > .title {
+                flex: 0 0 4.466rem;
+            }
+
+            body > header > #cart-popup > .content > #full-cart {
+                padding: 1.6rem 1.6rem 2.133rem 1.6rem;
+            }
+
+                body > header > #cart-popup > .content > #full-cart > .full-cart-content {
+                    height: 3.4rem;
+                    margin-bottom: 1.6rem;
+                }
+
+                body > header > #cart-popup > .content > #full-cart > #checkout-cart-button {
+                    border-radius: 0.666rem;
+                    line-height: 1.066rem;
+                    padding-top: 1.466rem;
+                    padding-bottom: 1.2rem;
+                }
+
+    main {
+    }

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+          content="SoccerLogic | Statistics" />
+
+    <!-- connect to domain of font files -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- optionally increase loading priority -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    <!-- async CSS -->
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    <!-- no-JS fallback -->
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    </noscript>
+
+    <title>SoccerLogic | Statistics</title>
+
+    <link href="./shared.css" rel="stylesheet" />
+    <link href="./stats.css" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="navigation-bar flex">
+            <div class="left flex">
+                <img id="menu" src="./images/icon-menu.svg" alt="icon menu" onClick={menuClickHandler} />
+                <a class="flex logo" href="./index.html">
+                    <img src="./images/logo.png" alt="logo" />
+                    <h1>SoccerLogic</h1>
+                </a>
+                <ul class="navigation-menu flex">
+                    <li>
+                        <a href="./matches.html">Matches</a>
+                    </li>
+                    <li>
+                        <a href="./table.html">Table</a>
+                    </li>
+                    <li class="active">
+                        <a href="./stats.html">Statistics</a>
+                    </li>
+                    <li>
+                        <a href="./">Teams</a>
+                    </li>
+                    <li>
+                        <a href="./">Players</a>
+                    </li>
+                    <li>
+                        <a href="./">Coaches</a>
+                    </li>
+                </ul>
+                <div class="overlay"></div>
+                <button id="menu-close-button" aria-label="Close menu button" class="flex">
+                    <svg style="width: 0.896rem; height: 0.896rem; display: block;" viewBox="0 0 14 15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fillRule="evenodd" /></svg>
+                </button>
+            </div>
+            <div class="right flex">
+                <button>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAEZ0FNQQAAsY58+1GTAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAOxAAADsQBlSsOGwAACaFJREFUeNrtWXlczeka/57TniyVZK1ERWSEMNn3+NiHCc24ovIxH4Z0r8FoLHPJkjXrZRjZZRtixJDJcu2SJUq5pRSlUtq03ed5OyfJsXTOL/f+Mc/n83ze3/uc3/m9z/M++/sCf4FqKCkpkb2HLpdyHVkVMb+EhmmEi2Uy2dxyjG8mHEvoS/TF/3MBiCl7GmYShhL+SkwRqcSUnpNi78frWNtbFNOzM9GvEH014fePI5+A6LFEdyPsx0LR70/V5UFLEwHmzZu3NTc7b6SOrvYQmjrRnAUZUlJcMvS73jPh2NVBZlKnFtNrE33Wutm/4knMU7Tp6mBE8/EkUE9i3mb+/Pl71eVBrubOuxLOokdD2mn4frsUGamZA2h+h9DnzuVIJD9JwQrvTSBhviDaz7tXHcaBjcHISn/Fn9A5uTtUO/VpGj9naLKJ2mow70DD3uKiYsi15LC0aYDzwVdw9+pD/GP1JFNnl3amZw9fFO/eu/YQx7afho6uDjYv2CVoWRnZ+H13KI5tC4HLmB5M2vlZBSBIJ8wJC75i+CI5DcM8+4PMBGnPMzB7tB8Gju2Niyevl728cW4g8nNfs+ClQpGgYccu46uJrDDkE4ZpIkClfYDsNZNsOs/StmE/f++NOHfkEpg3MiHxe9TtWORl572xUbkc2jrarDoUF5cgOzOHxmIMHtcXTR2sIsgH1n9uDTCslcll3t9MH95wwYSVZcTa9UzQsU8bdl6KNJao39gcevq6StNDRspLJD5OxoNbj2DvZCssiui6JMTrzx5GaWGfosIi/5EtJ6JJC0uMmDQQLYipG+cicOvCXTyKeIyk+OfCaQsLi2BgqI+ewzthsp87zh+/inoWddCivR1/Ko4jFAmx53MLYEZDQtqzDN3M9CzsXfMbQsmc8nPzP/i/lsS0besmOPSvE2RCjeExZzQ69m3LPx3hJEeCZFV5HiDmXWg4QWhsYKQPg2r6SKbdvh56m8PmO++bNzJD4+YWSEl6gecJqYi9HwfSnnD8Pw6cR1xUAjr0btOM8okV+djBqg6jU2hYRYvKyZEFA0e3nYIZ2X/bbg64eiZcvGdUoxqGerrAZXQPNGxSr8zBA2ZtxZ1/R6JTfydY2jVE0IZghB6+BJtW1hgzbVjPKjUhYn46DcsPb/4d0WTjrpMHw915mogu5eHLfm3xw9rJqFW7hqpv4HjgH6hhUh1dB3VEfFQiFk5cDZO6xvDbw7kRjmRG4ZJnYlp4NA3++9cdxeoZWyg8ysSOFqswGd59VcyLHZPJMPBvfQTzDBa2DbD25EKYmhsj44UIxZ6SmxAx35yGLWcPXZBt8A0UtNuX7sOZzOAth9LWElFm6AQXUI2EnSsO4tTeP2FsVhNu3sPRZWAH3Ai7w7UQtLRK9y7nVS4MjQzg7e8psjRBV0mdWFEGByfEJFnNdF2EgteFgp6ZlkVxvq4wpUIFzZbsuAPlASu7RghafwyBS4NE4nrxLF0kvCNbTiIvJx/dBn9Z9v0jW0Lw52+XsNBrNTqTgKSJaEqUu8iZi6TSgDthe/+pG8Sulocd/gcoy77Zg4fhMfCbFID2vRzZIdFrRBfhsLnZuWJ32WHvX4tCOiU01grDcK/++PuwBeJ3jkwEnQiDCAdLogHajb1XTt80ZXNQBRV9oLCgEC/TMoUjG9WsBmtKcnYU9x06Nhd2H7InFGSK6D6sE/QN9ESpwQkunkJp5PVoUWZQyLWjdWNJCxFSCOBKYdDCxa0nLX4Or/M+nvWjwmNx+8I9oR1OcsnxKQLZ3ine48zBC7hI2TgvJw8HNhwXfsJR6Sb5Rwg9c86gEOtMa28iIV5rakL+hJ13Lj9Aan71yc4VfvGeQJWLUnGXmpQmTE4VbPDdzho0pzLcm6YL1NaAojHf8eDmo/orfTZL0i/r6umg76ju8PrJTRR/USREUVFxWf6QkUklxibDrL4p7BybtCItBJAWCtXNA70I223z21dWz2sCnQY4Ycf1AG584NSzNSbO+xaBV9egWg1DDBrXB4v2zEY3RX7g7o2W5P76K01MyPNJdCKVB7c0Zn7qMg8M8+j/Dr0uVaV6BrqoZ2lOSQ6w+cJa0DlDR96Ihn07m1Ef6trkHzAfQxoGndofJsnuK3NFReCgUJBfWBYcapIzK+HSyWs89OCeQR0T6k5ocPHEVUlsf+eKQ8jJyn2LxhXslAFzRHDYt/aoKE3SU970+HcvP+CBN7KlOgI4v6Rsy+c4UsBLqnOYSbHr+QU4uOkEJnT2wcNbpZGIk+SCCSvKqlmGxw/K1m6mjg9YUfmApq0aozPVPBwpApcFaSTEfiovuBfgOopLERMq4OZsmSYSHdv7j2MWiwhUXugCElZHT6euOgIkcYu4+dwyMdm+NEhjLeRSIuMjGA6lg6gi9fB1Q03TUpvn/qCFk504iikP+eQbJIC+OgL4EkYSPuNijhtySc4yKdRsPLtENP2lwQIi+ijLEFVJj3+qtA/QQnmEW+nxDM/zPtLrVqKvKPOFuIcJmPn1PwUt5l7cO5lZn1pVfUM9fkzVpJQoUGZQqeD0vjAkxz1HxOVI0UM/e5KCldM3vfNeI0UrShCjdkdGWuAa95VhdQOVv7MDKtT8ycAVJzuy8gDgR7cl4miyfGOk/Da/zv2Tpi3lc2OzWu8QuZP66ZfpsG1trZFGYu7+5635cK8BotRo042PYcGndxmankokmDcys67ojDMCvkMD67qwcWgsGhWpwIZC9/jZo5QVwHEpmvoI+7Y2bxHGzhiJ7kOdhY/UaVgbUoJjFwc+a4onDTPzAVKcC4WYNTCd3LSlFR6RulnF435wZfrPhCNpoWZSMc+5x6y+CT96kZZDpDrYOk2YNsi9r8mL5HS4zxrFsXst0fj+a5Sq+K0uDJngIkxWGb4lOReineAksHzI+H7CNon5RTT/nu/EaDR99TJbEua5lew9ogs/rqJvf9KuVCb+LVGcJCfRx88qkhKfXpk8S0jVmHkOnRwU5FpyjvnrJD8bVeSDXRXI9srmQ1OY4jcezdva8K67cxUg+dHie8CBk9HjyPhK/al9b0eRP5Th2JP646EewvZ9aH6+Sk+nK24Ax2p26uDtpxEf/X5N8E2Ns0s7cafWytkefEm4fo4JvOZ+g76u3URCJubXVOnptIrCTFcRiSYT1uDmh69YE2OTqEHJp/pJG2YNavNdmLjY0DMQhRm3eHwbs5Jvb6obG3GbNomY365WdStRhclt30AFtudmiDddUQbzLTwfEPFt5DFi9J7iP1MV7/oR7S7+34AY1MNf8HH4L05GEg/65Hp4AAAAAElFTkSuQmCC" class="rISBZc zr758c M4dUYb" style="height: 2rem; vertical-align: middle;" alt="" data-atf="1" data-frt="0">
+                    <span style="vertical-align: middle; font-size: 1.2rem; color: var(--navigation-menu-color);">Premier League</span>
+                    <svg viewBox="0 0 19 13" style="height: 0.6rem; fill: var(--active-text-color); vertical-align: middle;" xmlns="http://www.w3.org/2000/svg"><path d="M15.949.586l2.828 2.828-9.096 9.096L.586 3.414 3.414.586l6.267 6.267z" fill-rule="nonzero" /></svg>
+                </button>
+                <a href="./">
+                    <img class="avatar" src="./images/image-avatar.png" alt="avatar" />
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <section class="player">
+            <header>
+                <h3>Player Statistics</h3>
+            </header>
+            <ul>
+                <li class="card">
+                    <header>
+                        <h4>Goals</h4>
+                    </header>
+                    <ul>
+                        <li class="statsHero">
+                            <div class="statInfo">
+                                <div class="pos">1.</div>
+                                <a href="#" class="statName">Mohamed Salah Ghaly</a>
+                                <a href="#" class="statNameSecondary">Liverpool</a>
+                                <div class="stat">
+                                    17
+                                </div>
+                            </div>
+                            <div class="heroBadgeContainer">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t14.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t14@x2.png 2x">
+                            </div>
+                            <div class="imgCropContainer">
+                                <img class="statCardImg" src="https://resources.premierleague.com/premierleague/photos/players/110x140/p118748.png" alt="Photo for Mohamed Salah">
+                            </div>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">2.</div>
+                            <div class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t14.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t14@x2.png 2x">
+                            </div>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Diogo Jota</a>
+                                <a href="#" class="statNameSecondary">Liverpool</a>
+                            </div>
+                            <div class="stat">
+                                12
+                            </div>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">3.</div>
+                            <div class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t43.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t43@x2.png 2x">
+                            </div>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Raheem Sterling</a>
+                                <a href="#" class="statNameSecondary">Man City</a>
+                            </div>
+                            <div class="stat">
+                                10
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="card">
+                    <header>
+                        <h4>Yellow Cards</h4>
+                    </header>
+                    <ul>
+                        <li class="statsHero">
+                            <div class="statInfo">
+                                <div class="pos">1.</div>
+                                <a href="#" class="statName">Rúben Diogo da Silva Neves</a>
+                                <a href="#" class="statNameSecondary">Wolves</a>
+                                <div class="stat">
+                                    8
+                                </div>
+                            </div>
+                            <div class="heroBadgeContainer">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t39.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t39@x2.png 2x">
+                            </div>
+                            <div class="imgCropContainer">
+                                <img class="statCardImg" src="https://resources.premierleague.com/premierleague/photos/players/110x140/p171317.png" alt="Photo for Rúben Neves">
+                            </div>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">2.</div>
+                            <div class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t1.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t1@x2.png 2x">
+                            </div>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Bruno Fernandes</a>
+                                <a href="#" class="statNameSecondary">Man Utd</a>
+                            </div>
+                            <div class="stat">
+                                7
+                            </div>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">2.</div>
+                            <div class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t90.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t90@x2.png 2x">
+                            </div>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Josh Brownhill</a>
+                                <a href="#" class="statNameSecondary">Burnley</a>
+                            </div>
+                            <div class="stat">
+                                7
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="card">
+                    <header>
+                        <h4>Red Cards</h4>
+                    </header>
+                    <ul>
+                        <li class="statsHero">
+                            <div class="statInfo">
+                                <div class="pos">1.</div>
+                                <a href="#" class="statName">Ezri Konsa</a>
+                                <a href="#" class="statNameSecondary">Aston Villa</a>
+                                <div class="stat">
+                                    2
+                                </div>
+                            </div>
+                            <div class="heroBadgeContainer">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t7.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t7@x2.png 2x">
+                            </div>
+                            <div class="imgCropContainer">
+                                <img class="statCardImg" src="https://resources.premierleague.com/premierleague/photos/players/110x140/p199798.png" alt="Photo for Ezri Konsa">
+                            </div>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">2.</div>
+                            <div class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t21.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t21@x2.png 2x">
+                            </div>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Michail Antonio</a>
+                                <a href="#" class="statNameSecondary">West Ham</a>
+                            </div>
+                            <div class="stat">
+                                1
+                            </div>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">2.</div>
+                            <div class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t94.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t94@x2.png 2x">
+                            </div>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Shandon Baptiste</a>
+                                <a href="#" class="statNameSecondary">Brentford</a>
+                            </div>
+                            <div class="stat">
+                                1
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="team">
+            <header>
+                <h3>Team Statistics</h3>
+            </header>
+            <ul>
+                <li class="card">
+                    <header>
+                        <h4>Wins</h4>
+                    </header>
+                    <ul>
+                        <li class="statsHero">
+                            <div class="statInfo">
+                                <div class="pos">1.</div>
+                                <a href="#" class="statName">
+                                    Man City
+                                </a>
+                                <div class="statNameSecondary">
+                                    Etihad Stadium
+                                </div>
+                                <div class="stat">20</div>
+                            </div>
+                            <a href="#">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t43.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t43@x2.png 2x">
+                            </a>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">2.</div>
+                            <a href="#" title="Liverpool" class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t14.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t14@x2.png 2x">
+                            </a>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Liverpool</a>
+                                <div class="statNameSecondary">
+                                    Anfield
+                                </div>
+                            </div>
+                            <div class="stat">
+                                17
+                            </div>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">3.</div>
+                            <a href="#" title="Chelsea" class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t8.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t8@x2.png 2x">
+                            </a>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Chelsea</a>
+                                <div class="statNameSecondary">
+                                    Stamford Bridge
+                                </div>
+                            </div>
+                            <div class="stat">
+                                14
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="card">
+                    <header>
+                        <h4>Losses</h4>
+                    </header>
+                    <ul>
+                        <li class="statsHero">
+                            <div class="statInfo">
+                                <div class="pos">1.</div>
+                                <a href="#" class="statName">
+                                    Norwich
+                                </a>
+                                <div class="statNameSecondary">
+                                    Carrow Road
+                                </div>
+                                <div class="stat">16</div>
+                            </div>
+                            <a href="#">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t45.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t45@x2.png 2x">
+                            </a>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">1.</div>
+                            <a href="#" title="Watford" class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t57.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t57@x2.png 2x">
+                            </a>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Watford</a>
+                                <div class="statNameSecondary">
+                                    Vicarage Road
+                                </div>
+                            </div>
+                            <div class="stat">
+                                16
+                            </div>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">3.</div>
+                            <a href="#" title="Brentford" class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t94.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t94@x2.png 2x">
+                            </a>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Brentford</a>
+                                <div class="statNameSecondary">
+                                    Brentford Community Stadium
+                                </div>
+                            </div>
+                            <div class="stat">
+                                14
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="card">
+                    <header>
+                        <h4>Goals</h4>
+                    </header>
+                    <ul>
+                        <li class="statsHero">
+                            <div class="statInfo">
+                                <div class="pos">1.</div>
+                                <a href="#" class="statName">
+                                    Liverpool
+                                </a>
+                                <div class="statNameSecondary">
+                                    Anfield
+                                </div>
+                                <div class="stat">64</div>
+                            </div>
+                            <a href="#">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t14.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t14@x2.png 2x">
+                            </a>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">2.</div>
+                            <a href="#" title="Manchester City" class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t43.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t43@x2.png 2x">
+                            </a>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Man City</a>
+                                <div class="statNameSecondary">
+                                    Etihad Stadium
+                                </div>
+                            </div>
+                            <div class="stat">
+                                63
+                            </div>
+                        </li>
+                        <li class="statsRow">
+                            <div class="pos">3.</div>
+                            <a href="#" title="Chelsea" class="statsBadge">
+                                <img class="badge-image" src="https://resources.premierleague.com/premierleague/badges/100/t8.png" srcset="https://resources.premierleague.com/premierleague/badges/100/t8@x2.png 2x">
+                            </a>
+                            <div class="teamInfo">
+                                <a href="#" class="statName">Chelsea</a>
+                                <div class="statNameSecondary">
+                                    Stamford Bridge
+                                </div>
+                            </div>
+                            <div class="stat">
+                                49
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

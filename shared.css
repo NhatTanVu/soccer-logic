@@ -3,20 +3,13 @@
 /* ------------------- */
 :root {
     /* Colors */
-    --orange: hsl(26, 100%, 55%); /* #FF7E1B */
-    --hover-orange: hsl(26, 100%, 71%); /* #FFAB6A */
-    --pale-orange: hsl(25, 100%, 94%); /* #FFEEE2 */
-    --very-dark-blue: hsl(220, 13%, 13%); /* #1D2026 */
-    --dark-grayish-blue: hsl(219, 9%, 45%); /* #69707D */
-    --grayish-blue: hsl(220, 14%, 75%); /* #B6BCC8 */
-    --light-grayish-blue: hsl(223, 64%, 98%); /* #F6F8FD */
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%); /*  (with 75% opacity for lightbox background) */
-    --gray: hsl(219, 35%, 92%); /* #E4E9F2 */
 
     --background-color: #F3F4F7;
     --text-color: #959FA8;
     --active-text-color: #172C41;
+    --active-row-background-color: #8B96A0;
     --navigation-menu-color: #A0A8B1;
     --box-shadow-color: #BDBDBD;
     --separator-color: #EFEFEF;
@@ -46,6 +39,23 @@ p,
 figure,
 picture {
     margin: 0;
+}
+
+ul {
+    list-style: none;
+    list-style-image: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* ------------------- */
@@ -84,6 +94,12 @@ body {
     text-align: left;
     padding: 0 1rem;
     --gap: 0;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 3px 2px var(--box-shadow-color);
 }
 
 button {
