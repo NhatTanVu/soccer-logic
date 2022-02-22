@@ -1,0 +1,108 @@
+/* Main */
+main > section {
+    margin-bottom: 2rem;
+}
+
+    main > section > ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 1rem;
+        justify-content: space-between;
+    }
+
+    main > section .card {
+        transition: transform 0.2s;
+    }
+
+        main > section .card:hover {
+            transform: scale(1.02);
+        }
+
+            main > section .card:hover a .clubInfo {
+                background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%);
+                border-top: 1px solid var(--white);
+                border-radius: 0 0 4px 4px;
+                color: var(--white);
+            }
+
+                main > section .card:hover a .clubInfo h4.clubName {
+                    color: var(--white);
+                }
+
+                main > section .card:hover a .clubInfo i {
+                    right: 1rem;
+                }
+
+        main > section .card a {
+            display: block;
+        }
+
+        main > section .card .indexImg {
+            background: radial-gradient(var(--white) 0%, var(--active-row-background-color) 90%);
+            height: 8.75rem;
+            border-radius: 4px 4px 0 0;
+            position: relative;
+        }
+
+            main > section .card .indexImg .indexBadge {
+                position: absolute;
+                top: 1rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--white);
+                border-radius: 100%;
+                height: 6.75rem;
+                aspect-ratio: 1;
+            }
+
+                main > section .card .indexImg .indexBadge img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    border-radius: 100%;
+                    height: 80%;
+                    aspect-ratio: 1;
+                }
+
+        main > section .card .clubInfo {
+            display: grid;
+            grid-template-columns: 1fr 1.3rem;
+            text-align: center;
+            padding: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 7rem;
+            position: relative;
+        }
+
+            main > section .card .clubInfo > .nameContainer {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+            }
+
+            main > section .card .clubInfo > i {
+                transition: right 0.2s;
+                right: 1.3rem;
+                position: absolute;
+                width: 1rem;
+            }
+
+            main > section .card .clubInfo .clubName {
+                font-size: 1.3rem;
+                color: var(--active-text-color);
+            }
+
+            main > section .card .clubInfo .stadiumName {
+                font-size: 0.9rem;
+            }
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main {
+    }
+}

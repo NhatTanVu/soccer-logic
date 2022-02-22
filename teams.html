@@ -5,7 +5,7 @@
     <link rel="icon" href="favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-          content="SoccerLogic | Matches" />
+          content="SoccerLogic | Teams" />
 
     <!-- connect to domain of font files -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +21,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     </noscript>
 
-    <title>SoccerLogic | Matches</title>
+    <title>SoccerLogic | Teams</title>
 
     <link href="./shared.css" rel="stylesheet" />
-    <link href="./matches.css" rel="stylesheet" />
+    <link href="./teams.css" rel="stylesheet" />
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
 </head>
@@ -38,7 +38,7 @@
                     <h1>SoccerLogic</h1>
                 </a>
                 <ul class="navigation-menu flex">
-                    <li class="active">
+                    <li>
                         <a href="./matches.html">Matches</a>
                     </li>
                     <li>
@@ -47,7 +47,7 @@
                     <li>
                         <a href="./stats.html">Statistics</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="./teams.html">Teams</a>
                     </li>
                     <li>
@@ -73,40 +73,89 @@
     </header>
     <main class="container">
         <header class="hero">
-            <h1>Matches</h1>
+            <h1>Teams</h1>
         </header>
-        <section class="matches card">
-            <time>
-                Sunday 13 February 2022
-            </time>
-            <ul class="vertical-flex">
-                <li class="flex" tabindex="0">
-                    <div class="flex">
-                        <span>Leicester City</span>
-                        <img alt="Leicester City logo" src="https://ssl.gstatic.com/onebox/media/sports/logos/UDYY4FSlty6fXFBzvFfcyw_48x48.png">
-                        <div class="score">2<span></span>2</div>
-                        <img alt="West Ham logo" src="https://ssl.gstatic.com/onebox/media/sports/logos/bXkiyIzsbDip3x2FFcUU3A_48x48.png">
-                        <span>West Ham</span>
-                    </div>
-                    <div class="flex">
-                        <img src="./images/field.png" alt="Leicester stadium" />
-                        <span>King Power Stadium, <strong>Leicester</strong></span>
-                    </div>
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        <section class="clubs">
+            <ul>
+                <li class="card">
+                    <a href="#">
+                        <div class="indexImg">
+                            <div class="indexBadge">
+                                <img class="badge-image badge-image--70 js-badge-image" src="https://resources.premierleague.com/premierleague/badges/70/t3.png" srcset="https://resources.premierleague.com/premierleague/badges/70/t3@x2.png 2x">
+                            </div>
+                        </div>
+                        <div class="clubInfo">
+                            <div class="nameContainer">
+                                <h4 class="clubName">Arsenal</h4>
+                                <div class="stadiumName">Emirates Stadium</div>
+                            </div>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </div>
+                    </a>
                 </li>
-                <li class="flex" tabindex="0">
-                    <div class="flex">
-                        <span>Tottenham</span>
-                        <img alt="Tottenham logo" src="https://ssl.gstatic.com/onebox/media/sports/logos/k3Q_mKE98Dnohrcea0JFgQ_48x48.png">
-                        <div class="score">0<span></span>2</div>
-                        <img alt="Wolves logo" src="https://ssl.gstatic.com/onebox/media/sports/logos/-WjHLbBIQO9xE2e2MW3OPQ_48x48.png">
-                        <span>Wolves</span>
-                    </div>
-                    <div class="flex">
-                        <img src="./images/field.png" alt="Tottenham stadium" />
-                        <span>Tottenham Hotspur Stadium, <strong>London</strong></span>
-                    </div>
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <li class="card">
+                    <a href="#">
+                        <div class="indexImg">
+                            <div class="indexBadge">
+                                <img class="badge-image badge-image--70 js-badge-image" src="https://resources.premierleague.com/premierleague/badges/70/t7.png" srcset="https://resources.premierleague.com/premierleague/badges/70/t7@x2.png 2x">
+                            </div>
+                        </div>
+                        <div class="clubInfo">
+                            <div class="nameContainer">
+                                <h4 class="clubName">Aston Villa</h4>
+                                <div class="stadiumName">Villa Park</div>
+                            </div>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </div>
+                    </a>
+                </li>
+                <li class="card">
+                    <a href="#">
+                        <div class="indexImg">
+                            <div class="indexBadge">
+                                <img class="badge-image badge-image--70 js-badge-image" src="https://resources.premierleague.com/premierleague/badges/70/t94.png" srcset="https://resources.premierleague.com/premierleague/badges/70/t94@x2.png 2x">
+                            </div>
+                        </div>
+                        <div class="clubInfo">
+                            <div class="nameContainer">
+                                <h4 class="clubName">Brentford</h4>
+                                <div class="stadiumName">Brentford Community Stadium</div>
+                            </div>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </div>
+                    </a>
+                </li>
+                <li class="card">
+                    <a href="#">
+                        <div class="indexImg">
+                            <div class="indexBadge">
+                                <img class="badge-image badge-image--70 js-badge-image" src="https://resources.premierleague.com/premierleague/badges/70/t36.png" srcset="https://resources.premierleague.com/premierleague/badges/70/t36@x2.png 2x">
+                            </div>
+                        </div>
+                        <div class="clubInfo">
+                            <div class="nameContainer">
+                                <h4 class="clubName">Brighton and Hove Albion</h4>
+                                <div class="stadiumName">Amex Stadium</div>
+                            </div>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </div>
+                    </a>
+                </li>
+                <li class="card">
+                    <a href="#">
+                        <div class="indexImg">
+                            <div class="indexBadge">
+                                <img class="badge-image badge-image--70 js-badge-image" src="https://resources.premierleague.com/premierleague/badges/70/t90.png" srcset="https://resources.premierleague.com/premierleague/badges/70/t90@x2.png 2x">
+                            </div>
+                        </div>
+                        <div class="clubInfo">
+                            <div class="nameContainer">
+                                <h4 class="clubName">Burnley</h4>
+                                <div class="stadiumName">Turf Moor</div>
+                            </div>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        </div>
+                    </a>
                 </li>
             </ul>
         </section>

@@ -5,7 +5,7 @@
     <link rel="icon" href="favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-          content="SoccerLogic | Table" />
+          content="SoccerLogic | Players" />
 
     <!-- connect to domain of font files -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +21,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     </noscript>
 
-    <title>SoccerLogic | Table</title>
+    <title>SoccerLogic | Players</title>
 
     <link href="./shared.css" rel="stylesheet" />
-    <link href="./table.css" rel="stylesheet" />
+    <link href="./players.css" rel="stylesheet" />
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
 </head>
@@ -41,7 +41,7 @@
                     <li>
                         <a href="./matches.html">Matches</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="./table.html">Table</a>
                     </li>
                     <li>
@@ -50,7 +50,7 @@
                     <li>
                         <a href="./teams.html">Teams</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="./players.html">Players</a>
                     </li>
                 </ul>
@@ -73,217 +73,73 @@
     </header>
     <main class="container">
         <header class="hero">
-            <h1>Table</h1>
+            <h1>Players</h1>
         </header>
         <table class="card">
             <thead>
                 <tr>
                     <th>
-                        Position
+                        Player
                     </th>
                     <th class="team">
-                        Club
+                        Position
                     </th>
                     <th>
-                        <div class="full">Played</div>
-                        <div class="short">Pl</div>
-                    </th>
-                    <th>
-                        <div class="full">Won</div>
-                        <div class="short">W</div>
-                    </th>
-                    <th>
-                        <div class="full">Draw</div>
-                        <div class="short">D</div>
-                    </th>
-                    <th>
-                        Lost
-                    </th>
-                    <th class="hideSmall">
-                        GF
-                    </th>
-                    <th class="hideSmall">
-                        GA
-                    </th>
-                    <th>
-                        GD
-                    </th>
-                    <th>
-                        <div class="full">Points</div>
-                        <div class="short">Pts</div>
-                    </th>
-                    <th class="teamForm hideMed">
-                        Form
+                        Team
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                        1
-                    </td>
-                    <td class="team">
-                        <a href="./">
-                            <img alt="Manchester City logo" src="https://ssl.gstatic.com/onebox/media/sports/logos/z44l-a0W1v5FmgPnemV6Xw_48x48.png">
-                            Manchester City
+                        <a href="#" class="playerName">
+                            <img class="img" src="https://resources.premierleague.com/premierleague/photos/players/40x40/p232980.png" alt="Photo for Max Aarons"><span>Max Aarons</span>
                         </a>
                     </td>
                     <td>
-                        38
+                        Defender
                     </td>
                     <td>
-                        27
-                    </td>
-                    <td>
-                        5
-                    </td>
-                    <td>
-                        6
-                    </td>
-                    <td>
-                        83
-                    </td>
-                    <td>
-                        32
-                    </td>
-                    <td>
-                        51
-                    </td>
-                    <td class="point">
-                        86
-                    </td>
-                    <td class="form">
-                        <a class="win bubble" href="./"></a>
-                        <a class="lose bubble" href="./"></a>
-                        <a class="win bubble" href="./"></a>
-                        <a class="lose bubble" href="./"></a>
-                        <a class="win bubble" href="./"></a>
+                        Norwich City
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        2
-                    </td>
-                    <td class="team">
-                        <a href="./">
-                            <img alt="Manchester United logo" src="https://ssl.gstatic.com/onebox/media/sports/logos/udQ6ns69PctCv143h-GeYw_48x48.png">
-                            Manchester United
+                        <a href="#" class="playerName">
+                            <img class="img" src="https://resources.premierleague.com/premierleague/photos/players/40x40/p118335.png" alt="Photo for Abdul Rahman Baba"><span>Abdul Rahman Baba</span>
                         </a>
                     </td>
                     <td>
-                        38
+                        Defender
                     </td>
                     <td>
-                        21
-                    </td>
-                    <td>
-                        11
-                    </td>
-                    <td>
-                        6
-                    </td>
-                    <td>
-                        73
-                    </td>
-                    <td>
-                        44
-                    </td>
-                    <td>
-                        29
-                    </td>
-                    <td class="point">
-                        74
-                    </td>
-                    <td class="form">
-                        <a class="win bubble" href="./"></a>
-                        <a class="lose bubble" href="./"></a>
-                        <a class="lose bubble" href="./"></a>
-                        <a class="draw bubble" href="./"></a>
-                        <a class="win bubble" href="./"></a>
+                        Chelsea
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        3
-                    </td>
-                    <td class="team">
-                        <a href="./">
-                            <img alt="Liverpool logo" src="https://ssl.gstatic.com/onebox/media/sports/logos/0iShHhASp5q1SL4JhtwJiw_48x48.png">
-                            Liverpool
+                        <a href="#" class="playerName">
+                            <img class="img" src="https://resources.premierleague.com/premierleague/photos/players/40x40/p173879.png" alt="Photo for Tammy Abraham"><span>Tammy Abraham</span>
                         </a>
                     </td>
                     <td>
-                        38
+                        Forward
                     </td>
                     <td>
-                        20
-                    </td>
-                    <td>
-                        9
-                    </td>
-                    <td>
-                        9
-                    </td>
-                    <td>
-                        68
-                    </td>
-                    <td>
-                        42
-                    </td>
-                    <td>
-                        26
-                    </td>
-                    <td class="point">
-                        69
-                    </td>
-                    <td class="form">
-                        <a class="win bubble" href="./"></a>
-                        <a class="win bubble" href="./"></a>
-                        <a class="win bubble" href="./"></a>
-                        <a class="win bubble" href="./"></a>
-                        <a class="win bubble" href="./"></a>
+                        Chelsea
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        4
-                    </td>
-                    <td class="team">
-                        <a href="./">
-                            <img alt="Chelsea logo" src="https://ssl.gstatic.com/onebox/media/sports/logos/fhBITrIlbQxhVB6IjxUO6Q_48x48.png">
-                            Chelsea
+                        <a href="#" class="playerName">
+                            <img class="img" src="https://resources.premierleague.com/premierleague/photos/players/40x40/p155511.png" alt="Photo for Adam Armstrong"><span>Adam Armstrong</span>
                         </a>
                     </td>
                     <td>
-                        38
+                        Forward
                     </td>
                     <td>
-                        19
-                    </td>
-                    <td>
-                        10
-                    </td>
-                    <td>
-                        9
-                    </td>
-                    <td>
-                        58
-                    </td>
-                    <td>
-                        36
-                    </td>
-                    <td>
-                        22
-                    </td>
-                    <td class="point">
-                        67
-                    </td>
-                    <td class="form">
-                        <a class="win bubble" href="./"></a>
-                        <a class="win bubble" href="./"></a>
-                        <a class="lose bubble" href="./"></a>
-                        <a class="win bubble" href="./"></a>
-                        <a class="lose bubble" href="./"></a>
+                        Southampton
                     </td>
                 </tr>
             </tbody>

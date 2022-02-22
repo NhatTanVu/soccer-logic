@@ -1,0 +1,34 @@
+/* Main */
+main > table {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+    main > table tbody tr > *:first-of-type {
+        padding: 0.75rem 0.625rem 0 0.625rem;
+    }
+
+    main > table tbody > tr td a {
+        display: flex;
+        align-items: center;
+        color: var(--active-text-color);
+        font-size: 1.1rem;
+    }
+
+        main > table tbody > tr td a span {
+            padding-bottom: 0.625rem;
+        }
+
+        main > table tbody > tr td a img {
+            width: 4rem;
+            height: 4rem;
+            margin-right: 1rem;
+        }
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main {
+    }
+}
