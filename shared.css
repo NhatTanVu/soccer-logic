@@ -102,6 +102,15 @@ body {
     box-shadow: 0 3px 2px var(--box-shadow-color);
 }
 
+.rotate {
+    transform: rotateX(180deg);
+    transform-origin: center center;
+}
+
+.hide {
+    display: none;
+}
+
 button {
     border: none;
     outline: none;
@@ -176,7 +185,9 @@ body > header {
 
                         body > header > .navigation-bar > .left > ul.navigation-menu > li.active > a,
                         body > header > .navigation-bar > .left > ul.navigation-menu > li > a:hover,
-                        body > header > .navigation-bar > .left > ul.navigation-menu > li > a:focus {
+                        body > header > .navigation-bar > .left > ul.navigation-menu > li > a:focus,
+                        body > header > .navigation-bar > .right > button#league-selector:hover,
+                        body > header > .navigation-bar > .right > button#league-selector:focus {
                             padding-bottom: 0;
                             border-bottom: 0.25rem solid var(--active-text-color);
                         }
@@ -188,16 +199,79 @@ body > header {
 
         body > header > .navigation-bar > .right {
             align-items: center;
-            padding-bottom: 0.25rem;
+            position: relative;
         }
 
-            body > header > .navigation-bar > .right > button {
-                display: inline-block;
+            body > header > .navigation-bar > .right > button#league-selector {
                 margin-right: 1rem;
-                line-height: 2.25rem;
-                vertical-align: middle;
                 background-color: inherit;
+                line-height: 4rem;
+                padding-bottom: 0.25rem;
+                width: 13rem;
+                justify-content: space-between;
+                align-items: center;
             }
+
+                body > header > .navigation-bar > .right > button#league-selector > div {
+                    align-items: center;
+                }
+
+                    body > header > .navigation-bar > .right > button#league-selector > div > img {
+                        height: 2rem;
+                        margin-right: 0.25rem;
+                    }
+
+                    body > header > .navigation-bar > .right > button#league-selector > div > span {
+                        font-size: 1.2rem;
+                        color: var(--navigation-menu-color);
+                    }
+
+            body > header > .navigation-bar > .right > #league-selector-popup {
+                --gap: 0;
+                position: absolute;
+                top: 4.25rem;
+                left: 0;
+                max-height: 8rem;
+                z-index: 10;
+                background-color: var(--white);
+                margin-top: 0.25rem;
+                border-radius: 0 0 0.625rem 0.625rem;
+                box-shadow: 0 3px 2px var(--box-shadow-color);
+                overflow: hidden;
+                width: 13rem;
+            }
+
+                body > header > .navigation-bar > .right > #league-selector-popup > .content {
+                    overflow: auto;
+                    text-align: left;
+                }
+
+                    body > header > .navigation-bar > .right > #league-selector-popup > .content li {
+                        line-height: 4rem;
+                        border-bottom: 1px solid var(--separator-color);
+                        cursor: pointer;
+                        padding-right: 0.5rem;
+                    }
+
+                        body > header > .navigation-bar > .right > #league-selector-popup > .content li img {
+                            height: 2rem;
+                            vertical-align: middle;
+                            margin-right: 0.25rem;
+                        }
+
+                        body > header > .navigation-bar > .right > #league-selector-popup > .content li span {
+                            vertical-align: middle;
+                            font-size: 1.2rem;
+                            color: var(--navigation-menu-color);
+                        }
+
+                        body > header > .navigation-bar > .right > #league-selector-popup > .content li.active {
+                            background-color: var(--active-row-background-color);
+                        }
+
+                            body > header > .navigation-bar > .right > #league-selector-popup > .content li.active span {
+                                color: var(--white);
+                            }
 
             body > header > .navigation-bar > .right > a {
                 display: inline-block;
@@ -220,36 +294,6 @@ body > header {
                     margin: 0;
                 }
 
-    body > header > .line {
-        /*border-bottom: 0.0625rem solid var(--gray);*/
-    }
-
-    body > header > #cart-popup {
-        --gap: 0;
-        position: absolute;
-        bottom: -14.8125rem;
-        right: -4.75rem;
-        min-width: 22.5rem;
-        height: 16rem;
-        z-index: 10;
-        background-color: var(--white);
-        border-radius: 0.625rem;
-        box-shadow: 0px 20px 50px -20px var(--box-shadow-color);
-        display: none;
-    }
-
-        body > header > #cart-popup > .title {
-            flex: 0 0 4.1875rem;
-            /*border-bottom: 0.0625rem solid var(--gray);*/
-            align-items: center;
-        }
-
-            body > header > #cart-popup > .title > div {
-                margin-left: 1.5rem;
-                line-height: 1rem;
-                /*color: var(--very-dark-blue);*/
-                font-weight: bold;
-            }
 
 /* Main */
 main > header.hero {

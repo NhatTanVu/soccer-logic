@@ -40,6 +40,10 @@ a.bubble {
     border-radius: 100%;
 }
 
+    a.bubble:not(:last-of-type) {
+        margin-right: 0.25rem;
+    }
+
     a.bubble.win {
         background-color: #13cf00;
     }
