@@ -10,6 +10,7 @@
     --text-color: #959FA8;
     --active-text-color: #172C41;
     --active-row-background-color: #8B96A0;
+    --active-row-background-color-opacity: 139, 150, 160;
     --navigation-menu-color: #A0A8B1;
     --box-shadow-color: #BDBDBD;
     --separator-color: #EFEFEF;
@@ -177,7 +178,7 @@ body > header {
 
                     body > header > .navigation-bar > .left > ul.navigation-menu > li > a {
                         display: inline-block;
-                        line-height: 4rem;
+                        line-height: 3.5rem;
                         padding-bottom: 0.25rem;
                         color: inherit;
                         text-decoration: inherit; /* no underline */
@@ -205,7 +206,7 @@ body > header {
             body > header > .navigation-bar > .right > button#league-selector {
                 margin-right: 1rem;
                 background-color: inherit;
-                line-height: 4rem;
+                line-height: 3.5rem;
                 padding-bottom: 0.25rem;
                 width: 13rem;
                 justify-content: space-between;
@@ -229,9 +230,9 @@ body > header {
             body > header > .navigation-bar > .right > #league-selector-popup {
                 --gap: 0;
                 position: absolute;
-                top: 4.25rem;
+                top: 3.5rem;
                 left: 0;
-                max-height: 8rem;
+                max-height: 10.5rem;
                 z-index: 10;
                 background-color: var(--white);
                 margin-top: 0.25rem;
@@ -247,7 +248,7 @@ body > header {
                 }
 
                     body > header > .navigation-bar > .right > #league-selector-popup > .content li {
-                        line-height: 4rem;
+                        line-height: 3.5rem;
                         border-bottom: 1px solid var(--separator-color);
                         cursor: pointer;
                         padding-right: 0.5rem;
@@ -273,25 +274,30 @@ body > header {
                                 color: var(--white);
                             }
 
+                        body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):hover,
+                        body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):focus {
+                            background-color: rgba(var(--active-row-background-color-opacity), 0.4);
+                        }
+
             body > header > .navigation-bar > .right > a {
                 display: inline-block;
-                line-height: 4rem;
+                line-height: 3.5rem;
                 vertical-align: middle;
             }
 
                 body > header > .navigation-bar > .right > a > .avatar {
-                    height: 3.125rem;
+                    height: 2.75rem;
                     aspect-ratio: 1;
                     vertical-align: middle;
-                    margin: 0.25rem;
+                    margin: 0.5rem;
                 }
 
                 body > header > .navigation-bar > .right > a:hover > .avatar,
                 body > header > .navigation-bar > .right > a:focus > .avatar {
                     border: 0.25rem solid var(--active-text-color);
-                    border-radius: 1.8125rem;
-                    height: 3.625rem;
-                    margin: 0;
+                    border-radius: 100%;
+                    height: 3.25rem;
+                    margin: 0.25rem;
                 }
 
 
