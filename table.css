@@ -1,32 +1,46 @@
 /* Main */
-main > table tr > *.team {
-    text-align: left;
+main > table {
+    margin-bottom: 2rem;
 }
 
-    main > table tr > *.team * {
-        vertical-align: middle;
+    main > table tr > *.team {
+        text-align: left;
     }
 
-    main > table tr > *.team > a > img {
-        width: 2rem;
-        height: 2rem;
-        margin-right: 1rem;
+        main > table tr > *.team * {
+            vertical-align: middle;
+        }
+
+        main > table tr > *.team > a {
+            display: block;
+            width: 100%;
+        }
+
+            main > table tr > *.team > a:hover, main > table tr > *.team > a:focus {
+                text-decoration: underline;
+            }
+
+            main > table tr > *.team > a > img {
+                width: 2rem;
+                height: 2rem;
+                margin-right: 1rem;
+                display: inline-block;
+            }
+
+    main > table tbody tr > *.team {
+        font-size: 1.1rem;
+        color: var(--active-text-color);
     }
 
-main > table tbody tr > *.team {
-    font-size: 1.1rem;
-    color: var(--active-text-color);
-}
+    main > table tr > *.form {
+        display: flex;
+        justify-content: center;
+    }
 
-main > table tr > *.form {
-    display: flex;
-    justify-content: center;
-}
-
-main > table tr > *.point {
-    color: var(--active-text-color);
-    font-weight: bold;
-}
+    main > table tr > *.point {
+        color: var(--active-text-color);
+        font-weight: bold;
+    }
 
 a.bubble {
     width: 2.5rem;

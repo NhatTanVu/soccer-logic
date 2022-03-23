@@ -18,3 +18,17 @@ document.querySelectorAll("#league-selector-popup li").forEach((item) => {
         document.getElementById("league-selector").click();
     });
 });
+
+document.querySelectorAll(".tab-list li").forEach((item) => {
+    item.addEventListener('click', (e) => {
+        document.querySelector(".tab-list li.active")?.classList.remove("active");
+        let element = e.target;
+        while (element.tagName.toLowerCase() != "li") element = element.parentElement;
+        element.classList.add("active");
+        let tabContent = element.getAttribute("data-tab-content");
+        document.querySelectorAll(".tab-content  > *").forEach((item2) => {
+            item2.style.display = "none";
+        });
+        document.querySelector(".tab-content  > ." + tabContent).style.display = null;
+    });
+});
