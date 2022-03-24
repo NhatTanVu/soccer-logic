@@ -318,34 +318,33 @@ main > header.hero {
         font-weight: normal;
     }
 
-main > table {
+main table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    text-align: left;
     overflow: hidden;
     text-align: center;
 }
 
-    main > table > thead {
+    main table > thead {
         background-color: var(--active-row-background-color);
         color: var(--white);
         font-weight: normal;
     }
 
-        main > table > thead > tr > th {
+        main table > thead > tr > th {
             font-weight: normal;
         }
 
-            main > table > thead > tr > th > .short {
+            main table > thead > tr > th > .short {
                 display: none;
             }
 
-    main > table tr > * {
+    main table tr > * {
         padding: 0.75rem 0.625rem;
     }
 
-    main > table tbody > tr {
+    main table tbody > tr {
         border-bottom: 1px solid var(--separator-color);
     }
 
