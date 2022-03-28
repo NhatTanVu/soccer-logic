@@ -62,41 +62,13 @@
             border-left: 1px dotted var(--text-color);
         }
 
-        ul.tab-list {
-            margin-bottom: -3px;
-            margin-left: -3px;
-            position: relative;
-            z-index: 0;
-            display: flex;
-            align-items: center;
+        .line-ups > div > ul > li > a:hover, .line-ups > div > ul > li > a:focus {
+            text-decoration: none;
         }
 
-            ul.tab-list > li {
-                padding: 3px 3px 0 3px;
-                overflow: hidden;
-                display: inline-block;
-                vertical-align: bottom;
-                margin-right: 0.25rem;
+            .line-ups > div > ul > li > a:hover .name, .line-ups > div > ul > li > a:focus .name {
+                text-decoration: underline;
             }
-
-                ul.tab-list > li > span {
-                    display: block;
-                    padding: 1rem 1rem calc(1rem + 3px) 1rem;
-                    background-color: var(--text-color);
-                    color: var(--white);
-                    border-radius: 4px 4px 0 0;
-                    font-weight: bold;
-                }
-
-                ul.tab-list > li.active > span {
-                    background-color: var(--white);
-                    color: var(--active-text-color);
-                    box-shadow: 0 -1px 2px var(--box-shadow-color);
-                }
-
-                ul.tab-list > li:hover, ul.tab-list > li:focus {
-                    cursor: pointer;
-                }
     </style>
 </head>
 <body>
@@ -301,182 +273,182 @@
                 <span>Line-ups</span>
             </li>
         </ul>
-        <div class="tab-content" style="min-height: 20rem; margin-bottom: 2rem; background-color: var(--white); border-radius: 0 4px 4px 4px; box-shadow: 0 3px 2px var(--box-shadow-color); position: relative; z-index: 1; padding: 1rem;">
-            <div class="details flex" style="--gap: 2rem; align-items: start;">
+        <div class="tab-content">
+            <div class="details flex">
                 <ul class="first-half" style="flex: 1; margin-left: 1.5rem;">
-                    <li id="ko" style="position: relative; height: 9rem;">
+                    <li id="ko" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; color: #E09F1F; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-hourglass-start"></i>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Kick Off!</h2>
+                            <h3 style="color: var(--active-text-color);">Kick Off!</h3>
                             <div>First Half begins.</div>
                         </div>
                     </li>
-                    <li id="goal-8" style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; height: 9rem;">
+                    <li id="goal-8" style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; color: var(--active-text-color); border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-futbol"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--white);">8'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; height: 100%;">
-                            <h2>Goal!</h2>
+                            <h3 style="color: var(--white);">Goal!</h3>
                             <div>Fulham 0, Arsenal 1. <br />For: Alexandre Lacazette (Arsenal).</div>
                         </div>
                     </li>
-                    <li id="yellow-card-26" style="position: relative; height: 9rem;">
+                    <li id="yellow-card-26" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-mobile" style="color: yellow; border: 2px solid var(--active-text-color); border-radius: 3px;"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--active-text-color);">26'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Yellow Card!</h2>
+                            <h3 style="color: var(--active-text-color);">Yellow Card!</h3>
                             <div>For: Michael Hector (Fulham).</div>
                         </div>
                     </li>
-                    <li id="yellow-card-39" style="position: relative; height: 9rem;">
+                    <li id="yellow-card-39" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-mobile" style="color: yellow; border: 2px solid var(--active-text-color); border-radius: 3px;"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--active-text-color);">39'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Yellow Card!</h2>
+                            <h3 style="color: var(--active-text-color);">Yellow Card!</h3>
                             <div>For: Pierre-Emerick Aubameyang (Arsenal).</div>
                         </div>
                     </li>
-                    <li style="position: relative; height: 9rem;">
+                    <li style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; color: #E09F1F; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-hourglass-end"></i>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Half-time</h2>
+                            <h3 style="color: var(--active-text-color);">Half-time</h3>
                             <div>First Half ends.<br />Fulham 0, Arsenal 1.</div>
                         </div>
                     </li>
                 </ul>
                 <ul class="second-half" style="flex: 1; margin-left: 1.5rem;">
-                    <li id="ht" style="position: relative; height: 9rem;">
+                    <li id="ht" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; color: #E09F1F; border: 2px solid var(--active-text-color); font-size: 1.125rem; --gap: 2px;">
                             <i class="fa-solid fa-hourglass-start"></i>
                             <i class="fa-solid fa-hourglass-start"></i>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Kick Off!</h2>
+                            <h3 style="color: var(--active-text-color);">Kick Off!</h3>
                             <div>Second Half begins. Fullham 0, Arsenal 1.</div>
                         </div>
                     </li>
-                    <li id="goal-49" style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; height: 9rem;">
+                    <li id="goal-49" style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; color: var(--active-text-color); border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-futbol"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--white);">49'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; height: 100%;">
-                            <h2>Goal!</h2>
+                            <h3 style="color: var(--white);">Goal!</h3>
                             <div>Fulham 0, Arsenal 2. <br />For: Gabriel Magalhães (Arsenal).</div>
                         </div>
                     </li>
-                    <li id="yellow-card-55" style="position: relative; height: 9rem;">
+                    <li id="yellow-card-55" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-mobile" style="color: yellow; border: 2px solid var(--active-text-color); border-radius: 3px;"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--active-text-color);">55'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Yellow Card!</h2>
+                            <h3 style="color: var(--active-text-color);">Yellow Card!</h3>
                             <div>For: Héctor Bellerín (Arsenal).</div>
                         </div>
                     </li>
-                    <li id="goal-57" style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; height: 9rem;">
+                    <li id="goal-57" style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; color: var(--active-text-color); border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-futbol"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--white);">57'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; height: 100%;">
-                            <h2>Goal!</h2>
+                            <h3 style="color: var(--white);">Goal!</h3>
                             <div>Fulham 0, Arsenal 3. <br />For: Pierre-Emerick Aubameyang (Arsenal).</div>
                         </div>
                     </li>
-                    <li id="yellow-card-61" style="position: relative; height: 9rem;">
+                    <li id="yellow-card-61" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-mobile" style="color: yellow; border: 2px solid var(--active-text-color); border-radius: 3px;"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--active-text-color);">61'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Yellow Card!</h2>
+                            <h3 style="color: var(--active-text-color);">Yellow Card!</h3>
                             <div>For: Tom Cairney (Fulham).</div>
                         </div>
                     </li>
-                    <li id="substitution-63" style="position: relative; height: 9rem;">
+                    <li id="substitution-63" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-rotate" style="color: var(--active-text-color);"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--active-text-color);">63'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Substitution</h2>
+                            <h3 style="color: var(--active-text-color);">Substitution</h3>
                             <div>Substitution, Fulham. <br />Aleksandar Mitrovic replaces Aboubakar Kamara.</div>
                         </div>
                     </li>
-                    <li id="substitution-63-2" style="position: relative; height: 9rem;">
+                    <li id="substitution-63-2" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-rotate" style="color: var(--active-text-color);"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--active-text-color);">63'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Substitution</h2>
+                            <h3 style="color: var(--active-text-color);">Substitution</h3>
                             <div>Substitution, Fulham. <br />André-Frank Zambo Anguissa replaces Neeskens Kebano.</div>
                         </div>
                     </li>
-                    <li id="substitution-75" style="position: relative; height: 9rem;">
+                    <li id="substitution-75" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-rotate" style="color: var(--active-text-color);"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--active-text-color);">75'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Substitution</h2>
+                            <h3 style="color: var(--active-text-color);">Substitution</h3>
                             <div>Substitution, Fulham. <br />Bobby De Cordova-Reid replaces Josh Onomah.</div>
                         </div>
                     </li>
-                    <li id="substitution-75-2" style="position: relative; height: 9rem;">
+                    <li id="substitution-75-2" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-rotate" style="color: var(--active-text-color);"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--active-text-color);">75'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Substitution</h2>
+                            <h3 style="color: var(--active-text-color);">Substitution</h3>
                             <div>Substitution, Arsenal. <br />Nicolas Pépé replaces Willian.</div>
                         </div>
                     </li>
-                    <li id="substitution-78" style="position: relative; height: 9rem;">
+                    <li id="substitution-78" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-rotate" style="color: var(--active-text-color);"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--active-text-color);">78'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Substitution</h2>
+                            <h3 style="color: var(--active-text-color);">Substitution</h3>
                             <div>Substitution, Arsenal. <br />Dani Ceballos replaces Granit Xhaka.</div>
                         </div>
                     </li>
-                    <li id="substitution-87" style="position: relative; height: 9rem;">
+                    <li id="substitution-87" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; border: 2px solid var(--active-text-color); font-size: 1.125rem;">
                             <i class="fa-solid fa-rotate" style="color: var(--active-text-color);"></i>
                             <div style="position: absolute; top: 50%; transform: translateY(-50%); right: -2rem; color: var(--active-text-color);">87'</div>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Substitution</h2>
+                            <h3 style="color: var(--active-text-color);">Substitution</h3>
                             <div>Substitution, Arsenal. <br />Eddie Nketiah replaces Alexandre Lacazette.</div>
                         </div>
                     </li>
-                    <li id="ft" style="position: relative; height: 9rem;">
+                    <li id="ft" style="position: relative; height: 7rem;">
                         <div class="meta flex" style="position: absolute; top: 1rem; left: -0.5rem; justify-content: center; width: 3rem; height: 3rem; background-color: var(--white); border-radius: 50%; color: #E09F1F; border: 2px solid var(--active-text-color); font-size: 1.125rem; --gap: 2px;">
                             <i class="fa-solid fa-hourglass-end"></i>
                             <i class="fa-solid fa-hourglass-end"></i>
                         </div>
                         <div class="content vertical-flex" style="margin-left: 6rem; padding: 1rem; --gap: 1rem; border-top: 1px solid var(--separator-color); height: 100%; ">
-                            <h2 style="color: var(--active-text-color);">Full-time</h2>
+                            <h3 style="color: var(--active-text-color);">Full-time</h3>
                             <div>Match ends.<br />Fulham 0, Arsenal 3.</div>
                         </div>
                     </li>
                 </ul>
             </div>
-            <div class="line-ups flex" style="--gap: 2rem; align-items: start; color: var(--active-text-color); display: none;">
+            <div class="line-ups flex">
                 <div class="home-team" style="flex: 1; padding: 0 1.5rem 2rem 1.5rem; text-align: right;">
                     <h2 style="margin: 2rem 0 1rem 0;">Goalkeeper</h2>
                     <ul>
@@ -484,9 +456,9 @@
                             <a href="../players/index.html?na=Marek%20Rodák&no=12&cl=Fulham&po=Goalkeeper&nat=Slovakia&dob=13-Dec-1996&ht=194cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">12</div>
                                 <img src="../images/Players/Marek Rodák.png" alt="Photo for Marek Rodák" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Marek Rodák</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -497,12 +469,12 @@
                             <a href="../players/index.html?na=Michael%20Hector&no=3&cl=Fulham&po=Defender&nat=Jamaica&dob=19-Jul-1992&ht=193cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">3</div>
                                 <img src="../images/Players/Michael Hector.png" alt="Photo for Michael Hector" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Michael Hector</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <i class="fa-solid fa-mobile" style="color: yellow; border: 2px solid var(--active-text-color); border-radius: 3px;"></i>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -510,9 +482,9 @@
                             <a href="../players/index.html?na=Denis%20Odoi&no=4&cl=Fulham&po=Defender&nat=Ghana&dob=27-May-1988&ht=178cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">4</div>
                                 <img src="../images/Players/Denis Odoi.png" alt="Photo for Denis Odoi" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Denis Odoi</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -520,9 +492,9 @@
                             <a href="../players/index.html?na=Tim%20Ream&no=13&cl=Fulham&po=Defender&nat=United%20States&dob=05-Oct-1987&ht=186cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">13</div>
                                 <img src="../images/Players/Tim Ream.png" alt="Photo for Tim Ream" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Tim Ream</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -530,9 +502,9 @@
                             <a href="../players/index.html?na=Joe%20Bryan&no=23&cl=Fulham&po=Defender&nat=England&dob=17-Sep-1993&ht=173cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">23</div>
                                 <img src="../images/Players/Joe Bryan.png" alt="Photo for Joe Bryan" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Joe Bryan</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -543,9 +515,9 @@
                             <a href="../players/index.html?na=Harrison%20Reed&no=21&cl=Fulham&po=Midfielder&nat=England&dob=27-Jan-1995&ht=181cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">21</div>
                                 <img src="../images/Players/Harrison Reed.png" alt="Photo for Harrison Reed" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Harrison Reed</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -553,15 +525,15 @@
                             <a href="../players/index.html?na=Neeskens%20Kebano&no=7&cl=Fulham&po=Midfielder&nat=DR%20Congo&dob=10-Mar-1992&ht=170cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">7</div>
                                 <img src="../images/Players/Neeskens Kebano.png" alt="Photo for Neeskens Kebano" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Neeskens Kebano</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <span class="vertical-flex" style="color: red; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">63'</div>
+                                            <span style="font-size: 0.7em;">63'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -569,13 +541,13 @@
                             <a href="../players/index.html?na=Tom%20Cairney&no=10&cl=Fulham&po=Midfielder&nat=Scotland&dob=20-Jan-1991&ht=186cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">10</div>
                                 <img src="../images/Players/Tom Cairney.png" alt="Photo for Tom Cairney" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Tom Cairney</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <i class="fa-solid fa-mobile" style="color: yellow; border: 2px solid var(--active-text-color); border-radius: 3px;"></i>
                                         <i class="fa-solid fa-copyright" style="color: red;"></i>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -583,13 +555,13 @@
                             <a href="../players/index.html?na=Josh%20Onomah&no=25&cl=Fulham&po=Midfielder&nat=England&dob=27-Apr-1997&ht=185cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">25</div>
                                 <img src="../images/Players/Josh Onomah.png" alt="Photo for Josh Onomah" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Josh Onomah</span>
                                     <span class="vertical-flex" style="color: red; --gap: 0; align-items: center;">
                                         <i class="fa-solid fa-rotate"></i>
-                                        <div style="font-size: 0.7em;">75'</div>
+                                        <span style="font-size: 0.7em;">75'</span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -597,9 +569,9 @@
                             <a href="../players/index.html?na=Ivan%20Cavaleiro&no=17&cl=Fulham&po=Forward&nat=Portugal&dob=18-Oct-1993&ht=175cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">17</div>
                                 <img src="../images/Players/Ivan Cavaleiro.png" alt="Photo for Ivan Cavaleiro" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Ivan Cavaleiro</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -610,15 +582,15 @@
                             <a href="../players/index.html?na=Aboubakar%20Kamara&no=47&cl=Fulham&po=Forward&nat=Mauritania&dob=07-Mar-1995&ht=177cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">47</div>
                                 <img src="../images/Players/Aboubakar Kamara.png" alt="Photo for Aboubakar Kamara" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Aboubakar Kamara</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <span class="vertical-flex" style="color: red; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">63'</div>
+                                            <span style="font-size: 0.7em;">63'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -631,15 +603,15 @@
                             <a href="../players/index.html?na=André-Frank%20Zambo%20Anguissa&no=29&cl=Fulham&po=Midfielder&nat=Cameroon&dob=16-Nov-1995&ht=184cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">29</div>
                                 <img src="../images/Players/André-Frank Zambo Anguissa.png" alt="Photo for André-Frank Zambo Anguissa" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">André-Frank Zambo Anguissa</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <span class="vertical-flex" style="color: green; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">63'</div>
+                                            <span style="font-size: 0.7em;">63'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -647,15 +619,15 @@
                             <a href="../players/index.html?na=Aleksandar%20Mitrovic&no=9&cl=Fulham&po=Forward&nat=Serbia&dob=16-Sep-1994&ht=189cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">9</div>
                                 <img src="../images/Players/Aleksandar Mitrovic.png" alt="Photo for Aleksandar Mitrovic" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Aleksandar Mitrovic</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <span class="vertical-flex" style="color: green; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">63'</div>
+                                            <span style="font-size: 0.7em;">63'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -663,15 +635,15 @@
                             <a href="../players/index.html?na=Bobby%20De%20Cordova-Reid&no=14&cl=Fulham&po=Forward&nat=Jamaica&dob=02-Feb-1993&ht=170cm" class="flex" style="flex-direction: row-reverse; position: relative;">
                                 <div class="number" style="width: 3rem;">14</div>
                                 <img src="../images/Players/Bobby De Cordova-Reid.png" alt="Photo for Bobby De Cordova-Reid" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Bobby De Cordova-Reid</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <span class="vertical-flex" style="color: green; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">75'</div>
+                                            <span style="font-size: 0.7em;">75'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -684,9 +656,9 @@
                             <a href="../players/index.html?na=Bernd%20Leno&no=1&cl=Arsenal&po=Goalkeeper&fb=bernd.leno.official&tw=Bernd_Leno&inst=berndleno1&nat=Germany&dob=04-Mar-1992%20(30)&ht=190cm" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">1</div>
                                 <img src="../images/Players/Bernd Leno.png" alt="Photo for Bernd Leno" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Bernd Leno</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -697,9 +669,9 @@
                             <a href="../players/index.html?na=Kieran%20Tierney&no=3&cl=Arsenal&po=Defender&nat=Scotland&dob=05-Jun-1997&ht=178cm" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">3</div>
                                 <img src="../images/Players/Kieran Tierney.png" alt="Photo for Kieran Tierney" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Kieran Tierney</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -707,12 +679,12 @@
                             <a href="../players/index.html?na=Gabriel%20Magalhães&no=6&cl=Arsenal&po=Defender&nat=Brazil&dob=19-Dec-1997&ht=190cm&goal=1" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">6</div>
                                 <img src="../images/Players/Gabriel Magalhães.png" alt="Photo for Gabriel Magalhães" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Gabriel Magalhães</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <i class="fa-solid fa-futbol"></i>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -720,9 +692,9 @@
                             <a href="../players/index.html?na=Rob%20Holding&no=16&cl=Arsenal&po=Defender&nat=England&dob=20-Sep-1995&ht=189cm" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">16</div>
                                 <img src="../images/Players/Rob Holding.png" alt="Photo for Rob Holding" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Rob Holding</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -734,12 +706,12 @@
                             <a href="../players/index.html?na=Hector%20Bellerin&no=2&cl=Arsenal&po=Defender&nat=Spain&dob=19-Mar-1995&ht=178cm" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">2</div>
                                 <img src="../images/Players/Hector Bellerin.png" alt="Photo for Hector Bellerin" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Hector Bellerin</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <i class="fa-solid fa-mobile" style="color: yellow; border: 2px solid var(--active-text-color); border-radius: 3px;"></i>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -747,9 +719,9 @@
                             <a href="../players/index.html?na=Ainsley%20Maitland-Niles&no=15&cl=Arsenal&po=Midfielder&tw=MaitlandNiles&inst=maitlandniles&nat=England&dob=29-Aug-1997&ht=177cm" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">15</div>
                                 <img src="../images/Players/Ainsley Maitland-Niles.png" alt="Photo for Ainsley Maitland-Niles" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Ainsley Maitland-Niles</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -757,25 +729,25 @@
                             <a href="../players/index.html?na=Mohamed%20Elneny&no=25&cl=Arsenal&po=Midfielder&nat=Egypt&dob=11-Jul-1992&ht=180cm" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">25</div>
                                 <img src="../images/Players/Mohamed Elneny.png" alt="Photo for Mohamed Elneny" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Mohamed Elneny</span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
                         <li class="player" style="margin-bottom: 0.5rem;">
-                            <a href="../players/index.html?na=Granit%20Xhaka&no=25&cl=Arsenal&po=Midfielder&nat=Switzerland&dob=27-Sep-1992&ht=185cm" class="flex" style="position: relative;">
-                                <div class="number" style="width: 3rem;">25</div>
+                            <a href="../players/index.html?na=Granit%20Xhaka&no=34&cl=Arsenal&po=Midfielder&nat=Switzerland&dob=27-Sep-1992&ht=185cm" class="flex" style="position: relative;">
+                                <div class="number" style="width: 3rem;">34</div>
                                 <img src="../images/Players/Granit Xhaka.png" alt="Photo for Granit Xhaka" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Granit Xhaka</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <span class="vertical-flex" style="color: red; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">78'</div>
+                                            <span style="font-size: 0.7em;">78'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -787,16 +759,16 @@
                             <a href="../players/index.html?na=Alexandre%20Lacazette&no=9&cl=Arsenal&po=Forward&fb=AlexandreLacazetteOfficiel&tw=LacazetteAlex&inst=lacazettealex&nat=France&dob=28-May-1991%20(30)&ht=175cm&goal=1" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">9</div>
                                 <img src="../images/Players/Alexandre Lacazette.png" alt="Photo for Alexandre Lacazette" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Alexandre Lacazette</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <i class="fa-solid fa-futbol"></i>
                                         <span class="vertical-flex" style="color: red; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">87'</div>
+                                            <span style="font-size: 0.7em;">87'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -804,15 +776,15 @@
                             <a href="../players/index.html?na=Willian&no=12&cl=Arsenal&po=Forward&nat=Brazil&dob=09-Aug-1988&ht=175cm" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">12</div>
                                 <img src="../images/Players/Willian.png" alt="Photo for Willian" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Willian</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <span class="vertical-flex" style="color: red; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">75'</div>
+                                            <span style="font-size: 0.7em;">75'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -820,14 +792,14 @@
                             <a href="../players/index.html?na=Pierre-Emerick%20Aubameyang&no=14&cl=Arsenal&po=Forward&nat=Gabon&dob=18-Jun-1989&ht=187cm&goal=1" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">14</div>
                                 <img src="../images/Players/Pierre-Emerick Aubameyang.png" alt="Photo for Pierre-Emerick Aubameyang" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Pierre-Emerick Aubameyang</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <i class="fa-solid fa-futbol"></i>
                                         <i class="fa-solid fa-mobile" style="color: yellow; border: 2px solid var(--active-text-color); border-radius: 3px;"></i>
                                         <i class="fa-solid fa-copyright" style="color: red;"></i>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -838,15 +810,15 @@
                             <a href="../players/index.html?na=Dani%20Ceballos&no=8&cl=Arsenal&po=Midfielder&tw=DaniCeballos46&inst=danifuli10&nat=Spain&dob=07-Aug-1996&ht=179cm" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">8</div>
                                 <img src="../images/Players/Dani Ceballos.png" alt="Photo for Dani Ceballos" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Dani Ceballos</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <span class="vertical-flex" style="color: green; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">78'</div>
+                                            <span style="font-size: 0.7em;">78'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -854,15 +826,15 @@
                             <a href="../players/index.html?na=Nicolas%20Pépé&no=19&cl=Arsenal&po=Forward&nat=Cote%20D%E2%80%99Ivoire&dob=29-May-1995&ht=183cm" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">19</div>
                                 <img src="../images/Players/Nicolas Pépé.png" alt="Photo for Nicolas Pépé" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Nicolas Pépé</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <span class="vertical-flex" style="color: green; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">75'</div>
+                                            <span style="font-size: 0.7em;">75'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>
@@ -870,15 +842,15 @@
                             <a href="../players/index.html?na=Eddie%20Nketiah&no=30&cl=Arsenal&po=Forward&nat=England&dob=30-May-1999&ht=175cm" class="flex" style="position: relative;">
                                 <div class="number" style="width: 3rem;">30</div>
                                 <img src="../images/Players/Eddie Nketiah.png" alt="Photo for Eddie Nketiah" style="width: 4rem; margin: 0 1.5rem;">
-                                <h3 class="flex" style="--gap: 1rem; flex-direction: inherit;">
+                                <span class="flex highlight" style="--gap: 1rem; flex-direction: inherit;">
                                     <span class="name">Eddie Nketiah</span>
                                     <span class="flex" style="--gap: 0.25rem; flex-direction: inherit;">
                                         <span class="vertical-flex" style="color: green; --gap: 0; align-items: center;">
                                             <i class="fa-solid fa-rotate"></i>
-                                            <div style="font-size: 0.7em;">87'</div>
+                                            <span style="font-size: 0.7em;">87'</span>
                                         </span>
                                     </span>
-                                </h3>
+                                </span>
                                 <hr style="width: 100%; margin: 0; position: absolute; bottom: 0; right: 0; border: 0; border-bottom: 1px solid var(--separator-color);" />
                             </a>
                         </li>

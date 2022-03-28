@@ -16,10 +16,6 @@ main > table {
             width: 100%;
         }
 
-            main > table tr > *.team > a:hover, main > table tr > *.team > a:focus {
-                text-decoration: underline;
-            }
-
             main > table tr > *.team > a > img {
                 width: 2rem;
                 height: 2rem;

@@ -59,6 +59,10 @@ a {
     color: inherit;
 }
 
+    a:hover, a:focus {
+        text-decoration: underline;
+    }
+
 /* ------------------- */
 /* General             */
 /* ------------------- */
@@ -73,6 +77,35 @@ body {
     font-weight: 400;
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: var(--active-text-color);
+    padding-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--active-text-color);
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: var(--active-text-color);
+}
+
+.highlight {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: var(--active-text-color);
 }
 
 .flex {
@@ -127,6 +160,59 @@ button {
     button:focus {
         cursor: pointer;
     }
+
+/* Tab */
+ul.tab-list {
+    margin-bottom: -3px;
+    margin-left: -3px;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+}
+
+    ul.tab-list > li {
+        padding: 3px 3px 0 3px;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        margin-right: 0.25rem;
+    }
+
+        ul.tab-list > li > span {
+            display: block;
+            padding: 1rem 1rem calc(1rem + 3px) 1rem;
+            background-color: var(--text-color);
+            color: var(--white);
+            border-radius: 4px 4px 0 0;
+            font-weight: bold;
+        }
+
+        ul.tab-list > li.active > span {
+            background-color: var(--white);
+            color: var(--active-text-color);
+            box-shadow: 0 -1px 2px var(--box-shadow-color);
+        }
+
+        ul.tab-list > li:hover, ul.tab-list > li:focus {
+            cursor: pointer;
+        }
+
+    ul.tab-list + .tab-content {
+        min-height: 20rem;
+        margin-bottom: 2rem;
+        background-color: var(--white);
+        border-radius: 0 4px 4px 4px;
+        box-shadow: 0 3px 2px var(--box-shadow-color);
+        position: relative;
+        z-index: 1;
+        padding: 1rem;
+    }
+
+        ul.tab-list + .tab-content > *.flex {
+            --gap: 2rem;
+            align-items: start;
+        }
 
 /* Header */
 body > header {
@@ -240,7 +326,7 @@ body > header {
                 border-radius: 0 0 0.625rem 0.625rem;
                 box-shadow: 0 3px 2px var(--box-shadow-color);
                 overflow: hidden;
-                width: 13.5rem;
+                width: 14rem;
             }
 
                 body > header > .navigation-bar > .right > #league-selector-popup > .content {
@@ -279,6 +365,12 @@ body > header {
                         body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):focus {
                             background-color: rgba(var(--active-row-background-color-opacity), 0.4);
                         }
+
+                            body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):hover span,
+                            body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):focus span {
+                                color: var(--active-text-color);
+                                font-weight: bold;
+                            }
 
             body > header > .navigation-bar > .right > a {
                 display: inline-block;
@@ -324,6 +416,7 @@ main table {
     border-spacing: 0;
     overflow: hidden;
     text-align: center;
+    border: 1px solid var(--separator-color);
 }
 
     main table > thead {

@@ -32,3 +32,4 @@ document.querySelectorAll(".tab-list li").forEach((item) => {
         document.querySelector(".tab-content  > ." + tabContent).style.display = null;
     });
 });
+document.querySelector(".tab-list li.active")?.click();

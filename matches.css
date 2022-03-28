@@ -1,98 +1,99 @@
 /* Main */
-main > section.matches {
+main section.matches {
     padding: 2rem;
     margin-bottom: 2rem;
 }
 
-    main > section.matches > time {
+    main section.matches > time {
         font-size: 1.8rem;
         display: block;
         padding-bottom: 2rem;
         color: var(--active-text-color);
     }
 
-    main > section.matches > ul {
+    main section.matches > ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
         border-top: 1px solid var(--separator-color);
     }
 
-        main > section.matches > ul > li > a {
+        main section.matches > ul > li > a {
             align-items: center;
             justify-content: space-between;
             padding: 1rem;
             border-bottom: 1px dotted var(--separator-color);
         }
 
-            main > section.matches > ul > li > a:hover,
-            main > section.matches > ul > li > a:focus {
+            main section.matches > ul > li > a:hover,
+            main section.matches > ul > li > a:focus {
                 background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%);
                 color: var(--white);
                 cursor: pointer;
+                text-decoration: none;
             }
 
-                main > section.matches > ul > li > a:hover > i,
-                main > section.matches > ul > li > a:focus > i {
+                main section.matches > ul > li > a:hover > i,
+                main section.matches > ul > li > a:focus > i {
                     padding-right: 0;
                 }
 
-                main > section.matches > ul > li > a:hover > div:first-of-type > div > span,
-                main > section.matches > ul > li > a:focus > div:first-of-type > div > span {
+                main section.matches > ul > li > a:hover > div:first-of-type > div > span,
+                main section.matches > ul > li > a:focus > div:first-of-type > div > span {
                     color: var(--white);
                 }
 
-            main > section.matches > ul > li > a > i {
+            main section.matches > ul > li > a > i {
                 transition: padding-right 0.2s;
                 padding-right: 0.5rem;
             }
 
-            main > section.matches > ul > li > a > div {
+            main section.matches > ul > li > a > div {
                 align-items: center;
                 gap: 1rem;
                 justify-content: center;
             }
 
-                main > section.matches > ul > li > a > div:first-of-type {
+                main section.matches > ul > li > a > div:first-of-type {
                     flex: 0 0 40%;
                 }
 
-                    main > section.matches > ul > li > a > div:first-of-type > div:first-of-type {
+                    main section.matches > ul > li > a > div:first-of-type > div:first-of-type {
                         flex: 1;
                         justify-content: right;
                         --gap: 0.25rem;
                     }
 
-                    main > section.matches > ul > li > a > div:first-of-type > div:nth-of-type(3) {
+                    main section.matches > ul > li > a > div:first-of-type > div:nth-of-type(3) {
                         flex: 1;
                         justify-content: left;
                         --gap: 0.25rem;
                     }
 
-                    main > section.matches > ul > li > a > div:first-of-type > div > span {
+                    main section.matches > ul > li > a > div:first-of-type > div > span {
                         font-size: 1.5rem;
                         color: var(--active-text-color);
                     }
 
-                    main > section.matches > ul > li > a > div:first-of-type > div > img {
+                    main section.matches > ul > li > a > div:first-of-type > div > img {
                         width: 2rem;
                         height: 2rem;
                     }
 
-                    main > section.matches > ul > li > a > div:first-of-type > .score {
+                    main section.matches > ul > li > a > div:first-of-type > .score {
                         padding: 0.5rem;
                         font-size: 1.3rem;
                         color: var(--white);
                         background-color: var(--active-text-color);
                     }
 
-                        main > section.matches > ul > li > a > div:first-of-type > .score > span {
+                        main section.matches > ul > li > a > div:first-of-type > .score > span {
                             padding: 0 0.5rem;
                             color: var(--active-text-color);
                             position: relative;
                         }
 
-                            main > section.matches > ul > li > a > div:first-of-type > .score > span:before {
+                            main section.matches > ul > li > a > div:first-of-type > .score > span:before {
                                 content: " ";
                                 display: block;
                                 width: 0.1rem;
@@ -103,12 +104,12 @@ main > section.matches {
                                 left: 50%;
                             }
 
-                main > section.matches > ul > li > a > div:nth-of-type(2) {
+                main section.matches > ul > li > a > div:nth-of-type(2) {
                     justify-content: start;
                     flex: 1;
                 }
 
-                    main > section.matches > ul > li > a > div:nth-of-type(2) > img {
+                    main section.matches > ul > li > a > div:nth-of-type(2) > img {
                         width: 2rem;
                         height: 2rem;
                     }

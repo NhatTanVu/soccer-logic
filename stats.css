@@ -4,18 +4,9 @@ main > section {
     font-weight: bold;
 }
 
-main > section > header > h3 {
-    padding-bottom: 1rem;
-    font-size: 1.8rem;
-    font-weight: normal;
-    color: var(--active-text-color);
+main .card > header > h4 {
+    padding: 1rem;
 }
-
-    main .card > header > h4 {
-        padding: 1rem;
-        font-size: 1.2rem;
-        font-weight: normal;
-    }
 
 main > section > ul {
     display: grid;

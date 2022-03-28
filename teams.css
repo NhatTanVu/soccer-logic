@@ -26,7 +26,7 @@ main > section {
                 color: var(--white);
             }
 
-                main > section .card:hover a .clubInfo h4.clubName {
+                main > section .card:hover a .clubInfo .clubName {
                     color: var(--white);
                 }
 
@@ -37,6 +37,10 @@ main > section {
         main > section .card a {
             display: block;
         }
+
+            main > section .card a:hover, main > section .card a:focus {
+                text-decoration: none;
+            }
 
         main > section .card .indexImg {
             background: radial-gradient(var(--white) 0%, var(--active-row-background-color) 90%);
@@ -61,8 +65,7 @@ main > section {
                     top: 50%;
                     left: 50%;
                     transform: translateX(-50%) translateY(-50%);
-                    border-radius: 100%;
-                    height: 80%;
+                    height: 75%;
                     aspect-ratio: 1;
                 }
 

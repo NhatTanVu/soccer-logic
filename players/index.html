@@ -30,20 +30,9 @@
     <script src="../shared.js" defer></script>
 
     <style>
-        b {
-            color: var(--active-text-color);
-        }
-
         tbody tr td {
             color: var(--active-text-color);
-            font-weight: bold;
-        }
-
-        h3 {
-            padding-bottom: 1rem;
-            font-size: 1.8rem;
-            font-weight: normal;
-            color: var(--active-text-color);
+            font-size: 1.1rem;
         }
     </style>
 
@@ -131,7 +120,7 @@
                 player_nationality.innerHTML = nationality;
             }
             if (dob) {
-                player_dob.innerHTML = "<b>" + dob.split(" ")[0] + "</b>" + (dob.split(" ")[1] ? " " + dob.split(" ")[1] : "");
+                player_dob.innerHTML = dob.split(" ")[0] + (dob.split(" ")[1] ? " " + dob.split(" ")[1] : "");
             }
             if (height) {
                 player_height.innerHTML = height;
@@ -231,18 +220,18 @@
                 <div class="flex" style="justify-content: space-between; padding: 1rem;">
                     <span>Club</span>
                     <span class="flex" style="--gap: 0.25rem;">
-                        <b class="club_name" style="text-align: right;"></b>
+                        <span class="club_name highlight" style="text-align: right;"></span>
                         <img class="club_photo" style="height: 2rem; width: 2rem;" />
                     </span>
                 </div>
                 <hr style="border: 0; border-bottom: 1px solid var(--separator-color); width: 100%; margin: 0;" />
                 <div class="flex" style="justify-content: space-between; padding: 1rem;">
                     <span>Position</span>
-                    <b id="player_position"></b>
+                    <span class="highlight" id="player_position"></span>
                 </div>
                 <hr style="border: 0; border-bottom: 1px solid var(--separator-color); width: 100%; margin: 0;" />
                 <div class="vertical-flex" style="justify-content: space-between; padding: 1rem;" id="follow_player">
-                    <h3>Follow <span class="player_name"></span></h3>
+                    <h4>Follow <span class="player_name"></span></h4>
                     <ul class="socialOptions flex" style="padding: 1rem 1rem 0 1rem; --gap: 1rem;">
                         <li>
                             <a id="player_facebook" target="_blank" class="facebook-option" title="">
@@ -263,22 +252,22 @@
                 </div>
             </div>
             <div class="right card vertical-flex" style="flex: 1; padding: 1rem; --gap: 0;">
-                <h3>Personal Details</h3>
+                <h2>Personal Details</h2>
                 <div class="flex" style="justify-content: space-between; padding: 1rem; border: 1px solid var(--separator-color); border-radius: 3px; --gap: 1rem; margin-bottom: 2rem; ">
                     <span class="flex" style="justify-content: space-between; border-right: 1px solid var(--separator-color); flex: 1; --gap: 0; padding-right: 1rem;">
                         <span>Nationality: </span>
-                        <span><b id="player_nationality"></b></span>
+                        <span class="highlight" id="player_nationality"></span>
                     </span>
                     <span class="flex" style="justify-content: space-between; border-right: 1px solid var(--separator-color); flex: 1; --gap: 0; padding-right: 1rem;">
                         <span>Date of Birth: </span>
-                        <span id="player_dob"></span>
+                        <span id="player_dob" class="highlight"></span>
                     </span>
                     <span class="flex" style="justify-content: space-between; flex: 1; --gap: 0;">
                         <span>Height: </span>
-                        <span><b id="player_height"></b></span>
+                        <span class="highlight" id="player_height"></span>
                     </span>
                 </div>
-                <h3>Playing Career</h3>
+                <h2>Playing Career</h2>
                 <table style="border: 1px solid var(--separator-color); border-radius: 3px; text-align: left; overflow: inherit;">
                     <thead>
                         <tr>
