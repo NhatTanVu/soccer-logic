@@ -81,7 +81,7 @@
                     <h1>SoccerLogic</h1>
                 </a>
                 <ul class="navigation-menu flex">
-                    <li>
+                    <li class="active">
                         <a href="../matches.html">Matches</a>
                     </li>
                     <li>
@@ -140,17 +140,17 @@
     </header>
     <main class="container">
         <header class="hero">
-            <div class=" home-team main-row flex" style="flex: 1; column-gap: 1rem; padding-left: 1rem;">
+            <a href="../teams/index.html?team=Fulham" class="home-team main-row flex" style="flex: 1; column-gap: 1rem; padding-left: 1rem;">
                 <img class="badge-image badge-image--50" src="../images/Teams/Fulham.png" style="width: 3.6rem; height: 3.6rem;">
                 <h1>Fulham</h1>
-            </div>
+            </a>
             <div class="score-board main-row flex middle-column" style="justify-content: center; background-color: var(--text-color);">
                 <h1>0 - 3</h1>
             </div>
-            <div class="away-team main-row flex" style="flex: 1; justify-content: right; column-gap: 1rem; padding-right: 1rem;">
+            <a href="../teams/index.html?team=Arsenal" class="away-team main-row flex" style="flex: 1; justify-content: right; column-gap: 1rem; padding-right: 1rem;">
                 <h1>Arsenal</h1>
                 <img class="badge-image badge-image--50" src="../images/Teams/Arsenal.png" style="width: 3.6rem; height: 3.6rem;">
-            </div>
+            </a>
             <div class="row-2"></div>
             <div class="row-2 middle-column" style="text-align: center;">
                 Half Time: 0-1
@@ -165,21 +165,21 @@
                 <div>
                     <i class="fa-solid fa-futbol"></i>
                     <span style="padding: 0 0.25rem;">
-                        <a href="#">Alexandre Lacazette</a>
+                        <a href="../Players/index.html?na=Alexandre%20Lacazette&no=9&cl=Arsenal&po=Forward&fb=AlexandreLacazetteOfficiel&tw=LacazetteAlex&inst=lacazettealex&nat=France&dob=28-May-1991%20(30)&ht=175cm&goal=1">Alexandre Lacazette</a>
                         8'
                     </span>
                 </div>
                 <div>
                     <i class="fa-solid fa-futbol"></i>
                     <span style="padding: 0 0.25rem;">
-                        <a href="#">Gabriel Magalhães</a>
+                        <a href="../Players/index.html?na=Gabriel%20Magalh%C3%A3es&no=6&cl=Arsenal&po=Defender&nat=Brazil&dob=19-Dec-1997&ht=190cm&goal=1">Gabriel Magalhães</a>
                         49'
                     </span>
                 </div>
                 <div>
                     <i class="fa-solid fa-futbol"></i>
                     <span style="padding: 0 0.25rem;">
-                        <a href="#">Pierre-Emerick Aubameyang</a>
+                        <a href="../Players/index.html?na=Pierre-Emerick%20Aubameyang&no=14&cl=Arsenal&po=Forward&nat=Gabon&dob=18-Jun-1989&ht=187cm&goal=1">Pierre-Emerick Aubameyang</a>
                         57'
                     </span>
                 </div>
@@ -191,12 +191,12 @@
             </div>
             <div class="away-team row-4" style="flex: 1; padding-left: 1rem;">
                 <span>
-                    <a href="#">Willian</a>
+                    <a href="../Players/index.html?na=Willian&no=12&cl=Arsenal&po=Forward&nat=Brazil&dob=09-Aug-1988&ht=175cm">Willian</a>
                     49', 57'
                 </span>
             </div>
             <div class="timeline" style="grid-column: 1 / span 3; padding-left: 1rem; padding-right: 1rem;">
-                <a class="flex" href="#" style="display: inline-flex; --gap: 0.25rem; vertical-align: middle;">
+                <a class="flex" href="../teams/index.html?team=Fulham" style="display: inline-flex; --gap: 0.25rem; vertical-align: middle;">
                     <img class="badge-image badge-image--20" src="../images/Teams/Fulham.png" style="width: 2rem; height: 2rem;">
                     FUL
                 </a>
@@ -258,7 +258,7 @@
                         <i class="fa-solid fa-rotate" style="top: 2.5rem; position: absolute; left: 50%; transform: translateX(-50%);"></i>
                     </div>
                 </div>
-                <a class="flex" href="#" style="display: inline-flex; --gap: 0.25rem; vertical-align: middle;">
+                <a class="flex" href="../teams/index.html?team=Arsenal" style="display: inline-flex; --gap: 0.25rem; vertical-align: middle;">
                     <img class="badge-image badge-image--20" src="../images/Teams/Arsenal.png" style="width: 2rem; height: 2rem;">
                     ARS
                 </a>
@@ -449,7 +449,7 @@
                 </ul>
             </div>
             <div class="line-ups flex">
-                <div class="home-team" style="flex: 1; padding: 0 1.5rem 2rem 1.5rem; text-align: right;">
+                <div class="home-team" style="flex: 1; padding: 0 1.5rem; text-align: right; position: relative;">
                     <h2 style="margin: 2rem 0 1rem 0;">Goalkeeper</h2>
                     <ul>
                         <li class="player">
@@ -648,8 +648,13 @@
                             </a>
                         </li>
                     </ul>
+                    <div style="position: absolute; top: 0; left: 0;">
+                        <a href="../teams/index.html?team=Fulham">
+                            <img class="badge-image badge-image--50" src="../images/Teams/Fulham.png" style="width: 3.6rem; height: 3.6rem;">
+                        </a>
+                    </div>
                 </div>
-                <div class="away-team" style="flex: 1; padding: 0 1.5rem 2rem 1.5rem;">
+                <div class="away-team" style="flex: 1; padding: 0 1.5rem; position: relative;">
                     <h2 style="margin: 2rem 0 1rem 0;">Goalkeeper</h2>
                     <ul>
                         <li class="player">
@@ -855,6 +860,11 @@
                             </a>
                         </li>
                     </ul>
+                    <div style="position: absolute; top: 0; right: 0;">
+                        <a href="../teams/index.html?team=Arsenal">
+                            <img class="badge-image badge-image--50" src="../images/Teams/Arsenal.png" style="width: 3.6rem; height: 3.6rem;">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

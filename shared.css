@@ -4,7 +4,7 @@
 :root {
     /* Colors */
     --white: hsl(0, 0%, 100%);
-    --black: hsl(0, 0%, 0%); /*  (with 75% opacity for lightbox background) */
+    --black: hsl(0, 0%, 0%);
 
     --background-color: #F3F4F7;
     --text-color: #959FA8;
@@ -88,6 +88,7 @@ h2 {
     font-weight: normal;
     color: var(--active-text-color);
     padding-bottom: 1rem;
+    white-space: nowrap;
 }
 
 h3 {
@@ -369,7 +370,7 @@ body > header {
                             body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):hover span,
                             body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):focus span {
                                 color: var(--active-text-color);
-                                font-weight: bold;
+                                font-size: 1.3rem;
                             }
 
             body > header > .navigation-bar > .right > a {

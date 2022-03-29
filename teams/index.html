@@ -29,6 +29,7 @@
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
     <script src="../shared.js" defer></script>
+    <script src="./data.js" defer></script>
 
     <style>
         main .results section.matches {
@@ -75,6 +76,75 @@
                 text-decoration: none;
             }
     </style>
+
+    <script>
+        window.onload = (event) => {
+            console.log("team = " + (team = getQueryVariable("team")));
+            if (team) {
+                document.querySelectorAll(".club_name").forEach((item) => {
+                    item.innerHTML = team;
+                });
+
+                document.querySelectorAll(".club_photo").forEach((item) => {
+                    item.src = "../images/Teams/" + team + ".png";
+                });
+
+                console.log(DATA[team]);
+                if (DATA[team]) {
+                    if (DATA[team].stadium_name)
+                        stadium_name.innerHTML = DATA[team].stadium_name;
+                    if (DATA[team].official_website)
+                        document.querySelectorAll(".official_website").forEach((item) => {
+                            item.href = DATA[team].official_website.href;
+                            item.textContent = DATA[team].official_website.textContent;
+                        });
+                    if (DATA[team].previous_standing || DATA[team].current_standing || DATA[team].next_standing) {
+                        if (DATA[team].previous_standing) {
+                            previous_standing.innerHTML = "";
+                            DATA[team].previous_standing.forEach((item) => {
+                                previous_standing.innerHTML += "<td>" + item + "</td>";
+                            });
+                        }
+                        else {
+                            previous_standing.innerHTML = "";
+                        }
+
+                        if (DATA[team].current_standing) {
+                            current_standing.innerHTML = "";
+                            DATA[team].current_standing.forEach((item) => {
+                                current_standing.innerHTML += "<td>" + item + "</td>";
+                            });
+                        }
+                        else {
+                            current_standing.innerHTML = "";
+                        }
+                        if (DATA[team].next_standing) {
+                            next_standing.innerHTML = "";
+                            DATA[team].next_standing.forEach((item) => {
+                                next_standing.innerHTML += "<td>" + item + "</td>";
+                            });
+                        }
+                        else {
+                            next_standing.innerHTML = "";
+                        }
+                    }
+                }
+
+                if (team == 'Arsenal') {
+                    no_latest_goals.style.display = "none";
+                    latest_goals.style.display = null;
+                    document.querySelector("[data-tab-content='squad']").style.display = null;
+                }
+                if (team == 'Arsenal' || team == 'Fulham') {
+                    no_matches.style.display = "none";
+                    document.querySelectorAll(".matches").forEach((item) => {
+                        item.style.display = null;
+                    });
+                    document.querySelector("[data-tab-content='results']").style.display = null;
+                }
+            }
+        };
+    </script>
 </head>
 <body>
     <header>
@@ -95,7 +165,7 @@
                     <li>
                         <a href="../stats.html">Statistics</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="../teams.html">Teams</a>
                     </li>
                     <li>
@@ -146,10 +216,10 @@
     <main class="container">
         <header class="hero" style="height: 18rem; background: linear-gradient(90deg,var(--active-text-color),var(--active-row-background-color) 45%); position: relative;">
             <div class="imgContainer" style="padding-left: 3rem; padding-top: 1rem; height: 60%; margin-right: 4.25rem; margin-left: 4.25rem; border-radius: 100%; background: #fff; box-shadow: 0 3px 2px var(--box-shadow-color); aspect-ratio: 1; position: relative;">
-                <img id="player_photo" style="display: block; height: 75%; width: 75%; position: absolute; top: 12.5%; left: 12.5%;" src="../images/Teams/Arsenal.png">
+                <img class="club_photo" style="display: block; height: 75%; width: 75%; position: absolute; top: 12.5%; left: 12.5%;" src="../images/Teams/Arsenal.png">
             </div>
             <div>
-                <span style="line-height: 5rem; font-size: 5rem; display: block; color: var(--active-text-color); margin-bottom: 1rem;" id="club_name">Arsenal</span>
+                <span style="line-height: 5rem; font-size: 5rem; display: block; color: var(--active-text-color); margin-bottom: 1rem;" class="club_name">Arsenal</span>
                 <div style="font-weight: normal; line-height: 2rem;">
                     <div id="stadium_name">
                         Emirates Stadium
@@ -157,47 +227,47 @@
                     <div>
                         <span style="margin-right: 0.25rem;">Official website: </span>
                         <h4 style="display: inline-block;">
-                            <a href="https://www.arsenal.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link" target="_blank">www.arsenal.com</a>
+                            <a class="official_website" href="https://www.arsenal.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link" target="_blank">www.arsenal.com</a>
                         </h4>
                     </div>
                     <ul class="socialOptions flex" style="padding: 1rem 1rem 0 0; --gap: 1rem;">
                         <li>
-                            <a id="club_facebook" target="_blank" class="facebook-option" title="" href="https://www.facebook.com/arsenal/" style="border-radius: 100%; background: #fff; display: block; padding: 1rem;">
+                            <a id="club_facebook" target="_blank" class="facebook-option" title="" href="#" style="border-radius: 100%; background: #fff; display: block; padding: 1rem;">
                                 <svg style="width: 1.25rem; height: 1.25rem; fill: #4267B2; display: block; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"></path></svg>
                             </a>
                         </li>
                         <li>
-                            <a id="club_twitter" target="_blank" class="twitter-option" href="https://twitter.com/Arsenal/" style="border-radius: 100%; background: #fff; display: block; padding: 1rem;">
+                            <a id="club_twitter" target="_blank" class="twitter-option" href="#" style="border-radius: 100%; background: #fff; display: block; padding: 1rem;">
                                 <svg style="width: 1.25rem; height: 1.25rem; fill: #1DA1F2; display: block; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20"><path d="M24 2.557a9.83 9.83 0 01-2.828.775A4.932 4.932 0 0023.337.608a9.864 9.864 0 01-3.127 1.195A4.916 4.916 0 0016.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 011.671 1.149a4.93 4.93 0 001.523 6.574 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.928 4.928 0 004.6 3.419A9.9 9.9 0 010 17.54a13.94 13.94 0 007.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0024 2.557z"></path></svg>
                             </a>
                         </li>
                         <li>
-                            <a id="club_instagram" target="_blank" class="instagram-option" href="http://instagram.com/arsenal/" style="border-radius: 100%; background: #fff; display: block; padding: 1rem; ">
+                            <a id="club_instagram" target="_blank" class="instagram-option" href="#" style="border-radius: 100%; background: #fff; display: block; padding: 1rem; ">
                                 <svg style="width: 1.25rem; height: 1.25rem; fill: var(--text-color); display: block; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <img style="position: absolute; right: 1rem; bottom: 1rem; width: 6rem; height: 6rem; opacity: 0.25;" src="../images/Teams/Arsenal.png" />
+            <img class="club_photo" style="position: absolute; right: 1rem; bottom: 1rem; width: 6rem; height: 6rem; opacity: 0.25;" />
         </header>
         <ul class="tab-list" role="tablist">
             <li role="tab" tabindex="0" class="active" data-tab-content="overview">
                 <span>Overview</span>
             </li>
-            <li role="tab" tabindex="0" data-tab-content="squad">
+            <li role="tab" tabindex="0" data-tab-content="squad" style="display: none;">
                 <span>Squad</span>
             </li>
-            <li role="tab" tabindex="0" data-tab-content="results">
+            <li role="tab" tabindex="0" data-tab-content="results" style="display: none;">
                 <span>Results</span>
             </li>
         </ul>
         <div class="tab-content">
             <div class="overview flex">
                 <div style="flex: 1;">
-                    <h2>Visit Arsenal website</h2>
+                    <h2>Visit <span class="club_name"></span> website</h2>
                     <div style="margin-bottom: 2rem;">
-                        <a href="https://www.arsenal.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link" target="_blank">Official website</a>
+                        <a class="official_website" href="https://www.arsenal.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link" target="_blank">Official website</a>
                     </div>
                     <h2>Standing</h2>
                     <table style="margin-bottom: 1rem;">
@@ -221,7 +291,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr id="previous_standing">
                                 <td>
                                     7
                                 </td>
@@ -238,7 +308,7 @@
                                     62
                                 </td>
                             </tr>
-                            <tr style="color: var(--active-text-color); font-weight: bold; background-color: rgba(var(--active-row-background-color-opacity), 0.4);">
+                            <tr id="current_standing" style="color: var(--active-text-color); font-weight: bold; background-color: rgba(var(--active-row-background-color-opacity), 0.4);">
                                 <td>
                                     8
                                 </td>
@@ -255,7 +325,7 @@
                                     61
                                 </td>
                             </tr>
-                            <tr>
+                            <tr id="next_standing">
                                 <td>
                                     9
                                 </td>
@@ -278,7 +348,8 @@
                 </div>
                 <div style="flex: 2;">
                     <h2>Latest Goals</h2>
-                    <table style="margin-bottom: 2rem; text-align: left;">
+                    <div id="no_latest_goals" style="padding: 0; text-align: center; margin-bottom: 2rem;">N/A</div>
+                    <table id="latest_goals" style="margin-bottom: 2rem; text-align: left; display: none;">
                         <thead>
                             <tr>
                                 <th>
@@ -335,7 +406,8 @@
                         </tbody>
                     </table>
                     <h2>Latest Matches</h2>
-                    <section class="matches">
+                    <div id="no_matches" style="padding: 0; text-align: center; margin-bottom: 2rem;">N/A</div>
+                    <section class="matches" style="display: none;">
                         <time>
                             Saturday 12 September 2020
                         </time>
