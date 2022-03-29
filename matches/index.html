@@ -110,7 +110,7 @@
                     </div>
                     <svg viewBox="0 0 19 13" style="height: 0.6rem; fill: var(--active-text-color); vertical-align: middle;" xmlns="http://www.w3.org/2000/svg"><path d="M15.949.586l2.828 2.828-9.096 9.096L.586 3.414 3.414.586l6.267 6.267z" fill-rule="nonzero" /></svg>
                 </button>
-                <div class="vertical-flex hide" id="league-selector-popup">
+                <div class="vertical-flex popup hide" id="league-selector-popup">
                     <div class="content">
                         <ul>
                             <li class="active">
@@ -132,9 +132,24 @@
                         </ul>
                     </div>
                 </div>
-                <a href="../">
-                    <img class="avatar" src="../images/image-avatar.png" alt="avatar" />
-                </a>
+                <button id="user">
+                    <i class="fa-solid fa-user avatar"></i>
+                </button>
+                <div class="vertical-flex popup hide" id="user-menu">
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <a href="../users/sign-in.html"><span>Sign In</span></a>
+                            </li>
+                            <li>
+                                <a href="../users/register.html"><span>Register</span></a>
+                            </li>
+                            <li>
+                                <a href="../users/feedback.html"><span>Feedback</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </header>

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="favicon-32x32.png" />
+    <link rel="icon" href="../favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-          content="SoccerLogic | Matches" />
+          content="SoccerLogic | Feedback" />
 
     <!-- connect to domain of font files -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,38 +21,38 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&display=swap">
     </noscript>
 
-    <title>SoccerLogic | Matches</title>
+    <title>SoccerLogic | Feedback</title>
 
-    <link href="./shared.css" rel="stylesheet" />
-    <link href="./matches.css" rel="stylesheet" />
+    <link href="../shared.css" rel="stylesheet" />
+    <link href="../index.css" rel="stylesheet" />
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
-    <script src="shared.js" defer></script>
+    <script src="../shared.js" defer></script>
 </head>
 <body>
     <header>
         <div class="navigation-bar flex">
             <div class="left flex">
-                <img id="menu" src="./images/icon-menu.svg" alt="icon menu" onClick={menuClickHandler} />
-                <a class="flex logo" href="./index.html">
-                    <img src="./images/logo.png" alt="logo" />
+                <img id="menu" src="../images/icon-menu.svg" alt="icon menu" onClick={menuClickHandler} />
+                <a class="flex logo" href="../index.html">
+                    <img src="../images/logo.png" alt="logo" />
                     <h1>SoccerLogic</h1>
                 </a>
                 <ul class="navigation-menu flex">
-                    <li class="active">
-                        <a href="./matches.html">Matches</a>
+                    <li>
+                        <a href="../matches.html">Matches</a>
                     </li>
                     <li>
-                        <a href="./table.html">Table</a>
+                        <a href="../table.html">Table</a>
                     </li>
                     <li>
-                        <a href="./stats.html">Statistics</a>
+                        <a href="../stats.html">Statistics</a>
                     </li>
                     <li>
-                        <a href="./teams.html">Teams</a>
+                        <a href="../teams.html">Teams</a>
                     </li>
                     <li>
-                        <a href="./players.html">Players</a>
+                        <a href="../players.html">Players</a>
                     </li>
                 </ul>
                 <div class="overlay"></div>
@@ -63,7 +63,7 @@
             <div class="right flex">
                 <button id="league-selector" class="flex">
                     <div class="flex">
-                        <img src="./images/Championships/Premier League.png" alt="">
+                        <img src="../images/Championships/Premier League.png" alt="">
                         <span>Premier League</span>
                     </div>
                     <svg viewBox="0 0 19 13" style="height: 0.6rem; fill: var(--active-text-color); vertical-align: middle;" xmlns="http://www.w3.org/2000/svg"><path d="M15.949.586l2.828 2.828-9.096 9.096L.586 3.414 3.414.586l6.267 6.267z" fill-rule="nonzero" /></svg>
@@ -72,38 +72,38 @@
                     <div class="content">
                         <ul>
                             <li class="active">
-                                <img src="./images/Championships/Premier League.png" alt="">
+                                <img src="../images/Championships/Premier League.png" alt="">
                                 <span>Premier League</span>
                             </li>
                             <li>
-                                <img src="./images/Championships/Bundesliga.png" alt="">
+                                <img src="../images/Championships/Bundesliga.png" alt="">
                                 <span>Bundesliga</span>
                             </li>
                             <li>
-                                <img src="./images/Championships/La Liga.png" alt="">
+                                <img src="../images/Championships/La Liga.png" alt="">
                                 <span>La Liga</span>
                             </li>
                             <li>
-                                <img src="./images/Championships/Serie A.png" alt="">
+                                <img src="../images/Championships/Serie A.png" alt="">
                                 <span>Serie A</span>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <button id="user">
+                <button id="user" class="active">
                     <i class="fa-solid fa-user avatar"></i>
                 </button>
                 <div class="vertical-flex popup hide" id="user-menu">
                     <div class="content">
                         <ul>
                             <li>
-                                <a href="./users/sign-in.html"><span>Sign In</span></a>
+                                <a href="./sign-in.html"><span>Sign In</span></a>
                             </li>
                             <li>
-                                <a href="./users/register.html"><span>Register</span></a>
+                                <a href="./register.html"><span>Register</span></a>
                             </li>
-                            <li>
-                                <a href="./users/feedback.html"><span>Feedback</span></a>
+                            <li class="active">
+                                <a href="./feedback.html"><span>Feedback</span></a>
                             </li>
                         </ul>
                     </div>
@@ -113,35 +113,8 @@
     </header>
     <main class="container">
         <header class="hero">
-            <h1>Matches</h1>
+            <h1>Feedback</h1>
         </header>
-        <section class="matches card">
-            <time>
-                Saturday 12 September 2020
-            </time>
-            <ul class="vertical-flex">
-                <li>
-                    <a class="flex" href="./matches/index.html">
-                        <div class="flex">
-                            <div class="flex">
-                                <span>Fulham</span>
-                                <img alt="Fulham logo" src="./images/Teams/Fulham.png">
-                            </div>
-                            <div class="score">0<span></span>3</div>
-                            <div class="flex">
-                                <img alt="Arsenal logo" src="./images/Teams/Arsenal.png">
-                                <span>Arsenal</span>
-                            </div>
-                        </div>
-                        <div class="flex">
-                            <img src="./images/field.png" alt="Craven Cottage, London" />
-                            <span>Craven Cottage, <strong>London</strong></span>
-                        </div>
-                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    </a>
-                </li>
-            </ul>
-        </section>
     </main>
     <footer>
     </footer>

@@ -155,6 +155,7 @@ button {
     font-size: inherit;
     line-height: inherit;
     font-family: inherit;
+    background: none;
 }
 
     button:hover,
@@ -296,7 +297,7 @@ body > header {
                 background-color: inherit;
                 line-height: 3.5rem;
                 padding-bottom: 0.25rem;
-                width: 13.5rem;
+                width: 14rem;
                 justify-content: space-between;
                 align-items: center;
             }
@@ -316,84 +317,106 @@ body > header {
                     }
 
             body > header > .navigation-bar > .right > #league-selector-popup {
+                left: 0;
+                width: 14rem;
+            }
+
+            body > header > .navigation-bar > .right > #user-menu {
+                right: 0;
+                width: 8rem;
+            }
+
+                body > header > .navigation-bar > .right > #user-menu .content li {
+                    padding: 0 0.5rem;
+                }
+
+                    body > header > .navigation-bar > .right > #user-menu .content li a {
+                        text-decoration: none;
+                        display: block;
+                    }
+
+            body > header > .navigation-bar > .right > .popup {
                 --gap: 0;
                 position: absolute;
                 top: 3.5rem;
-                left: 0;
-                max-height: 10.5rem;
+                max-height: 11rem;
                 z-index: 10;
                 background-color: var(--white);
                 margin-top: 0.25rem;
                 border-radius: 0 0 0.625rem 0.625rem;
                 box-shadow: 0 3px 2px var(--box-shadow-color);
                 overflow: hidden;
-                width: 14rem;
             }
 
-                body > header > .navigation-bar > .right > #league-selector-popup > .content {
+                body > header > .navigation-bar > .right > .popup > .content {
                     overflow: auto;
                     text-align: left;
                 }
 
-                    body > header > .navigation-bar > .right > #league-selector-popup > .content li {
+                    body > header > .navigation-bar > .right > .popup > .content li {
                         line-height: 3.5rem;
                         border-bottom: 1px solid var(--separator-color);
                         cursor: pointer;
                         padding-right: 0.5rem;
                     }
 
-                        body > header > .navigation-bar > .right > #league-selector-popup > .content li img {
+                        body > header > .navigation-bar > .right > .popup > .content li img {
                             height: 2rem;
                             vertical-align: middle;
                             margin-right: 0.25rem;
                         }
 
-                        body > header > .navigation-bar > .right > #league-selector-popup > .content li span {
+                        body > header > .navigation-bar > .right > .popup > .content li span {
                             vertical-align: middle;
                             font-size: 1.2rem;
                             color: var(--navigation-menu-color);
                         }
 
-                        body > header > .navigation-bar > .right > #league-selector-popup > .content li.active {
+                        body > header > .navigation-bar > .right > .popup > .content li.active {
                             background-color: var(--active-row-background-color);
                         }
 
-                            body > header > .navigation-bar > .right > #league-selector-popup > .content li.active span {
+                            body > header > .navigation-bar > .right > .popup > .content li.active span {
                                 color: var(--white);
                             }
 
-                        body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):hover,
-                        body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):focus {
+                        body > header > .navigation-bar > .right > .popup > .content li:not(.active):hover,
+                        body > header > .navigation-bar > .right > .popup > .content li:not(.active):focus {
                             background-color: rgba(var(--active-row-background-color-opacity), 0.4);
                         }
 
-                            body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):hover span,
-                            body > header > .navigation-bar > .right > #league-selector-popup > .content li:not(.active):focus span {
+                            body > header > .navigation-bar > .right > .popup > .content li:not(.active):hover span,
+                            body > header > .navigation-bar > .right > .popup > .content li:not(.active):focus span {
                                 color: var(--active-text-color);
                                 font-size: 1.3rem;
                             }
 
-            body > header > .navigation-bar > .right > a {
-                display: inline-block;
+            body > header > .navigation-bar > .right > #user {
+                display: block;
                 line-height: 3.5rem;
                 vertical-align: middle;
             }
 
-                body > header > .navigation-bar > .right > a > .avatar {
-                    height: 2.75rem;
-                    aspect-ratio: 1;
-                    vertical-align: middle;
-                    margin: 0.5rem;
-                }
-
-                body > header > .navigation-bar > .right > a:hover > .avatar,
-                body > header > .navigation-bar > .right > a:focus > .avatar {
-                    border: 0.25rem solid var(--active-text-color);
-                    border-radius: 100%;
+                body > header > .navigation-bar > .right > #user > .avatar {
                     height: 3.25rem;
+                    aspect-ratio: 1;
                     margin: 0.25rem;
+                    font-size: 2rem;
+                    line-height: 2.75rem;
+                    text-align: center;
+                    display: block;
+                    color: var(--text-color);
+                    border: 0.25rem solid var(--text-color);
+                    border-radius: 100%;
                 }
 
+                body > header > .navigation-bar > .right > #user.active > .avatar,
+                body > header > .navigation-bar > .right > #user:hover > .avatar,
+                body > header > .navigation-bar > .right > #user:focus > .avatar {
+                    border: 0.25rem solid var(--active-text-color);
+                    margin: 0.25rem;
+                    color: var(--active-text-color);
+                }
 
 /* Main */
 main > header.hero {

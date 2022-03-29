@@ -1,4 +1,8 @@
 document.getElementById("league-selector").onclick = (e) => {
+    document.querySelectorAll(".popup").forEach((item) => {
+        if (item.id != "league-selector-popup")
+            item.classList.add("hide");
+    });
     document.querySelector("#league-selector > svg").classList.toggle("rotate");
     document.querySelector("#league-selector-popup").classList.toggle("hide");
 };
@@ -45,5 +49,12 @@ function getQueryVariable(variable) {
             return decodeURIComponent(pair[1]);
         }
     }
-    //console.log('Query variable %s not found', variable);
 }
+
+document.getElementById("user").onclick = (e) => {
+    document.querySelectorAll(".popup").forEach((item) => {
+        if (item.id != "user-menu")
+            item.classList.add("hide");
+    });
+    document.querySelector("#user-menu").classList.toggle("hide");
+};
