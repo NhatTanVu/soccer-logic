@@ -501,9 +501,10 @@ main > header.hero {
     padding: 0 1rem;
 }
 
-    main > header.hero > h1 {
+    main > header.hero h1 {
         font-size: 5rem;
         font-weight: normal;
+        line-height: 5rem;
     }
 
 main table {
