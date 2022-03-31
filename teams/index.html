@@ -5,7 +5,7 @@
     <link rel="icon" href="../favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-          content="SoccerLogic" />
+          content="SoccerLogic | Teams" />
 
     <!-- connect to domain of font files -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&display=swap">
     </noscript>
 
-    <title>SoccerLogic</title>
+    <title>SoccerLogic | Teams</title>
 
     <link href="../shared.css" rel="stylesheet" />
     <link href="../index.css" rel="stylesheet" />
@@ -81,6 +81,9 @@
         window.onload = (event) => {
             console.log("team = " + (team = getQueryVariable("team")));
             if (team) {
+                document.title += " | " + team;
+                document.querySelector('meta[name="description"]').setAttribute("content", document.querySelector('meta[name="description"]').getAttribute("content") + " | " + team);
+
                 document.querySelectorAll(".club_name").forEach((item) => {
                     item.innerHTML = team;
                 });
@@ -89,7 +92,6 @@
                     item.src = "../images/Teams/" + team + ".png";
                 });
 
-                console.log(DATA[team]);
                 if (DATA[team]) {
                     if (DATA[team].stadium_name)
                         stadium_name.innerHTML = DATA[team].stadium_name;
@@ -213,14 +215,19 @@
                 <div class="vertical-flex popup hide" id="user-menu">
                     <div class="content">
                         <ul>
-                            <li>
+                            <li id="sign_in">
                                 <a href="../users/sign-in.html"><span>Sign In</span></a>
                             </li>
-                            <li>
+                            <li id="register">
                                 <a href="../users/register.html"><span>Register</span></a>
                             </li>
                             <li>
                                 <a href="../users/feedback.html"><span>Feedback</span></a>
+                            </li>
+                            <li id="sign_out">
+                                <a href="#" onclick="(function () { clearAuthInfo(true); return false; })(); return false;">
+                                    <span>Sign Out</span>
+                                </a>
                             </li>
                         </ul>
                     </div>

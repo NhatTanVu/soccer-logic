@@ -28,6 +28,36 @@
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
     <script src="../shared.js" defer></script>
+
+    <script>
+        function onSubmit(event) {
+            if (this.checkValidity()) {
+                summary_message.style.visibility = "visible";
+                if (email.value == "test@gmail.com" && password.value == "test") {
+                    setAuthInfo(email.value, "Test", "User", new Date());
+                    let timeLeft = 4000;
+                    let message = "Signed In!";
+                    summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
+                    window.setInterval(() => {
+                        if (timeLeft > 0) {
+                            timeLeft -= 1000;
+                            summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
+                        }
+                        else {
+                            window.location.replace("../index.html");
+                        }
+                    }, 1000);
+                    sign_in_button.disabled = true;
+                    register_button.classList.add("disabled");
+                    register_button.href = "#";
+                }
+                else {
+                    summary_message.innerHTML = "<span style='color: var(--errors-color);'>Invalid email or password!</span>";
+                }
+            }
+            event.preventDefault();
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -96,14 +126,19 @@
                 <div class="vertical-flex popup hide" id="user-menu">
                     <div class="content">
                         <ul>
-                            <li class="active">
-                                <a href="./sign-in.html"><span>Sign In</span></a>
+                            <li id="sign_in">
+                                <a href="../users/sign-in.html"><span>Sign In</span></a>
+                            </li>
+                            <li id="register">
+                                <a href="../users/register.html"><span>Register</span></a>
                             </li>
                             <li>
-                                <a href="./register.html"><span>Register</span></a>
+                                <a href="../users/feedback.html"><span>Feedback</span></a>
                             </li>
-                            <li>
-                                <a href="./feedback.html"><span>Feedback</span></a>
+                            <li id="sign_out">
+                                <a href="#" onclick="(function () { clearAuthInfo(true); return false; })(); return false;">
+                                    <span>Sign Out</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -116,26 +151,27 @@
             <h1>Sign In</h1>
         </header>
         <div class="flex" style="align-items: stretch; --gap: 1rem; margin-bottom: 2rem;">
-            <form class="card" style="flex: 1; --gap: 0;">
+            <form id="sign_in_form" class="card" style="flex: 1; --gap: 0;" onsubmit="onSubmit.call(this, event);">
                 <div style="padding-bottom: 1rem;">
                     <div class="vertical-flex" style="margin-bottom: 1rem;">
-                        <label for="email" style="margin-bottom: 0.5rem;">Email Address</label>
-                        <input type="email" id="email" />
+                        <label class="required" for="email" style="margin-bottom: 0.5rem;">Email Address</label>
+                        <input type="email" id="email" required placeholder="i.e. test@gmail.com" />
                     </div>
                     <div class="vertical-flex" style="margin-bottom: 1rem;">
-                        <label for="password" style="margin-bottom: 0.5rem;">Password</label>
-                        <input type="password" id="password" />
+                        <label class="required" for="password" style="margin-bottom: 0.5rem;">Password</label>
+                        <input type="password" id="password" required placeholder="i.e. test" />
                     </div>
                 </div>
-                <div style="text-align: right;">
-                    <button class="form-button" type="submit" style="width: 50%;">Sign in</button>
+                <div class="flex">
+                    <div id="summary_message" class="highlight" style="flex: 1; padding-right: 1rem; visibility: hidden;">&nbsp;</div>
+                    <button id="sign_in_button" class="form-button" type="submit" style="flex: 1;">Sign In</button>
                 </div>
             </form>
             <div class="vertical-flex card" style="padding: 1rem; flex: 1; --gap: 0;">
-                <h2 style="padding: 1rem 0 2rem 0;">Don't have an account?</h2>
+                <h2 style="padding: 0.75rem 0 1.75rem 0;">Don't have an account?</h2>
                 <hr />
                 <div style="flex: 1; justify-content: center;" class="flex">
-                    <a class="form-button" href="./register.html" style="width: 50%;">Register</a>
+                    <a id="register_button" class="form-button" href="./register.html" style="width: 50%;">Register</a>
                 </div>
             </div>
         </div>

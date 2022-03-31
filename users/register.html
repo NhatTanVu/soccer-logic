@@ -28,6 +28,34 @@
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
     <script src="../shared.js" defer></script>
+
+    <script>
+        function onSubmit(event) {
+            if (this.checkValidity()) {
+                setAuthInfo(email.value, first_name.value, last_name.value, new Date());
+                summary_message.style.visibility = "visible";
+                let timeLeft = 4000;
+                let message = "Registered!";
+                summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
+                window.setInterval(() => {
+                    if (timeLeft > 0) {
+                        timeLeft -= 1000;
+                        summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
+                    }
+                    else {
+                        window.location.replace("../index.html");
+                    }
+                }, 1000);
+                submit_button.disabled = true;
+                cancel_button.disabled = true;
+            }
+            event.preventDefault();
+        }
+
+        function onCancel(event) {
+            window.location.replace("../index.html");
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -71,21 +99,19 @@
                 <div class="vertical-flex popup hide" id="league-selector-popup">
                     <div class="content">
                         <ul>
-                            <li class="active">
-                                <img src="../images/Championships/Premier League.png" alt="">
-                                <span>Premier League</span>
+                            <li id="sign_in">
+                                <a href="../users/sign-in.html"><span>Sign In</span></a>
+                            </li>
+                            <li id="register">
+                                <a href="../users/register.html"><span>Register</span></a>
                             </li>
                             <li>
-                                <img src="../images/Championships/Bundesliga.png" alt="">
-                                <span>Bundesliga</span>
+                                <a href="../users/feedback.html"><span>Feedback</span></a>
                             </li>
-                            <li>
-                                <img src="../images/Championships/La Liga.png" alt="">
-                                <span>La Liga</span>
-                            </li>
-                            <li>
-                                <img src="../images/Championships/Serie A.png" alt="">
-                                <span>Serie A</span>
+                            <li id="sign_out">
+                                <a href="#" onclick="(function () { clearAuthInfo(true); return false; })(); return false;">
+                                    <span>Sign Out</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -116,53 +142,56 @@
             <h1>Register</h1>
         </header>
         <div class="flex" style="--gap: 0; justify-content: center; margin-bottom: 2rem;">
-            <form class="card" style="flex: 1;">
-                <div style="padding-bottom: 2rem; --gap: 1rem;" class="flex">
-                    <div style="flex: 1">
-                        <div class="flex row" style="margin-bottom: 1rem; --gap: 1rem;">
-                            <label for="first-name" style="flex: 3;">First Name</label>
-                            <input type="text" id="first_name" style="flex: 7;" />
-                        </div>
-                        <div class="flex row" style="margin-bottom: 1rem; --gap: 1rem;">
-                            <label for="last-name" style="flex: 3;">Last Name</label>
-                            <input type="text" id="last_name" style="flex: 7;" />
-                        </div>
-                        <div class="flex row" style="--gap: 1rem;">
-                            <label for="email" style="flex: 3;">Email Address</label>
-                            <input type="email" id="email" style="flex: 7;" />
-                        </div>
-                    </div>
-                    <div style="flex: 1">
-                        <div class="flex row" style="margin-bottom: 1rem; --gap: 1rem;">
-                            <label for="password" style="flex: 3;">Password</label>
-                            <input type="password" id="password" style="flex: 7;" />
-                        </div>
-                        <div class="flex row" style="margin-bottom: 1rem; --gap: 1rem;">
-                            <label style="flex: 3;">Gender</label>
-                            <div class="flex" style="flex: 7;">
-                                <div class="flex" style="flex: 1; --gap: 0.25rem;">
-                                    <input type="radio" id="gender_male" name="gender" />
-                                    <span for="gender_male">Male</span>
-                                </div>
-                                <div class="flex" style="flex: 1; --gap: 0.25rem;">
-                                    <input type="radio" id="gender_female" name="gender" />
-                                    <span for="gender_female">Female</span>
-                                </div>
-                                <div class="flex" style="flex: 1; --gap: 0.25rem;">
-                                    <input type="radio" id="gender_unspecified" name="gender" />
-                                    <span for="gender_unspecified">Unspecified</span>
-                                </div>
+            <form id="register_form" class="card" style="flex: 1;" onsubmit="onSubmit.call(this, event);">
+                <div style="padding-bottom: 1rem;">
+                    <div class="flex" style="padding-bottom: 1rem; --gap: 1rem;">
+                        <div style="flex: 1">
+                            <div class="flex row" style="margin-bottom: 1rem; --gap: 1rem;">
+                                <label class="required" for="email" style="flex: 3;">Email Address</label>
+                                <input type="email" id="email" required style="flex: 7;" />
+                            </div>
+                            <div class="flex row" style="margin-bottom: 1rem; --gap: 1rem;">
+                                <label class="required" for="password" style="flex: 3;">Password</label>
+                                <input type="password" id="password" required style="flex: 7;" />
+                            </div>
+                            <div class="flex row" style="--gap: 1rem;">
+                                <label for="first_name" style="flex: 3;">First Name</label>
+                                <input type="text" id="first_name" style="flex: 7;" />
                             </div>
                         </div>
-                        <div class="flex row" style="--gap: 1rem;">
-                            <label for="dob" style="flex: 3;">Date of Birth</label>
-                            <input type="date" id="dob" style="flex: 7;" />
+                        <div style="flex: 1">
+                            <div class="flex row" style="margin-bottom: 1rem; --gap: 1rem;">
+                                <label for="last_name" style="flex: 3;">Last Name</label>
+                                <input type="text" id="last_name" style="flex: 7;" />
+                            </div>
+                            <div class="flex row" style="margin-bottom: 1rem; --gap: 1rem;">
+                                <label style="flex: 3;">Gender</label>
+                                <div class="flex" style="flex: 7;">
+                                    <div class="flex" style="flex: 1; --gap: 0.25rem;">
+                                        <input type="radio" id="gender_male" name="gender" />
+                                        <span for="gender_male">Male</span>
+                                    </div>
+                                    <div class="flex" style="flex: 1; --gap: 0.25rem;">
+                                        <input type="radio" id="gender_female" name="gender" />
+                                        <span for="gender_female">Female</span>
+                                    </div>
+                                    <div class="flex" style="flex: 1; --gap: 0.25rem;">
+                                        <input type="radio" id="gender_unspecified" name="gender" />
+                                        <span for="gender_unspecified">Unspecified</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex row" style="--gap: 1rem;">
+                                <label for="dob" style="flex: 3;">Date of Birth</label>
+                                <input type="date" id="dob" style="flex: 7;" />
+                            </div>
                         </div>
                     </div>
+                    <div id="summary_message" class="highlight" style="text-align: center; visibility: hidden;">&nbsp;</div>
                 </div>
                 <div style="text-align: center;">
-                    <button class="form-button" type="submit" style="width: 25%; margin-right: 1rem;">Register</button>
-					<button class="form-button" style="width: 25%;">Cancel</button>
+                    <button id="submit_button" class="form-button" type="submit" style="width: 25%; margin-right: 1rem;">Register &#8594; Sign In</button>
+					<button id="cancel_button" class="form-button" style="width: 25%;" onclick="onCancel.call(this, event);">Cancel</button>
                 </div>
             </form>
         </div>

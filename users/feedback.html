@@ -28,6 +28,45 @@
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
     <script src="../shared.js" defer></script>
+
+    <script>
+        function onSubmit() {
+            if (this.checkValidity()) {
+                summary_message.style.visibility = "visible";
+                let timeLeft = 4000;
+                let message = "Your feedback was sent. Thanks for contacting us!";
+                summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
+                window.setInterval(() => {
+                    if (timeLeft > 0) {
+                        timeLeft -= 1000;
+                        summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
+                    }
+                    else {
+                        window.location.replace("../index.html");
+                    }
+                }, 1000);
+                submit_button.disabled = true;
+                cancel_button.disabled = true;
+            }
+            event.preventDefault();
+        }
+
+        function onCancel() {
+            window.location.replace("../index.html");
+        }
+
+        window.onload = (event) => {
+            if (isAuth()) {
+                let auth = getAuthInfo();
+                if (auth.first_name)
+                    first_name.value = auth.first_name;
+                if (auth.last_name)
+                    last_name.value = auth.last_name;
+                if (auth.email)
+                    email.value = auth.email;
+            }
+        };
+    </script>
 </head>
 <body>
     <header>
@@ -96,14 +135,19 @@
                 <div class="vertical-flex popup hide" id="user-menu">
                     <div class="content">
                         <ul>
-                            <li>
-                                <a href="./sign-in.html"><span>Sign In</span></a>
+                            <li id="sign_in">
+                                <a href="../users/sign-in.html"><span>Sign In</span></a>
+                            </li>
+                            <li id="register">
+                                <a href="../users/register.html"><span>Register</span></a>
                             </li>
                             <li>
-                                <a href="./register.html"><span>Register</span></a>
+                                <a href="../users/feedback.html"><span>Feedback</span></a>
                             </li>
-                            <li class="active">
-                                <a href="./feedback.html"><span>Feedback</span></a>
+                            <li id="sign_out">
+                                <a href="#" onclick="(function () { clearAuthInfo(true); return false; })(); return false;">
+                                    <span>Sign Out</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -116,20 +160,20 @@
             <h1>Feedback</h1>
         </header>
         <div class="flex" style="--gap: 0; margin-bottom: 2rem;">
-            <form class="card" style="flex: 1;">
-                <div style="padding-bottom: 2rem; --gap: 1rem;" class="vertical-flex">
-                    <div style="flex: 1; justify-content: space-between;" class="flex">
+            <form class="card" style="flex: 1;" onsubmit="onSubmit.call(this, event);">
+                <div style="padding-bottom: 1rem; --gap: 1rem;" class="vertical-flex">
+                    <div style="flex: 1; justify-content: space-between; padding-bottom: 0.5rem;" class="flex">
                         <div class="flex" style="--gap: 1rem; flex: 1;">
-                            <label for="first-name" style="flex: 3;">First Name</label>
-                            <input type="text" id="first_name" style="flex: 7;" />
+                            <label class="required" for="email">Email Address</label>
+                            <input type="email" id="email" required style="flex: 1;" />
                         </div>
                         <div class="flex" style="--gap: 1rem; flex: 1;">
-                            <label for="last-name" style="flex: 3;">Last Name</label>
-                            <input type="text" id="last_name" style="flex: 7;" />
+                            <label for="first_name">First Name</label>
+                            <input type="text" id="first_name" style="flex: 1;" />
                         </div>
                         <div class="flex" style="--gap: 1rem; flex: 1;">
-                            <label for="email" style="flex: 3;">Email Address</label>
-                            <input type="email" id="email" style="flex: 7;" />
+                            <label for="last_name">Last Name</label>
+                            <input type="text" id="last_name" style="flex: 1;" />
                         </div>
                     </div>
                     <hr />
@@ -141,10 +185,11 @@
                         <label for="commBox">Tell us more about your experience!</label>
                         <textarea name="custExp" id="commBox" rows="5"></textarea>
                     </div>
+                    <div id="summary_message" class="highlight" style="text-align: center;">&nbsp;</div>
                 </div>
                 <div style="text-align: center;">
-                    <button class="form-button" type="submit" style="width: 25%; margin-right: 1rem;">Submit</button>
-					<button class="form-button" style="width: 25%;">Cancel</button>
+                    <button id="submit_button" class="form-button" type="submit" style="width: 25%; margin-right: 1rem;">Submit</button>
+                    <button id="cancel_button" class="form-button" style="width: 25%;" onclick="onCancel.call(this, event);">Cancel</button>
                 </div>
             </form>
         </div>

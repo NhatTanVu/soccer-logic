@@ -13,6 +13,7 @@
     --navigation-menu-color: #A0A8B1;
     --box-shadow-color: #BDBDBD;
     --separator-color: #EFEFEF;
+    --errors-color: #df5858;
 }
 
 /* ------------------- */
@@ -157,8 +158,8 @@ button {
     background: none;
 }
 
-    button:hover,
-    button:focus {
+    button:not(:disabled):hover,
+    button:not(:disabled):focus {
         cursor: pointer;
     }
 
@@ -166,7 +167,7 @@ hr {
     width: 100%;
     margin: 0;
     border: 0;
-    border-bottom: 1px solid var(--separator-color);
+    border-bottom: 1px solid var(--box-shadow-color);
 }
 
 /* Form */
@@ -178,7 +179,23 @@ form {
     form input {
         padding: 0.5rem;
         margin: 0;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid var(--box-shadow-color);
+        outline: none;
     }
+
+        form textarea::placeholder,
+        form input::placeholder {
+            color: var(--text-color);
+            font-style: italic;
+        }
+
+        form textarea:focus,
+        form input:focus {
+            border-bottom: 2px solid var(--active-text-color);
+            color: var(--active-text-color);
+        }
 
     form .row {
         height: 2.5rem;
@@ -186,6 +203,13 @@ form {
 
     form textarea {
         resize: none;
+    }
+
+    form .required::after {
+        margin-left: 5px;
+        content: '*';
+        color: var(--errors-color);
+        font-weight: bold;
     }
 
 .form-button {
@@ -197,11 +221,19 @@ form {
     font-size: 1.2rem;
 }
 
-    .form-button:hover, .form-button:focus {
+    .form-button:not(:disabled):not(.disabled):hover, .form-button:not(:disabled):not(.disabled):focus {
         text-decoration: none;
         background-color: rgba(var(--active-row-background-color-opacity), 0.4);
         color: var(--active-text-color);
         outline: none;
+    }
+
+    .form-button:disabled,
+    .form-button.disabled {
+        background-color: rgba(var(--active-row-background-color-opacity), 0.4);
+        color: var(--white);
+        text-decoration: none;
+        cursor: none;
     }
 
 /* Tab */
@@ -380,7 +412,7 @@ body > header {
                 --gap: 0;
                 position: absolute;
                 top: 3.5rem;
-                max-height: 11rem;
+                max-height: 11.25rem;
                 z-index: 10;
                 background-color: var(--white);
                 margin-top: 0.25rem;
