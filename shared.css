@@ -130,6 +130,7 @@ h4 {
     text-align: left;
     padding: 0 1rem;
     --gap: 0;
+    min-height: calc(100vh - 4rem);
 }
 
 .card {
