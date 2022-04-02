@@ -11,8 +11,8 @@
     --active-row-background-color: #8B96A0;
     --active-row-background-color-opacity: 139, 150, 160;
     --navigation-menu-color: #A0A8B1;
-    --box-shadow-color: #BDBDBD;
-    --separator-color: #EFEFEF;
+    --box-shadow-color: #B0B0B0;
+    --separator-color: #E0E0E0;
     --errors-color: #df5858;
 }
 
@@ -134,6 +134,7 @@ h4 {
 }
 
 .card {
+    border-top: 1px solid var(--separator-color);
     background-color: var(--white);
     border-radius: 4px;
     box-shadow: 0 3px 2px var(--box-shadow-color);
@@ -296,6 +297,7 @@ body > header {
     padding: 0 1rem;
     background-color: var(--white);
     box-shadow: 0 3px 2px var(--box-shadow-color);
+    z-index: 2;
 }
 
     body > header > .navigation-bar {
