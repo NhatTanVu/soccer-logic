@@ -117,6 +117,16 @@ document.getElementById("user").onclick = (e) => {
     });
     document.querySelector("#user-menu").classList.toggle("hide");
 };
+document.getElementById("menu").onclick = (e) => {
+    document.querySelector(".navigation-menu").classList.toggle("mobile");
+    document.querySelector(".overlay").classList.toggle("mobile");
+    document.querySelector("#menu-close-button").classList.toggle("mobile");
+};
+document.getElementById("menu-close-button").onclick = (e) => {
+    document.querySelector(".navigation-menu").classList.toggle("mobile");
+    document.querySelector(".overlay").classList.toggle("mobile");
+    document.querySelector("#menu-close-button").classList.toggle("mobile");
+};
 
 document.querySelector(".tab-list li.active")?.click();
 displayAuthInfo();

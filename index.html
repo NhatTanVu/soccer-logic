@@ -28,19 +28,12 @@
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
     <script src="shared.js" defer></script>
-    <style>
-        main > header.hero > div > h1 {
-            font-size: 5rem;
-            font-weight: normal;
-            line-height: 5rem;
-        }
-    </style>
 </head>
 <body>
     <header>
         <div class="navigation-bar flex">
             <div class="left flex">
-                <img id="menu" src="./images/icon-menu.svg" alt="icon menu" onClick={menuClickHandler} />
+                <img id="menu" src="./images/icon-menu.svg" alt="icon menu" />
                 <a class="flex logo" href="./index.html">
                     <img src="./images/logo.png" alt="logo" />
                     <h1>SoccerLogic</h1>
@@ -124,48 +117,43 @@
         </div>
     </header>
     <main class="container">
-        <header class="hero" style="margin-bottom: 5rem; position: relative; z-index: 1; height: 36rem;">
-            <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-image: url('./images/match.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; z-index: -1; opacity: 0.2;">
-            </div>
-            <div style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); padding: 2rem; background-color: var(--white); width: 50%; color: var(--active-text-color);">
-                <h1 style="margin-bottom: 1rem;">Matches</h1>
-                <hr style="margin-bottom: 1rem; border-bottom: 1px solid var(--separator-color);" />
-                <h4 style="margin-bottom: 2rem;">Keep up to date with latest match news from top soccer leagues.</h4>
-                <a href="./matches.html" class="form-button" style="padding: 1.2rem; display: inline-block; font-size: 1.2rem; line-height: 1.2rem;"><span style="margin-right: 0.5rem;">View All Matches</span>&#8594;</a>
-            </div>
-        </header>
-        <header class="hero" style="margin-bottom: 5rem; position: relative; z-index: 1; height: 36rem;">
-            <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-image: url('./images/team.jpg'); background-repeat: no-repeat; background-size: cover; background-position: 50% 30%; z-index: -1; opacity: 0.2;">
-            </div>
-            <div style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); padding: 2rem; background-color: var(--white); width: 50%; color: var(--active-text-color);">
-                <h1 style="margin-bottom: 1rem;">Teams</h1>
-                <hr style="margin-bottom: 1rem; border-bottom: 1px solid var(--separator-color);" />
-                <h4 style="margin-bottom: 2rem;">Search your favourite teams, buys their tickets and merchandise.</h4>
-                <a href="./teams.html" class="form-button" style="padding: 1.2rem; display: inline-block; font-size: 1.2rem; line-height: 1.2rem;"><span style="margin-right: 0.5rem;">View All Teams</span>&#8594;</a>
+        <header class="hero">
+            <div class="background"></div>
+            <div class="content">
+                <h1>Matches</h1>
+                <hr />
+                <h4>Keep up to date with latest match news from top soccer leagues.</h4>
+                <a href="./matches.html" class="form-button">View All Matches</a>
             </div>
         </header>
-        <header class="hero" style="margin-bottom: 2rem; position: relative; z-index: 1; height: 36rem;">
-            <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-image: url('./images/player.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; z-index: -1; opacity: 0.2;">
+        <header class="hero">
+            <div class="background"></div>
+            <div class="content">
+                <h1>Teams</h1>
+                <hr />
+                <h4>Search your favourite teams, buys their tickets and merchandise.</h4>
+                <a href="./teams.html" class="form-button">View All Teams</a>
             </div>
-            <div style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); padding: 2rem; background-color: var(--white); width: 50%; color: var(--active-text-color);">
-                <h1 style="margin-bottom: 1rem;">Players</h1>
-                <hr style="margin-bottom: 1rem; border-bottom: 1px solid var(--separator-color);" />
-                <h4 style="margin-bottom: 2rem;">Find and follow your favourite players on social media.</h4>
-                <a href="./players.html" class="form-button" style="padding: 1.2rem; display: inline-block; font-size: 1.2rem; line-height: 1.2rem;"><span style="margin-right: 0.5rem;">View All Players</span>&#8594;</a>
+        </header>
+        <header class="hero">
+            <div class="background"></div>
+            <div class="content">
+                <h1>Players</h1>
+                <hr />
+                <h4>Find and follow your favourite players on social media.</h4>
+                <a href="./players.html" class="form-button">View All Players</a>
             </div>
         </header>
     </main>
-    <footer style="padding: 0.5rem 1rem; background: var(--white); text-align: center; --gap: 0;" class="flex">
-        <div style="flex: 1; text-align: left;">
-            <a style="height: 1.3rem;" class="flex logo" href="./index.html">
+    <footer class="flex">
+        <div>
+            <a class="flex logo" href="./index.html">
                 <img src="./images/logo.png" alt="logo" />
-                <h1 style="font-size: inherit;">SoccerLogic</h1>
+                <h1>SoccerLogic</h1>
             </a>
         </div>
-        <div>|</div>
-        <div style="flex: 1">A GitHub <a style="text-decoration: underline;" href="https://github.com/NhatTanVu/soccer-logic" target="_blank">project</a></div>
-        <div>|</div>
-        <div style="flex: 1; text-align: right;">Developed by: <a href="https://www.linkedin.com/in/tanvu/" style="text-decoration: underline;">Nhat Tan Vu</a></div>
+        <div>A GitHub <a href="https://github.com/NhatTanVu/soccer-logic" target="_blank">project</a></div>
+        <div>Developed by: <a href="https://www.linkedin.com/in/tanvu/" target="_blank">Nhat Tan Vu</a></div>
     </footer>
 </body>
 </html>
