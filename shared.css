@@ -12,8 +12,8 @@
     --active-row-background-color-opacity: 139, 150, 160;
     --navigation-menu-color: #A0A8B1;
     --box-shadow-color: #B0B0B0;
-    --separator-color: #E0E0E0;
-    --errors-color: #df5858;
+    --separator-color: #D9D9D9;
+    --errors-color: #DF5858;
 }
 
 /* ------------------- */
@@ -169,7 +169,7 @@ hr {
     width: 100%;
     margin: 0;
     border: 0;
-    border-bottom: 1px solid var(--box-shadow-color);
+    border-bottom: 1px solid var(--separator-color);
 }
 
 /* Form */
@@ -183,7 +183,7 @@ form {
         margin: 0;
         border: 0;
         border-radius: 0;
-        border-bottom: 1px solid var(--box-shadow-color);
+        border-bottom: 1px solid var(--separator-color);
         outline: none;
     }
 
@@ -325,7 +325,8 @@ body > header {
                 display: none;
             }
 
-            body > header > .navigation-bar > .left > .logo {
+            body > header > .navigation-bar > .left > .logo,
+            footer .logo {
                 margin-right: 2rem;
                 height: 2rem;
                 align-items: center;
@@ -333,7 +334,8 @@ body > header {
                 text-decoration: inherit;
             }
 
-                body > header > .navigation-bar > .left > .logo > img {
+                body > header > .navigation-bar > .left > .logo > img,
+                footer .logo > img {
                     height: 100%;
                 }
 
@@ -502,7 +504,6 @@ body > header {
                 body > header > .navigation-bar > .right > #user:focus > .avatar {
                     border: 0.25rem solid var(--active-text-color);
                     margin: 0.25rem;
-                    color: var(--active-text-color);
                 }
 
 /* Main */
