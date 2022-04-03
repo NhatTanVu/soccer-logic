@@ -137,7 +137,7 @@ h4 {
     border-top: 1px solid var(--separator-color);
     background-color: var(--white);
     border-radius: 4px;
-    box-shadow: 0 3px 2px var(--box-shadow-color);
+    box-shadow: 2px 3px 2px var(--box-shadow-color);
 }
 
 .rotate {
