@@ -267,7 +267,7 @@ ul.tab-list {
         ul.tab-list > li.active > span {
             background-color: var(--white);
             color: var(--active-text-color);
-            box-shadow: 0 -1px 2px var(--box-shadow-color);
+            box-shadow: 2px -1px 2px var(--box-shadow-color);
             position: relative;
         }
 
@@ -292,7 +292,7 @@ ul.tab-list {
         border-top: 1px solid var(--separator-color);
         background-color: var(--white);
         border-radius: 0 4px 4px 4px;
-        box-shadow: 0 3px 2px var(--box-shadow-color);
+        box-shadow: 2px 3px 2px var(--box-shadow-color);
         position: relative;
         z-index: 1;
         padding: 1rem;
