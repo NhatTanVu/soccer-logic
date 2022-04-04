@@ -36,7 +36,7 @@
                 var timeLeft = 3000;
                 var message = "Your feedback was sent. Thanks for contacting us!";
                 summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
-                window.setInterval(() => {
+                window.setInterval(function() {
                     if (timeLeft > 0) {
                         timeLeft -= 1000;
                         summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
@@ -55,7 +55,7 @@
             window.location.replace("../index.html");
         }
 
-        window.onload = (event) => {
+        window.onload = function() {
             if (isAuth()) {
                 var auth = getAuthInfo();
                 if (auth.first_name)

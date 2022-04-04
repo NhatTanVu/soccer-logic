@@ -78,17 +78,17 @@
     </style>
 
     <script>
-        window.onload = (event) => {
+        window.onload = function() {
             console.log("team = " + (team = getQueryVariable("team")));
             if (team) {
                 document.title += " | " + team;
                 document.querySelector('meta[name="description"]').setAttribute("content", document.querySelector('meta[name="description"]').getAttribute("content") + " | " + team);
 
-                document.querySelectorAll(".club_name").forEach((item) => {
+                document.querySelectorAll(".club_name").forEach(function() {
                     item.innerHTML = team;
                 });
 
-                document.querySelectorAll(".club_photo").forEach((item) => {
+                document.querySelectorAll(".club_photo").forEach(function() {
                     item.src = "../images/Teams/" + team + ".png";
                 });
 
@@ -96,14 +96,14 @@
                     if (DATA[team].stadium_name)
                         stadium_name.innerHTML = DATA[team].stadium_name;
                     if (DATA[team].official_website)
-                        document.querySelectorAll(".official_website").forEach((item) => {
+                        document.querySelectorAll(".official_website").forEach(function() {
                             item.href = DATA[team].official_website.href;
                             item.textContent = DATA[team].official_website.textContent;
                         });
                     if (DATA[team].previous_standing || DATA[team].current_standing || DATA[team].next_standing) {
                         if (DATA[team].previous_standing) {
                             previous_standing.innerHTML = "";
-                            DATA[team].previous_standing.forEach((item) => {
+                            DATA[team].previous_standing.forEach(function() {
                                 previous_standing.innerHTML += "<td>" + item + "</td>";
                             });
                         }
@@ -113,7 +113,7 @@
 
                         if (DATA[team].current_standing) {
                             current_standing.innerHTML = "";
-                            DATA[team].current_standing.forEach((item) => {
+                            DATA[team].current_standing.forEach(function() {
                                 current_standing.innerHTML += "<td>" + item + "</td>";
                             });
                         }
@@ -122,7 +122,7 @@
                         }
                         if (DATA[team].next_standing) {
                             next_standing.innerHTML = "";
-                            DATA[team].next_standing.forEach((item) => {
+                            DATA[team].next_standing.forEach(function() {
                                 next_standing.innerHTML += "<td>" + item + "</td>";
                             });
                         }
@@ -139,7 +139,7 @@
                 }
                 if (team == 'Arsenal' || team == 'Fulham') {
                     no_matches.style.display = "none";
-                    document.querySelectorAll(".matches").forEach((item) => {
+                    document.querySelectorAll(".matches").forEach(function() {
                         item.style.display = null;
                     });
                     document.querySelector("[data-tab-content='results']").style.display = null;

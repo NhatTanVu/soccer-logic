@@ -38,7 +38,7 @@
                     var timeLeft = 3000;
                     var message = "Signed In!";
                     summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
-                    window.setInterval(() => {
+                    window.setInterval(function() {
                         if (timeLeft > 0) {
                             timeLeft -= 1000;
                             summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
