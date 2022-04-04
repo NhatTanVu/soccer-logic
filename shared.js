@@ -84,7 +84,8 @@ document.getElementById("league-selector").onclick = (e) => {
 };
 document.querySelectorAll("#league-selector-popup li").forEach((item) => {
     item.addEventListener('click', (e) => {
-        document.querySelector("#league-selector-popup li.active")?.classList.remove("active");
+        if (document.querySelector("#league-selector-popup li.active"))
+            document.querySelector("#league-selector-popup li.active").classList.remove("active");
         let element = e.target;
         while (element.tagName.toLowerCase() != "li") element = element.parentElement;
         element.classList.add("active");
@@ -99,7 +100,8 @@ document.querySelectorAll("#league-selector-popup li").forEach((item) => {
 });
 document.querySelectorAll(".tab-list li").forEach((item) => {
     item.addEventListener('click', (e) => {
-        document.querySelector(".tab-list li.active")?.classList.remove("active");
+        if (document.querySelector(".tab-list li.active"))
+            document.querySelector(".tab-list li.active").classList.remove("active");
         let element = e.target;
         while (element.tagName.toLowerCase() != "li") element = element.parentElement;
         element.classList.add("active");
@@ -128,5 +130,6 @@ document.getElementById("menu-close-button").onclick = (e) => {
     document.querySelector("#menu-close-button").classList.toggle("mobile");
 };
 
-document.querySelector(".tab-list li.active")?.click();
+if (document.querySelector(".tab-list li.active"))
+    document.querySelector(".tab-list li.active").click();
 displayAuthInfo();
