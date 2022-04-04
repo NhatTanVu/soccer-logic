@@ -485,7 +485,7 @@ body > header {
 
                 body > header > .navigation-bar > .right > #user > .avatar {
                     height: 3.25rem;
-                    aspect-ratio: 1;
+                    width: 3.25rem;
                     margin: 0.25rem 0 0.25rem 0.25rem;
                     font-size: 2rem;
                     line-height: 2.75rem;
@@ -816,7 +816,7 @@ main table {
                 }
 
             body > header > .navigation-bar > .right > .popup {
-                top: 2.5rem;
+                top: 2.65rem;
             }
 
     /* Footer */
