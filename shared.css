@@ -324,6 +324,12 @@ body > header {
                 display: none;
             }
 
+            body > header > .navigation-bar > .left > #menu-close-button svg {
+                width: 1rem;
+                height: 1rem;
+                display: block;
+            }
+
             body > header > .navigation-bar > .left > .logo {
                 margin-right: 2rem;
                 height: 2rem;
@@ -357,7 +363,7 @@ body > header {
                         line-height: 3.5rem;
                         padding-bottom: 0.25rem;
                         color: inherit;
-                        text-decoration: inherit; /* no underline */
+                        text-decoration: inherit;
                     }
 
                         body > header > .navigation-bar > .left > ul.navigation-menu > li.active > a,
@@ -609,6 +615,11 @@ main table {
         display: block;
     }
 
+    body > header > .navigation-bar > .left > #menu-close-button svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
     body > header > .navigation-bar > .left > .logo {
         margin: 0 0 0 1rem;
         height: 2rem;
@@ -622,13 +633,13 @@ main table {
             position: fixed;
             top: 0;
             left: 0;
-            width: 16.66rem;
+            width: 16rem;
             height: 100vh;
             background-color: var(--white);
             z-index: 13;
             display: flex;
             flex-direction: column;
-            padding: 6.133rem 0 0 1.666rem;
+            padding: 4rem 0 0 2rem;
             align-items: initial;
         }
 
@@ -640,7 +651,6 @@ main table {
                     line-height: 1.733rem;
                     font-size: 1.2rem;
                     font-weight: bold;
-                    /*color: var(--very-dark-blue);*/
                     padding-top: 0.5415rem;
                     padding-bottom: 0.5415rem;
                     padding-left: 0.5rem;
@@ -673,8 +683,8 @@ main table {
 
     body > header > .navigation-bar > .left > #menu-close-button.mobile {
         position: fixed;
-        top: 1.6rem;
-        left: 1.6rem;
+        top: 1rem;
+        left: 1rem;
         display: block;
         z-index: 13;
         background-color: transparent;
@@ -716,13 +726,13 @@ main table {
                 position: fixed;
                 top: 0;
                 left: 0;
-                width: 16.66rem;
+                width: 16rem;
                 height: 100vh;
                 background-color: var(--white);
                 z-index: 13;
                 display: flex;
                 flex-direction: column;
-                padding: 6.133rem 0 0 1.666rem;
+                padding: 4rem 0 0 2rem;
                 align-items: initial;
             }
 
@@ -734,7 +744,6 @@ main table {
                         line-height: 1.733rem;
                         font-size: 1.2rem;
                         font-weight: bold;
-                        /*color: var(--very-dark-blue);*/
                         padding-top: 0.5415rem;
                         padding-bottom: 0.5415rem;
                         padding-left: 0.5rem;
@@ -767,8 +776,8 @@ main table {
 
         body > header > .navigation-bar > .left > #menu-close-button.mobile {
             position: fixed;
-            top: 1.6rem;
-            left: 1.6rem;
+            top: 1rem;
+            left: 1rem;
             display: block;
             z-index: 13;
             background-color: transparent;

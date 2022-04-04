@@ -44,6 +44,7 @@ main > header.hero {
         padding: 2rem;
         background-color: var(--white);
         width: 50%;
+        min-width: 41rem;
         color: var(--active-text-color);
     }
 
@@ -74,9 +75,9 @@ main > header.hero {
                 margin-left: 0.5rem;
             }
 
-/* ------------------- */
-/* Mobile view         */
-/* ------------------- */
+/* -------------------- */
+/* Mobile + Tablet view */
+/* -------------------- */
 @media only screen and (max-width : 1023px) {
     main > header.hero {
         height: 22rem;
@@ -93,14 +94,6 @@ main > header.hero {
 
         main > header.hero:nth-of-type(3) > .background {
             background-image: url('./images/player_mobile.jpg');
-        }
-
-        main > header.hero > .content {
-            position: absolute;
-            left: 1rem;
-            right: 1rem;
-            width: auto;
-            padding: 1rem;
         }
 
             main > header.hero > .content > h1 {
@@ -123,4 +116,18 @@ main > header.hero {
                 line-height: inherit;
                 padding: 0.5rem;
             }
+}
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > header.hero > .content {
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        width: auto;
+        min-width: auto;
+        padding: 1rem;
+    }
 }

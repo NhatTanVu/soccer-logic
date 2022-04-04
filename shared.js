@@ -129,6 +129,9 @@ document.getElementById("menu-close-button").onclick = function(e) {
     document.querySelector(".overlay").classList.toggle("mobile");
     document.querySelector("#menu-close-button").classList.toggle("mobile");
 };
+document.querySelector("#sign_out a").onclick = function (e) {
+    clearAuthInfo(true); return false;
+};
 
 if (document.querySelector(".tab-list li.active"))
     document.querySelector(".tab-list li.active").click();
