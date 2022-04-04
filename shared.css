@@ -601,6 +601,20 @@ main table {
         border-bottom: 1px solid var(--separator-color);
     }
 
+/* -------------------- */
+/* Mobile + Tablet view */
+/* -------------------- */
+@media only screen and (max-width : 1023px) {
+    main > header.hero {
+        height: 14rem;
+        min-height: auto;
+    }
+
+    main > header.hero > h1 {
+        font-size: 4rem;
+    }
+}
+
 /* ------------------- */
 /* Tablet view         */
 /* ------------------- */

@@ -60,7 +60,7 @@ main section.matches {
 
                     main section.matches > ul > li > a > div:first-of-type > div:first-of-type {
                         flex: 1;
-                        justify-content: right;
+                        justify-content: flex-end;
                         --gap: 0.25rem;
                     }
 
