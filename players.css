@@ -32,7 +32,6 @@ main > table {
         align-items: center;
         color: var(--active-text-color);
         font-size: 1.1rem;
-        word-break: break-all;
     }
 
         main > table tbody > tr td a span {
@@ -45,10 +44,20 @@ main > table {
             margin-right: 1rem;
         }
 
+/* -------------------- */
+/* Mobile + Tablet view */
+/* -------------------- */
+@media only screen and (max-width : 1023px) {
+    main > header.hero > .background {
+        background-image: url('./images/player_mobile.jpg');
+    }
+}
+
 /* ------------------- */
 /* Mobile view         */
 /* ------------------- */
 @media only screen and (max-width : 767px) {
-    main {
+    main > table tbody > tr td.position {
+        display: none;
     }
 }
