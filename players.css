@@ -1,4 +1,23 @@
 /* Main */
+main > header.hero {
+    position: relative;
+    z-index: 1;
+}
+
+    main > header.hero > .background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        opacity: 0.2;
+        background-image: url('./images/player.jpg');
+    }
+
 main > table {
     text-align: left;
     margin-bottom: 2rem;
@@ -13,6 +32,7 @@ main > table {
         align-items: center;
         color: var(--active-text-color);
         font-size: 1.1rem;
+        word-break: break-all;
     }
 
         main > table tbody > tr td a span {
