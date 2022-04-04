@@ -804,6 +804,7 @@ main table {
 
                 body > header > .navigation-bar > .right > #user > .avatar {
                     height: 2.25rem;
+                    width: 2.25rem;
                     font-size: 1.2rem;
                     line-height: 1.75rem;
                     border: 0.2rem solid var(--text-color);
