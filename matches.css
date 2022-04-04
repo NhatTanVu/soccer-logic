@@ -135,11 +135,44 @@ main section.matches {
 /* Mobile view         */
 /* ------------------- */
 @media only screen and (max-width : 767px) {
-    main section.matches > ul > li > a > div:first-of-type {
-        flex: 1;
+    main section.matches {
+        padding: 1rem;
     }
 
-    main section.matches > ul > li > a > div:nth-of-type(2) {
-        display: none;
+    main section.matches > time {
+        font-size: 1.3rem;
+        padding-bottom: 1rem;
     }
+
+    main section.matches > ul > li > a {
+        padding: 0.5rem;
+    }
+
+        main section.matches > ul > li > a > div:first-of-type {
+            flex: 1;
+            gap: 0.5rem;
+        }
+
+            main section.matches > ul > li > a > div:first-of-type > div > span {
+                font-size: inherit;
+            }
+
+            main section.matches > ul > li > a > div:first-of-type > div > img {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+
+            main section.matches > ul > li > a > div:first-of-type > .score {
+                padding: 0.5rem;
+                font-size: inherit;
+            }
+
+        main section.matches > ul > li > a > div:nth-of-type(2) {
+            display: none;
+        }
+
+        main section.matches > ul > li > a > i {
+            margin-left: 0.25rem;
+            padding-right: 0.25rem;
+        }
 }
