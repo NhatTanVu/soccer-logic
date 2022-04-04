@@ -1,4 +1,23 @@
 /* Main */
+main > header.hero {
+    position: relative;
+    z-index: 1;
+}
+
+    main > header.hero > .background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        z-index: -1;
+        opacity: 0.2;
+        background-image: url('./images/match.jpg');
+    }
+
 main section.matches {
     padding: 2rem;
     margin-bottom: 2rem;
@@ -114,6 +133,15 @@ main section.matches {
                         height: 2rem;
                     }
 
+/* -------------------- */
+/* Mobile + Tablet view */
+/* -------------------- */
+@media only screen and (max-width : 1023px) {
+    main > header.hero > .background {
+        background-image: url('./images/match_mobile.jpg');
+    }
+}
+
 /* ------------------- */
 /* Tablet view         */
 /* ------------------- */
@@ -139,40 +167,40 @@ main section.matches {
         padding: 1rem;
     }
 
-    main section.matches > time {
-        font-size: 1.3rem;
-        padding-bottom: 1rem;
-    }
-
-    main section.matches > ul > li > a {
-        padding: 0.5rem;
-    }
-
-        main section.matches > ul > li > a > div:first-of-type {
-            flex: 1;
-            gap: 0.5rem;
+        main section.matches > time {
+            font-size: 1.3rem;
+            padding-bottom: 1rem;
         }
 
-            main section.matches > ul > li > a > div:first-of-type > div > span {
-                font-size: inherit;
-            }
-
-            main section.matches > ul > li > a > div:first-of-type > div > img {
-                width: 1.5rem;
-                height: 1.5rem;
-            }
-
-            main section.matches > ul > li > a > div:first-of-type > .score {
-                padding: 0.5rem;
-                font-size: inherit;
-            }
-
-        main section.matches > ul > li > a > div:nth-of-type(2) {
-            display: none;
+        main section.matches > ul > li > a {
+            padding: 0.5rem;
         }
 
-        main section.matches > ul > li > a > i {
-            margin-left: 0.25rem;
-            padding-right: 0.25rem;
-        }
+            main section.matches > ul > li > a > div:first-of-type {
+                flex: 1;
+                gap: 0.5rem;
+            }
+
+                main section.matches > ul > li > a > div:first-of-type > div > span {
+                    font-size: inherit;
+                }
+
+                main section.matches > ul > li > a > div:first-of-type > div > img {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+
+                main section.matches > ul > li > a > div:first-of-type > .score {
+                    padding: 0.5rem;
+                    font-size: inherit;
+                }
+
+            main section.matches > ul > li > a > div:nth-of-type(2) {
+                display: none;
+            }
+
+            main section.matches > ul > li > a > i {
+                margin-left: 0.25rem;
+                padding-right: 0.25rem;
+            }
 }
