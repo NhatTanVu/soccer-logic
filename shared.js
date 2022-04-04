@@ -13,9 +13,9 @@ function getQueryVariable(variable) {
 
 /* Authentication */
 function isAuth() {
-    let isAuthenticated = (getAuthInfo().email != null) && (getAuthInfo().signin_time != null);
+    var isAuthenticated = (getAuthInfo().email != null) && (getAuthInfo().signin_time != null);
     if (isAuthenticated) {
-        let diff = Math.abs(new Date() - new Date(getAuthInfo().signin_time));
+        var diff = Math.abs(new Date() - new Date(getAuthInfo().signin_time));
         isAuthenticated &= (diff <= 1000 * 60 * 10); /* <= 10m */
         if (isAuthenticated) {
             setAuthInfo(null, null, null, new Date());
@@ -64,7 +64,7 @@ function displayAuthInfo() {
         sign_out.style.display = "none";
     }
     else {
-        let auth = getAuthInfo();
+        var auth = getAuthInfo();
         console.log("email = " + auth.email);
         console.log("signin_time = " + auth.signin_time);
         user.innerHTML = "<img class='avatar' src='" + menu.src.replace("icon-menu.svg", "image-avatar.png") + "' />";
@@ -86,14 +86,14 @@ document.querySelectorAll("#league-selector-popup li").forEach((item) => {
     item.addEventListener('click', (e) => {
         if (document.querySelector("#league-selector-popup li.active"))
             document.querySelector("#league-selector-popup li.active").classList.remove("active");
-        let element = e.target;
+        var element = e.target;
         while (element.tagName.toLowerCase() != "li") element = element.parentElement;
         element.classList.add("active");
-        let buttonImage = document.querySelector("#league-selector img");
-        let selectedImage = document.querySelector("#league-selector-popup li.active img");
+        var buttonImage = document.querySelector("#league-selector img");
+        var selectedImage = document.querySelector("#league-selector-popup li.active img");
         buttonImage.src = selectedImage.src;
-        let buttonText = document.querySelector("#league-selector span");
-        let selectedText = document.querySelector("#league-selector-popup li.active span");
+        var buttonText = document.querySelector("#league-selector span");
+        var selectedText = document.querySelector("#league-selector-popup li.active span");
         buttonText.innerHTML = selectedText.innerHTML;
         document.getElementById("league-selector").click();
     });
@@ -102,10 +102,10 @@ document.querySelectorAll(".tab-list li").forEach((item) => {
     item.addEventListener('click', (e) => {
         if (document.querySelector(".tab-list li.active"))
             document.querySelector(".tab-list li.active").classList.remove("active");
-        let element = e.target;
+        var element = e.target;
         while (element.tagName.toLowerCase() != "li") element = element.parentElement;
         element.classList.add("active");
-        let tabContent = element.getAttribute("data-tab-content");
+        var tabContent = element.getAttribute("data-tab-content");
         document.querySelectorAll(".tab-content  > *").forEach((item2) => {
             item2.style.display = "none";
         });

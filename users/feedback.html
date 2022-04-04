@@ -33,8 +33,8 @@
         function onSubmit() {
             if (this.checkValidity()) {
                 summary_message.style.visibility = "visible";
-                let timeLeft = 3000;
-                let message = "Your feedback was sent. Thanks for contacting us!";
+                var timeLeft = 3000;
+                var message = "Your feedback was sent. Thanks for contacting us!";
                 summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
                 window.setInterval(() => {
                     if (timeLeft > 0) {
@@ -57,7 +57,7 @@
 
         window.onload = (event) => {
             if (isAuth()) {
-                let auth = getAuthInfo();
+                var auth = getAuthInfo();
                 if (auth.first_name)
                     first_name.value = auth.first_name;
                 if (auth.last_name)

@@ -34,8 +34,8 @@
             if (this.checkValidity()) {
                 setAuthInfo(email.value, first_name.value, last_name.value, new Date());
                 summary_message.style.visibility = "visible";
-                let timeLeft = 3000;
-                let message = "Registered!";
+                var timeLeft = 3000;
+                var message = "Registered!";
                 summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
                 window.setInterval(() => {
                     if (timeLeft > 0) {
