@@ -401,6 +401,7 @@ body > header {
                     body > header > .navigation-bar > .right > button#league-selector > div > span {
                         font-size: 1.2rem;
                         color: var(--navigation-menu-color);
+                        white-space: nowrap;
                     }
 
             body > header > .navigation-bar > .right > #league-selector-popup {
