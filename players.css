@@ -57,7 +57,7 @@ main > table {
 /* Mobile view         */
 /* ------------------- */
 @media only screen and (max-width : 767px) {
-    main > table tbody > tr td.position {
+    main > table tr .position {
         display: none;
     }
 }
