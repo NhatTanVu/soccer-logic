@@ -486,7 +486,7 @@ body > header {
                 body > header > .navigation-bar > .right > #user > .avatar {
                     height: 3.25rem;
                     aspect-ratio: 1;
-                    margin: 0.25rem;
+                    margin: 0.25rem 0 0.25rem 0.25rem;
                     font-size: 2rem;
                     line-height: 2.75rem;
                     text-align: center;
@@ -500,7 +500,6 @@ body > header {
                 body > header > .navigation-bar > .right > #user:hover > .avatar,
                 body > header > .navigation-bar > .right > #user:focus > .avatar {
                     border: 0.25rem solid var(--active-text-color);
-                    margin: 0.25rem;
                 }
 
 /* Footer */
@@ -700,7 +699,7 @@ main table {
         }
 
         body > header > .navigation-bar > .left > .logo {
-            margin: 0 0 0 0.25rem;
+            margin: 0 0 0 1rem;
             height: 1.33rem;
         }
 
@@ -805,15 +804,9 @@ main table {
 
                 body > header > .navigation-bar > .right > #user > .avatar {
                     height: 2.25rem;
-                    aspect-ratio: 1;
-                    margin: 0.25rem;
                     font-size: 1.2rem;
                     line-height: 1.75rem;
-                    text-align: center;
-                    display: block;
-                    color: var(--text-color);
                     border: 0.2rem solid var(--text-color);
-                    border-radius: 100%;
                 }
 
                 body > header > .navigation-bar > .right > #user.active > .avatar,
@@ -823,7 +816,7 @@ main table {
                 }
 
             body > header > .navigation-bar > .right > .popup {
-                top: 2.5rem;
+                top: 2.75rem;
             }
 
     /* Footer */
