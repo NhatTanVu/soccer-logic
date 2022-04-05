@@ -63,6 +63,7 @@ main > section.flex {
     main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex {
         flex-direction: column;
         align-items: initial;
+        padding-bottom: 0;
     }
 
         main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex > div.flex > label {
@@ -92,6 +93,7 @@ main > section.flex {
     main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex {
         flex-direction: column;
         align-items: initial;
+        padding-bottom: 0;
     }
 
         main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex > div.flex {
