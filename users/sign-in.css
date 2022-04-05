@@ -6,6 +6,7 @@ main > section.flex {
     max-width: 60rem;
 }
 
+    /* Fallback for Flex --gap */
     main > section.flex > * + * {
         margin-left: 1rem; /* https://stackoverflow.com/questions/65452057/flexbox-gap-workaround-for-safari */
     }
@@ -64,6 +65,7 @@ main > section.flex {
         flex-direction: column;
     }
 
+        /* Fallback for Flex --gap */
         main > section.flex > * + * {
             margin-left: 0;
             margin-top: 1rem;
