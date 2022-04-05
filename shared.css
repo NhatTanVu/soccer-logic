@@ -201,10 +201,6 @@ form {
             color: var(--active-text-color);
         }
 
-    form .row {
-        height: 2.5rem;
-    }
-
     form .form-group {
         margin-bottom: 1rem;
     }
@@ -730,10 +726,6 @@ main table {
 @media only screen and (max-width : 767px) {
     html {
         font-size: 4vmin; /* 15px for 375px-viewport */
-    }
-
-    form .row {
-        height: auto;
     }
 
     body {
