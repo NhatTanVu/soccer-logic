@@ -689,6 +689,18 @@ main table {
         z-index: 13;
         background-color: transparent;
     }
+
+    main table .hideMed {
+        display: none;
+    }
+
+    main table > thead > tr > th > .short {
+        display: block;
+    }
+
+    main table > thead > tr > th > .full {
+        display: none;
+    }
 }
 
 /* ------------------- */
@@ -864,4 +876,16 @@ main table {
         main > header.hero > h1 {
             font-size: 4rem;
         }
+
+    main table .hideSmall {
+        display: none;
+    }
+
+    main table > thead > tr > th > .short {
+        display: block;
+    }
+
+    main table > thead > tr > th > .full {
+        display: none;
+    }
 }

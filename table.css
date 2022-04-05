@@ -79,9 +79,19 @@ a.bubble {
         }
 
 /* ------------------- */
+/* Tablet view         */
+/* ------------------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    main > table tr > *.form.hideMed {
+        display: none;
+    }
+}
+
+/* ------------------- */
 /* Mobile view         */
 /* ------------------- */
 @media only screen and (max-width : 767px) {
-    main {
+    main > table tr > *.form.hideSmall {
+        display: none;
     }
 }
