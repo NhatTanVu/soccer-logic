@@ -1,7 +1,7 @@
 /* Main */
 main > section.flex {
-    align-items: stretch;
     --gap: 0;
+    align-items: stretch;
     margin: 0 auto 2rem auto;
     max-width: 60rem;
 }
@@ -11,19 +11,15 @@ main > section.flex {
     }
 
     main > section.flex > form#sign_in_form {
-        flex: 2;
         --gap: 0;
+        flex: 2;
     }
 
         main > section.flex > form#sign_in_form > div:not(:last-of-type) {
             padding-bottom: 1rem;
         }
 
-        main > section.flex > form#sign_in_form .form-row {
-            margin-bottom: 1rem;
-        }
-
-            main > section.flex > form#sign_in_form .form-row.vertical-flex > label {
+            main > section.flex > form#sign_in_form .form-group.vertical-flex > label {
                 margin-bottom: 0.5rem;
             }
 
@@ -38,9 +34,9 @@ main > section.flex {
         }
 
     main > section.flex > #no_account {
-        padding: 1rem;
-        flex: 1;
         --gap: 0;
+        flex: 1;
+        padding: 1rem;
     }
 
         main > section.flex > #no_account > h2 {
@@ -61,8 +57,8 @@ main > section.flex {
 /* ------------------- */
 @media only screen and (max-width : 767px) {
     main > section.flex {
-        align-items: initial;
         --gap: 0;
+        align-items: initial;
         margin: 0 0 2rem 0;
         max-width: none;
         flex-direction: column;

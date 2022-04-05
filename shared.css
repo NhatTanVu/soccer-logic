@@ -202,8 +202,17 @@ form {
         height: 2.5rem;
     }
 
+    form .form-group {
+        margin-bottom: 1rem;
+    }
+
     form textarea {
         resize: none;
+    }
+
+    form .required {
+        display: flex;
+        align-items: center;
     }
 
     form .required::after {

@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="../favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description"
-          content="SoccerLogic | Sign In" />
+    <meta name="description" content="SoccerLogic | Sign In" />
 
     <!-- connect to domain of font files -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,13 +121,13 @@
         <section class="flex">
             <form id="sign_in_form" class="card" onsubmit="onSubmit.call(this, event);">
                 <div>
-                    <div class="form-row vertical-flex">
-                        <label class="required" for="email">Email Address</label>
-                        <input type="email" id="email" required placeholder="i.e. test@gmail.com" />
+                    <div class="form-group vertical-flex">
+                        <label class="required row" for="email">Email Address</label>
+                        <input class="row" type="email" id="email" required placeholder="i.e. test@gmail.com" />
                     </div>
-                    <div class="form-row vertical-flex">
-                        <label class="required" for="password">Password</label>
-                        <input type="password" id="password" required placeholder="i.e. test" />
+                    <div class="form-group vertical-flex">
+                        <label class="required row" for="password">Password</label>
+                        <input class="row" type="password" id="password" required placeholder="i.e. test" />
                     </div>
                 </div>
                 <div class="flex">
