@@ -711,7 +711,7 @@ main table {
         background-color: transparent;
     }
 
-    main table .hideMed {
+    main .hideMed {
         display: none;
     }
 
@@ -898,7 +898,7 @@ main table {
             font-size: 4rem;
         }
 
-    main table .hideSmall {
+    main .hideSmall {
         display: none;
     }
 
