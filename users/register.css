@@ -93,6 +93,12 @@ main > section.flex {
             margin-top: 1rem;
         }
 
+        main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row {
+            flex-direction: column;
+            align-items: initial;
+            height: auto;
+        }
+
     main > section.flex > form#register_form > div:last-of-type {
         display: flex;
         flex-direction: column;
