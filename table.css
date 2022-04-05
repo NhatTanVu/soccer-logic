@@ -12,8 +12,9 @@ main > table {
         }
 
         main > table tr > *.team > a {
-            display: block;
+            display: flex;
             width: 100%;
+            align-items: center;
         }
 
             main > table tr > *.team > a > img {
@@ -91,6 +92,13 @@ a.bubble {
 /* Mobile view         */
 /* ------------------- */
 @media only screen and (max-width : 767px) {
+    main > table tr > *.team > a > img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.25rem;
+        display: inline-block;
+    }
+
     main > table tr > *.form.hideSmall {
         display: none;
     }
