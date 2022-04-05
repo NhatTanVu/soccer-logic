@@ -23,49 +23,11 @@
     <title>SoccerLogic | Feedback</title>
 
     <link href="../shared.css" rel="stylesheet" />
-    <link href="../index.css" rel="stylesheet" />
+    <link href="./feedback.css" rel="stylesheet" />
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
     <script src="../shared.js" defer></script>
-
-    <script>
-        function onSubmit() {
-            if (this.checkValidity()) {
-                summary_message.style.visibility = "visible";
-                var timeLeft = 3000;
-                var message = "Your feedback was sent. Thanks for contacting us!";
-                summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
-                window.setInterval(function() {
-                    if (timeLeft > 0) {
-                        timeLeft -= 1000;
-                        summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
-                    }
-                    else {
-                        window.location.replace("../index.html");
-                    }
-                }, 1000);
-                submit_button.disabled = true;
-                cancel_button.disabled = true;
-            }
-            event.preventDefault();
-        }
-
-        function onCancel() {
-            window.location.replace("../index.html");
-        }
-
-        window.onload = function() {
-            if (isAuth()) {
-                var auth = getAuthInfo();
-                if (auth.first_name)
-                    first_name.value = auth.first_name;
-                if (auth.last_name)
-                    last_name.value = auth.last_name;
-                if (auth.email)
-                    email.value = auth.email;
-            }
-        };
-    </script>
+    <script src="./feedback.js" defer></script>
 </head>
 <body>
     <header>
@@ -156,40 +118,40 @@
         <header class="hero">
             <h1>Feedback</h1>
         </header>
-        <div class="flex" style="--gap: 0; margin-bottom: 2rem;">
-            <form class="card" style="flex: 1;" onsubmit="onSubmit.call(this, event);">
-                <div style="padding-bottom: 1rem; --gap: 1rem;" class="vertical-flex">
-                    <div style="flex: 1; justify-content: space-between; padding-bottom: 0.5rem;" class="flex">
-                        <div class="flex" style="--gap: 1rem; flex: 1;">
+        <section class="flex">
+            <form class="card" onsubmit="onSubmit.call(this, event);">
+                <div class="vertical-flex">
+                    <div class="flex">
+                        <div class="flex">
                             <label class="required" for="email">Email Address</label>
-                            <input type="email" id="email" required style="flex: 1;" />
+                            <input type="email" id="email" required />
                         </div>
-                        <div class="flex" style="--gap: 1rem; flex: 1;">
+                        <div class="flex">
                             <label for="first_name">First Name</label>
-                            <input type="text" id="first_name" style="flex: 1;" />
+                            <input type="text" id="first_name" />
                         </div>
-                        <div class="flex" style="--gap: 1rem; flex: 1;">
+                        <div class="flex">
                             <label for="last_name">Last Name</label>
-                            <input type="text" id="last_name" style="flex: 1;" />
+                            <input type="text" id="last_name" />
                         </div>
                     </div>
                     <hr />
-                    <div class="grid" style="grid-template-columns: auto 1fr;">
-                        <label for="rate">
-                            Rate the overall experience (0=poor &#8594; 10=great)
+                    <div class="grid">
+                        <label for="rate" class="flex">
+                            <span>Rate the overall experience&nbsp;</span><span>(0=poor &#8594; 10=great)</span>
                         </label>
                         <input type="range" value="5" step="1" min="0" max="10" id="rate" />
                         <label for="commBox">Tell us more about your experience!</label>
                         <textarea name="custExp" id="commBox" rows="5"></textarea>
                     </div>
-                    <div id="summary_message" class="highlight" style="text-align: center;">&nbsp;</div>
+                    <div id="summary_message" class="highlight">&nbsp;</div>
                 </div>
-                <div style="text-align: center;">
-                    <button id="submit_button" class="form-button" type="submit" style="width: 25%; margin-right: 1rem;">Submit</button>
-                    <button id="cancel_button" class="form-button" style="width: 25%;" onclick="onCancel.call(this, event);">Cancel</button>
+                <div>
+                    <button id="submit_button" class="form-button" type="submit">Submit</button>
+                    <button id="cancel_button" class="form-button" onclick="onCancel.call(this, event);">Cancel</button>
                 </div>
             </form>
-        </div>
+        </section>
     </main>
     <footer class="flex">
         <div>

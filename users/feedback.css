@@ -1,0 +1,131 @@
+/* Main */
+main > section.flex {
+    --gap: 0;
+    margin: 0 auto 2rem auto;
+    max-width: 60rem;
+}
+
+    main > section.flex > form {
+        flex: 1;
+    }
+
+        main > section.flex > form > div:not(:last-of-type).vertical-flex {
+            padding-bottom: 1rem;
+            --gap: 1rem;
+        }
+
+            main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex {
+                flex: 1;
+                padding-bottom: 0.5rem;
+            }
+
+                main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex > div.flex {
+                    --gap: 0.25rem;
+                    flex: 1;
+                }
+
+                    main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex > div.flex > label {
+                        white-space: nowrap;
+                    }
+
+                    main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex > div.flex > input {
+                        flex: 1;
+                    }
+
+            main > section.flex > form > div:not(:last-of-type).vertical-flex > div.grid {
+                grid-template-columns: auto 1fr;
+            }
+
+                main > section.flex > form > div:not(:last-of-type).vertical-flex > div.grid > label[for="rate"] {
+                    --gap: 0;
+                }
+
+            main > section.flex > form > div:not(:last-of-type).vertical-flex > div#summary_message {
+                text-align: center;
+            }
+
+        main > section.flex > form > div:last-of-type {
+            text-align: center;
+        }
+
+            main > section.flex > form > div:last-of-type > button {
+                width: 25%;
+            }
+
+                main > section.flex > form > div:last-of-type > button#submit_button {
+                    margin-right: 1rem;
+                }
+
+/* ------------------- */
+/* Tablet view         */
+/* ------------------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex {
+        flex-direction: column;
+        align-items: initial;
+    }
+
+        main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex > div.flex > label {
+            flex: 1;
+        }
+
+        main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex > div.flex > input {
+            flex: 2;
+        }
+
+    main > section.flex > form > div:not(:last-of-type).vertical-flex > div.grid {
+        grid-template-columns: 1fr 2fr;
+        row-gap: 1rem;
+        column-gap: 0;
+    }
+
+        main > section.flex > form > div:not(:last-of-type).vertical-flex > div.grid > label[for="rate"] {
+            flex-direction: column;
+            align-items: initial;
+        }
+}
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex {
+        flex-direction: column;
+        align-items: initial;
+    }
+
+        main > section.flex > form > div:not(:last-of-type).vertical-flex > div.flex > div.flex {
+            flex-direction: column;
+            align-items: initial;
+        }
+
+    main > section.flex > form > div:not(:last-of-type).vertical-flex > hr {
+        display: none;
+    }
+
+    main > section.flex > form > div:not(:last-of-type).vertical-flex > div.grid {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+        column-gap: 0;
+    }
+
+        main > section.flex > form > div:not(:last-of-type).vertical-flex > div.grid > label[for="rate"] {
+            flex-direction: column;
+            align-items: initial;
+        }
+
+    main > section.flex > form > div:last-of-type {
+        display: flex;
+        flex-direction: column;
+    }
+
+        main > section.flex > form > div:last-of-type > button {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+            main > section.flex > form > div:last-of-type > button#submit_button {
+                margin: 0 auto 1rem auto;
+            }
+}
