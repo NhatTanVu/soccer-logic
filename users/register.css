@@ -110,6 +110,10 @@ main > section.flex {
             margin: 0 auto;
         }
 
+        main > section.flex > form#register_form > div:last-of-type > button {
+            width: 50%;
+        }
+
             main > section.flex > form#register_form > div:last-of-type > button#submit_button {
                 margin: 0 auto 1rem auto;
             }

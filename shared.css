@@ -221,12 +221,12 @@ form {
         align-items: center;
     }
 
-    form .required::after {
-        margin-left: 5px;
-        content: '*';
-        color: var(--errors-color);
-        font-weight: bold;
-    }
+        form .required::after {
+            margin-left: 5px;
+            content: '*';
+            color: var(--errors-color);
+            font-weight: bold;
+        }
 
 .form-button {
     background-color: var(--active-row-background-color);
