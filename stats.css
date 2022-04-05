@@ -63,7 +63,7 @@ main > section .statsHero {
     main > section .statsHero .heroBadgeContainer {
         bottom: .7rem;
         right: .7rem;
-        aspect-ratio: 1;
+        width: 30%;
         height: 30%;
         position: absolute;
         border-radius: 100%;
