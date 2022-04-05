@@ -84,7 +84,7 @@ main > section {
                     left: 50%;
                     transform: translateX(-50%) translateY(-50%);
                     height: 75%;
-                    aspect-ratio: 1;
+                    width: 75%;
                 }
 
         main > section .card .clubInfo {

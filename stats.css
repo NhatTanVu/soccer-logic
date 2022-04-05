@@ -63,8 +63,8 @@ main > section .statsHero {
     main > section .statsHero .heroBadgeContainer {
         bottom: .7rem;
         right: .7rem;
-        width: 30%;
-        height: 30%;
+        width: 2.8rem;
+        height: 2.8rem;
         position: absolute;
         border-radius: 100%;
         background: #fff;
