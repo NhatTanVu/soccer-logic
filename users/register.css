@@ -99,6 +99,10 @@ main > section.flex {
             height: auto;
         }
 
+            main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row > label {
+                margin-bottom: 0.5rem;
+            }
+
     main > section.flex > form#register_form > div:last-of-type {
         display: flex;
         flex-direction: column;

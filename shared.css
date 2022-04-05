@@ -732,6 +732,10 @@ main table {
         font-size: 4vmin; /* 15px for 375px-viewport */
     }
 
+    form .row {
+        height: auto;
+    }
+
     body {
         line-height: 1.667rem; /* 25px */
     }
