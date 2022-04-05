@@ -89,4 +89,13 @@ main > section.flex {
             main > section.flex > #no_account > hr {
                 margin-bottom: 1rem;
             }
+
+            main > section.flex > form#sign_in_form div.flex {
+                flex-direction: column;
+            }
+
+                main > section.flex > form#sign_in_form div.flex button#sign_in_button {
+                    width: 50%;
+                    margin-top: 1rem;
+                }
 }
