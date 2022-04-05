@@ -24,40 +24,11 @@
     <title>SoccerLogic | Sign In</title>
 
     <link href="../shared.css" rel="stylesheet" />
-    <link href="../index.css" rel="stylesheet" />
+    <link href="./sign-in.css" rel="stylesheet" />
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
     <script src="../shared.js" defer></script>
-
-    <script>
-        function onSubmit(event) {
-            if (this.checkValidity()) {
-                summary_message.style.visibility = "visible";
-                if (email.value == "test@gmail.com" && password.value == "test") {
-                    setAuthInfo(email.value, "Test", "User", new Date());
-                    var timeLeft = 3000;
-                    var message = "Signed In!";
-                    summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
-                    window.setInterval(function() {
-                        if (timeLeft > 0) {
-                            timeLeft -= 1000;
-                            summary_message.innerHTML = message + " Redirect in " + (timeLeft / 1000) + "s...";
-                        }
-                        else {
-                            window.location.replace("../index.html");
-                        }
-                    }, 1000);
-                    sign_in_button.disabled = true;
-                    register_button.classList.add("disabled");
-                    register_button.href = "#";
-                }
-                else {
-                    summary_message.innerHTML = "<span style='color: var(--errors-color);'>Invalid email or password!</span>";
-                }
-            }
-            event.preventDefault();
-        }
-    </script>
+    <script src="./sign-in.js" defer></script>
 </head>
 <body>
     <header>
@@ -148,31 +119,31 @@
         <header class="hero">
             <h1>Sign In</h1>
         </header>
-        <div class="flex" style="align-items: stretch; --gap: 1rem; margin-bottom: 2rem;">
-            <form id="sign_in_form" class="card" style="flex: 1; --gap: 0;" onsubmit="onSubmit.call(this, event);">
-                <div style="padding-bottom: 1rem;">
-                    <div class="vertical-flex" style="margin-bottom: 1rem;">
-                        <label class="required" for="email" style="margin-bottom: 0.5rem;">Email Address</label>
+        <section class="flex">
+            <form id="sign_in_form" class="card" onsubmit="onSubmit.call(this, event);">
+                <div>
+                    <div class="form-row vertical-flex">
+                        <label class="required" for="email">Email Address</label>
                         <input type="email" id="email" required placeholder="i.e. test@gmail.com" />
                     </div>
-                    <div class="vertical-flex" style="margin-bottom: 1rem;">
-                        <label class="required" for="password" style="margin-bottom: 0.5rem;">Password</label>
+                    <div class="form-row vertical-flex">
+                        <label class="required" for="password">Password</label>
                         <input type="password" id="password" required placeholder="i.e. test" />
                     </div>
                 </div>
                 <div class="flex">
-                    <div id="summary_message" class="highlight" style="flex: 1; padding-right: 1rem; visibility: hidden;">&nbsp;</div>
-                    <button id="sign_in_button" class="form-button" type="submit" style="flex: 1;">Sign In</button>
+                    <div id="summary_message" class="highlight">&nbsp;</div>
+                    <button id="sign_in_button" class="form-button" type="submit">Sign In</button>
                 </div>
             </form>
-            <div class="vertical-flex card" style="padding: 1rem; flex: 1; --gap: 0;">
-                <h2 style="padding: 0.75rem 0 1.75rem 0;">Don't have an account?</h2>
+            <div id="no_account" class="vertical-flex card">
+                <h2>Don't have an account?</h2>
                 <hr />
-                <div style="flex: 1; justify-content: center;" class="flex">
-                    <a id="register_button" class="form-button" href="./register.html" style="width: 50%;">Register</a>
+                <div class="flex">
+                    <a id="register_button" class="form-button" href="./register.html">Register</a>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
     <footer class="flex">
         <div>

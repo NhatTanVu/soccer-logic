@@ -1,0 +1,83 @@
+/* Main */
+main > section.flex {
+    align-items: stretch;
+    --gap: 1rem;
+    margin: 0 auto 2rem auto;
+    max-width: 60rem;
+}
+
+    main > section.flex > form#sign_in_form {
+        flex: 2;
+        --gap: 0;
+    }
+
+        main > section.flex > form#sign_in_form > div:not(:last-of-type) {
+            padding-bottom: 1rem;
+        }
+
+        main > section.flex > form#sign_in_form .form-row {
+            margin-bottom: 1rem;
+        }
+
+            main > section.flex > form#sign_in_form .form-row.vertical-flex > label {
+                margin-bottom: 0.5rem;
+            }
+
+        main > section.flex > form#sign_in_form div.flex #summary_message {
+            flex: 1;
+            padding-right: 1rem;
+            visibility: hidden;
+        }
+
+        main > section.flex > form#sign_in_form div.flex button#sign_in_button {
+            flex: 1;
+        }
+
+    main > section.flex > #no_account {
+        padding: 1rem;
+        flex: 1;
+        --gap: 0;
+    }
+
+        main > section.flex > #no_account > h2 {
+            padding: 0.75rem 0 1.75rem 0;
+        }
+
+        main > section.flex > #no_account > div.flex {
+            flex: 1;
+            justify-content: center;
+        }
+
+            main > section.flex > #no_account > div.flex > #register_button {
+                width: 50%;
+            }
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > section.flex {
+        align-items: initial;
+        --gap: 1rem;
+        margin: 0 0 2rem 0;
+        max-width: none;
+        flex-direction: column;
+    }
+
+        main > section.flex > form#sign_in_form,
+        main > section.flex > #no_account {
+            flex: 0;
+        }
+
+            main > section.flex > form#sign_in_form > div:not(:last-of-type) {
+                padding-bottom: 0;
+            }
+
+            main > section.flex > #no_account > h2 {
+                padding: 0 0 1rem 0;
+            }
+
+            main > section.flex > #no_account > hr {
+                margin-bottom: 1rem;
+            }
+}
