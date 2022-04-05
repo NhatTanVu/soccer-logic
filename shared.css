@@ -410,6 +410,12 @@ body > header {
                         white-space: nowrap;
                     }
 
+                body > header > .navigation-bar > .right > button#league-selector > svg {
+                    height: 0.6rem;
+                    fill: var(--active-text-color);
+                    vertical-align: middle;
+                }
+
             body > header > .navigation-bar > .right > #league-selector-popup {
                 left: 0;
                 width: 14rem;
