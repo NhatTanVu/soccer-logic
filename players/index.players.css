@@ -1,0 +1,163 @@
+/* Main */
+main > header.hero {
+    background: linear-gradient(90deg,var(--active-text-color),var(--active-row-background-color) 45%);
+    position: relative;
+}
+
+    main > header.hero > .imgContainer {
+        padding-left: 3rem;
+        padding-top: 1rem;
+        display: inline-block;
+        height: 100%;
+        margin-right: 2rem;
+    }
+
+        main > header.hero > .imgContainer > #player_photo {
+            display: block;
+            height: 100%;
+        }
+
+    main > header.hero > div > .player_number {
+        line-height: 3rem;
+        font-size: 3rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    main > header.hero .player_name {
+        line-height: 5rem;
+        font-size: 5rem;
+        display: block;
+        color: var(--active-text-color);
+    }
+
+    main > header.hero > a.club_link {
+        bottom: -1.25rem;
+        left: 1.25rem;
+        aspect-ratio: 1;
+        height: 30%;
+        position: absolute;
+        border-radius: 100%;
+        background: #fff;
+        z-index: 1;
+        box-shadow: 0 3px 2px var(--box-shadow-color);
+    }
+
+        main > header.hero > a.club_link > .club_photo {
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            width: 70%;
+            height: 70%;
+            margin: 0;
+        }
+
+    main > header.hero > h1.player_number {
+        font-size: 7rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        line-height: 7rem;
+        background-color: var(--active-text-color);
+        color: transparent;
+        text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+    }
+
+main > section.flex {
+    --gap: 2rem;
+    align-items: start;
+    margin-bottom: 2rem;
+}
+
+    main > section.flex > .left {
+        --gap: 0;
+        flex: 0 1 20rem;
+    }
+
+        main > section.flex > .left > .row-1.flex,
+        main > section.flex > .left > .row-2.flex,
+        main > section.flex > .left > #follow_player.vertical-flex {
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        main > section.flex > .left > .row-1 > .club_link.flex {
+            --gap: 0.25rem;
+        }
+
+            main > section.flex > .left > .row-1 > .club_link.flex > .club_name {
+                text-align: right;
+            }
+
+            main > section.flex > .left > .row-1 > .club_link.flex > img.club_photo,
+            main > section.flex > .right > table a.club_link.flex > img.club_photo {
+                height: 2rem;
+                width: 2rem;
+            }
+
+        main > section.flex > .left > #follow_player.vertical-flex > .socialOptions.flex {
+            --gap: 1rem;
+            padding: 1rem 1rem 0 1rem;
+        }
+
+            main > section.flex > .left > #follow_player.vertical-flex > .socialOptions.flex svg {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            main > section.flex > .left > #follow_player.vertical-flex > .socialOptions.flex a#player_facebook > svg {
+                fill: #4267B2;
+            }
+
+            main > section.flex > .left > #follow_player.vertical-flex > .socialOptions.flex a#player_twitter > svg {
+                fill: #1DA1F2;
+            }
+
+            main > section.flex > .left > #follow_player.vertical-flex > .socialOptions.flex a#player_instagram > svg {
+                fill: var(--text-color);
+            }
+
+    main > section.flex > .right {
+        --gap: 0;
+        flex: 1;
+        padding: 1rem;
+    }
+
+        main > section.flex > .right > div.flex {
+            --gap: 1rem;
+            justify-content: space-between;
+            padding: 1rem;
+            border: 1px solid var(--separator-color);
+            border-radius: 3px;
+            margin-bottom: 2rem;
+        }
+
+            main > section.flex > .right > div.flex > span.flex {
+                --gap: 0;
+                justify-content: space-between;
+                flex: 1;
+            }
+
+                main > section.flex > .right > div.flex > span.flex:not(:last-of-type) {
+                    border-right: 1px solid var(--separator-color);
+                    padding-right: 1rem;
+                }
+
+        main > section.flex > .right > table {
+            border: 1px solid var(--separator-color);
+            border-radius: 3px;
+            text-align: left;
+            overflow: inherit;
+        }
+
+            main > section.flex > .right > table tbody tr td {
+                color: var(--active-text-color);
+                font-size: 1.1rem;
+            }
+
+            main > section.flex > .right > table a.club_link.flex {
+                --gap: 0.25rem;
+            }

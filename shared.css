@@ -572,7 +572,7 @@ footer.flex {
 
 /* Main */
 main > header.hero {
-    min-height: 18rem;
+    height: 18rem;
     display: flex;
     align-items: center;
     background-color: var(--active-text-color);
