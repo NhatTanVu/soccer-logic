@@ -67,10 +67,15 @@ main > header.hero {
     }
 
 main > section.flex {
-    --gap: 2rem;
+    --gap: 0;
     align-items: start;
     margin-bottom: 2rem;
 }
+
+    /* Fallback for Flex --gap */
+    main > section.flex > * + * {
+        margin-left: 2rem;
+    }
 
     main > section.flex > .left {
         --gap: 0;
@@ -85,23 +90,33 @@ main > section.flex {
         }
 
         main > section.flex > .left > .row-1 > .club_link.flex {
-            --gap: 0.25rem;
+            --gap: 0;
         }
+
+            /* Fallback for Flex --gap */
+            main > section.flex > .left > .row-1 > .club_link.flex > * + * {
+                margin-left: 0.25rem;
+            }
 
             main > section.flex > .left > .row-1 > .club_link.flex > .club_name {
                 text-align: right;
             }
 
             main > section.flex > .left > .row-1 > .club_link.flex > img.club_photo,
-            main > section.flex > .right > table a.club_link.flex > img.club_photo {
+            main > section.flex > .right.vertical-flex > table a.club_link.flex > img.club_photo {
                 height: 2rem;
                 width: 2rem;
             }
 
         main > section.flex > .left > #follow_player.vertical-flex > .socialOptions.flex {
-            --gap: 1rem;
+            --gap: 0;
             padding: 1rem 1rem 0 1rem;
         }
+
+            /* Fallback for Flex --gap */
+            main > section.flex > .left > #follow_player.vertical-flex > .socialOptions.flex > * + * {
+                margin-left: 1rem;
+            }
 
             main > section.flex > .left > #follow_player.vertical-flex > .socialOptions.flex svg {
                 width: 2rem;
@@ -120,36 +135,46 @@ main > section.flex {
                 fill: var(--text-color);
             }
 
-    main > section.flex > .right {
-        --gap: 1rem;
+    main > section.flex > .right.vertical-flex {
+        --gap: 0;
         flex: 1;
         padding: 1rem;
     }
 
-        main > section.flex > .right > h3 {
+        /* Fallback for Flex --gap */
+        main > section.flex > .right.vertical-flex > * + * {
+            margin-top: 1rem;
+        }
+
+        main > section.flex > .right.vertical-flex > h3 {
             padding-bottom: 0;
         }
 
-        main > section.flex > .right > div.flex {
-            --gap: 1rem;
+        main > section.flex > .right.vertical-flex > div.flex {
+            --gap: 0;
             justify-content: space-between;
             padding: 1rem;
             border: 1px solid var(--separator-color);
             border-radius: 3px;
         }
 
-            main > section.flex > .right > div.flex > span.flex {
+            /* Fallback for Flex --gap */
+            main > section.flex > .right.vertical-flex > div.flex > * + * {
+                margin-left: 1rem;
+            }
+
+            main > section.flex > .right.vertical-flex > div.flex > span.flex {
                 --gap: 0;
                 justify-content: space-between;
                 flex: 1;
             }
 
-                main > section.flex > .right > div.flex > span.flex:not(:last-of-type) {
+                main > section.flex > .right.vertical-flex > div.flex > span.flex:not(:last-of-type) {
                     border-right: 1px solid var(--separator-color);
                     padding-right: 1rem;
                 }
 
-        main > section.flex > .right > table {
+        main > section.flex > .right.vertical-flex > table {
             border: 1px solid var(--separator-color);
             border-radius: 3px;
             text-align: left;
@@ -157,17 +182,22 @@ main > section.flex {
             table-layout: fixed;
         }
 
-            main > section.flex > .right > table tbody tr td {
+            main > section.flex > .right.vertical-flex > table tbody tr td {
                 padding-right: 0;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
 
-            main > section.flex > .right > table a.club_link.flex {
-                --gap: 0.25rem;
+            main > section.flex > .right.vertical-flex > table a.club_link.flex {
+                --gap: 0;
             }
 
-                main > section.flex > .right > table a.club_link.flex .club_name {
+                /* Fallback for Flex --gap */
+                main > section.flex > .right.vertical-flex > table a.club_link.flex > * + * {
+                    margin-left: 0.25rem;
+                }
+
+                main > section.flex > .right.vertical-flex > table a.club_link.flex .club_name {
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
@@ -205,33 +235,45 @@ main > section.flex {
     }
 
     main > section.flex {
-        --gap: 1rem;
+        --gap: 0;
         flex-direction: column;
         align-items: initial;
     }
+
+        /* Fallback for Flex --gap */
+        main > section.flex > * + * {
+            margin-left: 0;
+            margin-top: 1rem;
+        }
 
         main > section.flex > .left {
             order: 1;
             flex: 1;
         }
 
-        main > section.flex > .right {
+        main > section.flex > .right.vertical-flex {
             order: 0;
         }
 
-            main > section.flex > .right > div.flex {
+            main > section.flex > .right.vertical-flex > div.flex {
                 flex-direction: column;
                 align-items: initial;
             }
 
-                main > section.flex > .right > div.flex > span.flex:not(:last-of-type) {
+                /* Fallback for Flex --gap */
+                main > section.flex > .right.vertical-flex > div.flex > * + * {
+                    margin-left: 0;
+                    margin-top: 1rem;
+                }
+
+                main > section.flex > .right.vertical-flex > div.flex > span.flex:not(:last-of-type) {
                     border-right: 0;
                     padding-right: 0;
                     border-bottom: 1px solid var(--separator-color);
                     padding-bottom: 1rem;
                 }
 
-            main > section.flex > .right > table tr > * {
+            main > section.flex > .right.vertical-flex > table tr > * {
                 padding-left: 0.5rem;
             }
 }
@@ -269,33 +311,45 @@ main > section.flex {
     }
 
     main > section.flex {
-        --gap: 1rem;
+        --gap: 0;
         flex-direction: column;
         align-items: initial;
     }
 
+        /* Fallback for Flex --gap */
+        main > section.flex > * + * {
+            margin-left: 0;
+        }
+
         main > section.flex > .left {
             order: 1;
             flex: 1;
+            margin-top: 1rem;
         }
 
-        main > section.flex > .right {
+        main > section.flex > .right.vertical-flex {
             order: 0;
         }
 
-            main > section.flex > .right > div.flex {
+            main > section.flex > .right.vertical-flex > div.flex {
                 flex-direction: column;
                 align-items: initial;
             }
 
-                main > section.flex > .right > div.flex > span.flex:not(:last-of-type) {
+                /* Fallback for Flex --gap */
+                main > section.flex > .right.vertical-flex > div.flex > * + * {
+                    margin-left: 0;
+                    margin-top: 1rem;
+                }
+
+                main > section.flex > .right.vertical-flex > div.flex > span.flex:not(:last-of-type) {
                     border-right: 0;
                     padding-right: 0;
                     border-bottom: 1px solid var(--separator-color);
                     padding-bottom: 1rem;
                 }
 
-            main > section.flex > .right > table tr > * {
+            main > section.flex > .right.vertical-flex > table tr > * {
                 padding-left: 0.25rem;
             }
 }
