@@ -158,8 +158,6 @@ main > section.flex {
         }
 
             main > section.flex > .right > table tbody tr td {
-                color: var(--active-text-color);
-                font-size: 1.1rem;
                 padding-right: 0;
                 overflow: hidden;
                 text-overflow: ellipsis;
