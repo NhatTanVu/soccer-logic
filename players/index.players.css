@@ -243,12 +243,12 @@ main > section.flex {
         /* Fallback for Flex --gap */
         main > section.flex > * + * {
             margin-left: 0;
-            margin-top: 1rem;
         }
 
         main > section.flex > .left {
             order: 1;
             flex: 1;
+            margin-top: 1rem;
         }
 
         main > section.flex > .right.vertical-flex {
