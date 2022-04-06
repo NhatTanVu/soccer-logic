@@ -18,8 +18,8 @@ main > header.hero {
         }
 
     main > header.hero > div > .player_number {
-        line-height: 3rem;
-        font-size: 3rem;
+        line-height: 4rem;
+        font-size: 4rem;
         display: block;
         margin-bottom: 1rem;
     }
@@ -34,8 +34,8 @@ main > header.hero {
     main > header.hero > a.club_link {
         bottom: -1.25rem;
         left: 1.25rem;
-        aspect-ratio: 1;
-        height: 30%;
+        width: 5.4rem;
+        height: 5.4rem;
         position: absolute;
         border-radius: 100%;
         background: #fff;
@@ -121,10 +121,14 @@ main > section.flex {
             }
 
     main > section.flex > .right {
-        --gap: 0;
+        --gap: 1rem;
         flex: 1;
         padding: 1rem;
     }
+
+        main > section.flex > .right > h3 {
+            padding-bottom: 0;
+        }
 
         main > section.flex > .right > div.flex {
             --gap: 1rem;
@@ -132,7 +136,6 @@ main > section.flex {
             padding: 1rem;
             border: 1px solid var(--separator-color);
             border-radius: 3px;
-            margin-bottom: 2rem;
         }
 
             main > section.flex > .right > div.flex > span.flex {
@@ -161,3 +164,123 @@ main > section.flex {
             main > section.flex > .right > table a.club_link.flex {
                 --gap: 0.25rem;
             }
+
+/* ------------------- */
+/* Tablet view         */
+/* ------------------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    main > header.hero > .imgContainer {
+        padding-left: 1rem;
+        padding-top: 1rem;
+        display: inline-block;
+        height: 100%;
+        margin-right: 1rem;
+    }
+
+    main > header.hero > div > .player_number {
+        line-height: 4rem;
+        font-size: 4rem;
+    }
+
+    main > header.hero .player_name {
+        line-height: 3rem;
+        font-size: 3rem;
+    }
+
+    main > header.hero > a.club_link {
+        left: 1rem;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    main > header.hero > h1.player_number {
+        display: none;
+    }
+
+    main > section.flex {
+        --gap: 1rem;
+        flex-direction: column;
+        align-items: initial;
+    }
+
+        main > section.flex > .left {
+            order: 1;
+            flex: 1;
+        }
+
+        main > section.flex > .right {
+            order: 0;
+        }
+
+            main > section.flex > .right > div.flex {
+                flex-direction: column;
+                align-items: initial;
+            }
+
+                main > section.flex > .right > div.flex > span.flex:not(:last-of-type) {
+                    border-right: 0;
+                    padding-right: 0;
+                    border-bottom: 1px solid var(--separator-color);
+                    padding-bottom: 1rem;
+                }
+}
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > header.hero > .imgContainer {
+        padding-left: 0;
+        padding-top: 1rem;
+        display: inline-block;
+        height: 100%;
+        margin-right: 0.5rem;
+    }
+
+    main > header.hero > div > .player_number {
+        line-height: 3rem;
+        font-size: 3rem;
+    }
+
+    main > header.hero .player_name {
+        line-height: 2rem;
+        font-size: 2rem;
+    }
+
+    main > header.hero > a.club_link {
+        left: 1rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    main > header.hero > h1.player_number {
+        display: none;
+    }
+
+    main > section.flex {
+        --gap: 1rem;
+        flex-direction: column;
+        align-items: initial;
+    }
+
+        main > section.flex > .left {
+            order: 1;
+            flex: 1;
+        }
+
+        main > section.flex > .right {
+            order: 0;
+        }
+
+            main > section.flex > .right > div.flex {
+                flex-direction: column;
+                align-items: initial;
+            }
+
+                main > section.flex > .right > div.flex > span.flex:not(:last-of-type) {
+                    border-right: 0;
+                    padding-right: 0;
+                    border-bottom: 1px solid var(--separator-color);
+                    padding-bottom: 1rem;
+                }
+}

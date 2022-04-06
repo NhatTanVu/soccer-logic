@@ -626,6 +626,14 @@ main table {
         font-size: 1.953125vw; /* 15px for 768px-viewport */
     }
 
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
     /* Header */
     body > header > .navigation-bar > .left > #menu {
         height: 1.25rem;
@@ -726,6 +734,14 @@ main table {
 @media only screen and (max-width : 767px) {
     html {
         font-size: 4vmin; /* 15px for 375px-viewport */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
     }
 
     body {
