@@ -154,16 +154,25 @@ main > section.flex {
             border-radius: 3px;
             text-align: left;
             overflow: inherit;
+            table-layout: fixed;
         }
 
             main > section.flex > .right > table tbody tr td {
                 color: var(--active-text-color);
                 font-size: 1.1rem;
+                padding-right: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             main > section.flex > .right > table a.club_link.flex {
                 --gap: 0.25rem;
             }
+
+                main > section.flex > .right > table a.club_link.flex .club_name {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
 
 /* ------------------- */
 /* Tablet view         */
@@ -223,6 +232,10 @@ main > section.flex {
                     border-bottom: 1px solid var(--separator-color);
                     padding-bottom: 1rem;
                 }
+
+            main > section.flex > .right > table tr > * {
+                padding-left: 0.5rem;
+            }
 }
 
 /* ------------------- */
@@ -283,4 +296,8 @@ main > section.flex {
                     border-bottom: 1px solid var(--separator-color);
                     padding-bottom: 1rem;
                 }
+
+            main > section.flex > .right > table tr > * {
+                padding-left: 0.25rem;
+            }
 }
