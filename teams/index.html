@@ -23,129 +23,13 @@
     <title>SoccerLogic | Teams</title>
 
     <link href="../shared.css" rel="stylesheet" />
-    <link href="../index.css" rel="stylesheet" />
     <link href="../matches.css" rel="stylesheet" />
+    <link href="./index.teams.css" rel="stylesheet" />
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
     <script src="../shared.js" defer></script>
     <script src="./data.js" defer></script>
-
-    <style>
-        main .results section.matches {
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        main .overview section.matches {
-            text-align: center;
-            padding: 0;
-            margin-bottom: 1rem;
-        }
-
-            main .overview section.matches > time {
-                font-size: 1.5rem;
-                padding-bottom: 1rem;
-            }
-
-            main .overview section.matches > ul > li > a > div:first-of-type > div > span {
-                font-size: 1.1rem;
-            }
-
-        main table .time {
-            text-align: center;
-        }
-
-        main .squad .squad-list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-column-gap: 2rem;
-            grid-row-gap: 2rem;
-            justify-content: space-between;
-        }
-
-        main .squad .squad-list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-column-gap: 2rem;
-            grid-row-gap: 2rem;
-            justify-content: space-between;
-        }
-
-            main .squad .squad-list li a:hover, main .squad .squad-list li a:focus {
-                text-decoration: none;
-            }
-    </style>
-
-    <script>
-        window.onload = function () {
-            console.log("team = " + (team = getQueryVariable("team")));
-            if (team) {
-                document.title += " | " + team;
-                document.querySelector('meta[name="description"]').setAttribute("content", document.querySelector('meta[name="description"]').getAttribute("content") + " | " + team);
-
-                document.querySelectorAll(".club_name").forEach(function (item) {
-                    item.innerHTML = team;
-                });
-
-                document.querySelectorAll(".club_photo").forEach(function (item) {
-                    item.src = "../images/Teams/" + team + ".png";
-                });
-
-                if (DATA[team]) {
-                    if (DATA[team].stadium_name)
-                        stadium_name.innerHTML = DATA[team].stadium_name;
-                    if (DATA[team].official_website)
-                        document.querySelectorAll(".official_website").forEach(function (item) {
-                            item.href = DATA[team].official_website.href;
-                            item.textContent = DATA[team].official_website.textContent;
-                        });
-                    if (DATA[team].previous_standing || DATA[team].current_standing || DATA[team].next_standing) {
-                        if (DATA[team].previous_standing) {
-                            previous_standing.innerHTML = "";
-                            DATA[team].previous_standing.forEach(function (item) {
-                                previous_standing.innerHTML += "<td>" + item + "</td>";
-                            });
-                        }
-                        else {
-                            previous_standing.innerHTML = "";
-                        }
-
-                        if (DATA[team].current_standing) {
-                            current_standing.innerHTML = "";
-                            DATA[team].current_standing.forEach(function (item) {
-                                current_standing.innerHTML += "<td>" + item + "</td>";
-                            });
-                        }
-                        else {
-                            current_standing.innerHTML = "";
-                        }
-                        if (DATA[team].next_standing) {
-                            next_standing.innerHTML = "";
-                            DATA[team].next_standing.forEach(function (item) {
-                                next_standing.innerHTML += "<td>" + item + "</td>";
-                            });
-                        }
-                        else {
-                            next_standing.innerHTML = "";
-                        }
-                    }
-                }
-
-                if (team == 'Arsenal') {
-                    no_latest_goals.style.display = "none";
-                    latest_goals.style.display = null;
-                    document.querySelector("[data-tab-content='squad']").style.display = null;
-                }
-                if (team == 'Arsenal' || team == 'Fulham') {
-                    no_matches.style.display = "none";
-                    document.querySelectorAll(".matches").forEach(function (item) {
-                        item.style.display = null;
-                    });
-                    document.querySelector("[data-tab-content='results']").style.display = null;
-                }
-            }
-        };
-    </script>
+    <script src="./index.teams.js" defer></script>
 </head>
 <body>
     <header>
@@ -233,63 +117,59 @@
         </div>
     </header>
     <main class="container">
-        <header class="hero" style="height: 18rem; background: linear-gradient(90deg,var(--active-text-color),var(--active-row-background-color) 45%); position: relative;">
-            <div class="imgContainer" style="padding-left: 3rem; padding-top: 1rem; height: 60%; margin-right: 4.25rem; margin-left: 4.25rem; border-radius: 100%; background: #fff; box-shadow: 0 3px 2px var(--box-shadow-color); aspect-ratio: 1; position: relative;">
-                <img class="club_photo" style="display: block; height: 75%; width: 75%; position: absolute; top: 12.5%; left: 12.5%;" src="../images/Teams/Arsenal.png">
+        <header class="hero">
+            <div class="imgContainer">
+                <img class="club_photo">
             </div>
-            <div>
-                <span style="line-height: 5rem; font-size: 5rem; display: block; color: var(--active-text-color); margin-bottom: 1rem;" class="club_name">Arsenal</span>
-                <div style="font-weight: normal; line-height: 2rem;">
-                    <div id="stadium_name">
-                        Emirates Stadium
-                    </div>
-                    <div>
-                        <span style="margin-right: 0.25rem;">Official website: </span>
-                        <h4 style="display: inline-block;">
-                            <a class="official_website" href="https://www.arsenal.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link" target="_blank">www.arsenal.com</a>
-                        </h4>
-                    </div>
-                    <ul class="socialOptions flex" style="padding: 1rem 1rem 0 0; --gap: 1rem;">
-                        <li>
-                            <a id="club_facebook" target="_blank" class="facebook-option" title="" href="#" style="border-radius: 100%; background: #fff; display: block; padding: 1rem;">
-                                <svg style="width: 1.25rem; height: 1.25rem; fill: #4267B2; display: block; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"></path></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="club_twitter" target="_blank" class="twitter-option" href="#" style="border-radius: 100%; background: #fff; display: block; padding: 1rem;">
-                                <svg style="width: 1.25rem; height: 1.25rem; fill: #1DA1F2; display: block; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20"><path d="M24 2.557a9.83 9.83 0 01-2.828.775A4.932 4.932 0 0023.337.608a9.864 9.864 0 01-3.127 1.195A4.916 4.916 0 0016.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 011.671 1.149a4.93 4.93 0 001.523 6.574 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.928 4.928 0 004.6 3.419A9.9 9.9 0 010 17.54a13.94 13.94 0 007.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0024 2.557z"></path></svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="club_instagram" target="_blank" class="instagram-option" href="#" style="border-radius: 100%; background: #fff; display: block; padding: 1rem; ">
-                                <svg style="width: 1.25rem; height: 1.25rem; fill: var(--text-color); display: block; " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
-                            </a>
-                        </li>
-                    </ul>
+            <div class="club_info">
+                <span class="club_name">Arsenal</span>
+                <div id="stadium_name"></div>
+                <div>
+                    <span>Official website: </span>
+                    <h4>
+                        <a class="official_website" target="_blank"></a>
+                    </h4>
                 </div>
+                <ul class="socialOptions flex">
+                    <li>
+                        <a id="club_facebook" target="_blank" class="facebook-option" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"></path></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="club_twitter" target="_blank" class="twitter-option" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20"><path d="M24 2.557a9.83 9.83 0 01-2.828.775A4.932 4.932 0 0023.337.608a9.864 9.864 0 01-3.127 1.195A4.916 4.916 0 0016.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 011.671 1.149a4.93 4.93 0 001.523 6.574 4.903 4.903 0 01-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 01-2.224.084 4.928 4.928 0 004.6 3.419A9.9 9.9 0 010 17.54a13.94 13.94 0 007.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0024 2.557z"></path></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="club_instagram" target="_blank" class="instagram-option" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <img class="club_photo" style="position: absolute; right: 1rem; bottom: 1rem; width: 6rem; height: 6rem; opacity: 0.25;" />
+            <img class="club_photo" />
         </header>
         <ul class="tab-list" role="tablist">
             <li role="tab" tabindex="0" class="active" data-tab-content="overview">
                 <span>Overview</span>
             </li>
-            <li role="tab" tabindex="0" data-tab-content="squad" style="display: none;">
+            <li role="tab" tabindex="0" data-tab-content="squad">
                 <span>Squad</span>
             </li>
-            <li role="tab" tabindex="0" data-tab-content="results" style="display: none;">
+            <li role="tab" tabindex="0" data-tab-content="results">
                 <span>Results</span>
             </li>
         </ul>
         <div class="tab-content">
             <div class="overview flex">
-                <div style="flex: 1;">
+                <div class="left">
                     <h2>Visit <span class="club_name"></span> website</h2>
-                    <div style="margin-bottom: 2rem;">
-                        <a class="official_website" href="https://www.arsenal.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link" target="_blank">Official website</a>
+                    <div>
+                        <a class="official_website" href="https://www.arsenal.com/?utm_source=premier-league-website&amp;utm_campaign=website&amp;utm_medium=link" target="_blank"></a>
                     </div>
                     <h2>Standing</h2>
-                    <table style="margin-bottom: 1rem;">
+                    <table>
                         <thead>
                             <tr>
                                 <th>
@@ -312,63 +192,48 @@
                         <tbody>
                             <tr id="previous_standing">
                                 <td>
-                                    7
                                 </td>
                                 <td>
-                                    Tottenham Hotspur
                                 </td>
                                 <td>
-                                    38
                                 </td>
                                 <td>
-                                    23
                                 </td>
                                 <td>
-                                    62
                                 </td>
                             </tr>
-                            <tr id="current_standing" style="color: var(--active-text-color); font-weight: bold; background-color: rgba(var(--active-row-background-color-opacity), 0.4);">
+                            <tr id="current_standing">
                                 <td>
-                                    8
                                 </td>
                                 <td>
-                                    Arsenal
                                 </td>
                                 <td>
-                                    38
                                 </td>
                                 <td>
-                                    16
                                 </td>
                                 <td>
-                                    61
                                 </td>
                             </tr>
                             <tr id="next_standing">
                                 <td>
-                                    9
                                 </td>
                                 <td>
-                                    Leeds United
                                 </td>
                                 <td>
-                                    38
                                 </td>
                                 <td>
-                                    8
                                 </td>
                                 <td>
-                                    59
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <a href="../table.html" style="text-align: left;">View Table</a>
+                    <a href="../table.html">View Table</a>
                 </div>
-                <div style="flex: 2;">
+                <div class="right">
                     <h2>Latest Goals</h2>
-                    <div id="no_latest_goals" style="padding: 0; text-align: center; margin-bottom: 2rem;">N/A</div>
-                    <table id="latest_goals" style="margin-bottom: 2rem; text-align: left; display: none;">
+                    <div id="no_latest_goals">N/A</div>
+                    <table id="latest_goals">
                         <thead>
                             <tr>
                                 <th>
@@ -388,8 +253,9 @@
                                     <a href="../matches/index.html">Fulham - Arsenal</a>
                                 </td>
                                 <td>
-                                    <a href="../players/index.html?na=Pierre-Emerick%20Aubameyang&amp;no=14&amp;cl=Arsenal&amp;po=Forward&amp;nat=Gabon&amp;dob=18-Jun-1989&amp;ht=187cm&amp;goal=1" class="playerName flex" style="--gap: 0;">
-                                        <img class="img" src="../images/Players/Pierre-Emerick Aubameyang.png" alt="Photo for Pierre-Emerick Aubameyang" style="width: 4rem; height: 4rem; margin-right: 1rem; margin-bottom: -0.75rem;"><span class="highlight">Pierre-Emerick Aubameyang</span>
+                                    <a href="../players/index.html?na=Pierre-Emerick%20Aubameyang&amp;no=14&amp;cl=Arsenal&amp;po=Forward&amp;nat=Gabon&amp;dob=18-Jun-1989&amp;ht=187cm&amp;goal=1" class="playerName flex">
+                                        <img class="img" src="../images/Players/Pierre-Emerick Aubameyang.png" alt="Photo for Pierre-Emerick Aubameyang">
+                                        <span class="highlight">Pierre-Emerick Aubameyang</span>
                                     </a>
                                 </td>
                                 <td class="time">
@@ -401,8 +267,9 @@
                                     <a href="../matches/index.html">Fulham - Arsenal</a>
                                 </td>
                                 <td>
-                                    <a href="../players/index.html?na=Gabriel%20Magalhães&amp;no=6&amp;cl=Arsenal&amp;po=Defender&amp;nat=Brazil&amp;dob=19-Dec-1997&amp;ht=190cm&amp;goal=1" class="playerName flex" style="--gap: 0;">
-                                        <img class="img" src="../images/Players/Gabriel Magalhães.png" alt="Photo for Eddie Nketiah" style="width: 4rem; height: 4rem; margin-right: 1rem; margin-bottom: -0.75rem;"><span class="highlight">Gabriel Magalhães</span>
+                                    <a href="../players/index.html?na=Gabriel%20Magalhães&amp;no=6&amp;cl=Arsenal&amp;po=Defender&amp;nat=Brazil&amp;dob=19-Dec-1997&amp;ht=190cm&amp;goal=1" class="playerName flex">
+                                        <img class="img" src="../images/Players/Gabriel Magalhães.png" alt="Photo for Eddie Nketiah">
+                                        <span class="highlight">Gabriel Magalhães</span>
                                     </a>
                                 </td>
                                 <td class="time">
@@ -414,8 +281,9 @@
                                     <a href="../matches/index.html">Fulham - Arsenal</a>
                                 </td>
                                 <td>
-                                    <a href="../players/index.html?na=Alexandre%20Lacazette&amp;no=9&amp;cl=Arsenal&amp;po=Forward&amp;fb=AlexandreLacazetteOfficiel&amp;tw=LacazetteAlex&amp;inst=lacazettealex&amp;nat=France&amp;dob=28-May-1991%20(30)&amp;ht=175cm&amp;goal=1" class="playerName flex" style="--gap: 0;">
-                                        <img class="img" src="../images/Players/Alexandre Lacazette.png" alt="Photo for Alexandre Lacazette" style="width: 4rem; height: 4rem; margin-right: 1rem; margin-bottom: -0.75rem;"><span class="highlight">Alexandre Lacazette</span>
+                                    <a href="../players/index.html?na=Alexandre%20Lacazette&amp;no=9&amp;cl=Arsenal&amp;po=Forward&amp;fb=AlexandreLacazetteOfficiel&amp;tw=LacazetteAlex&amp;inst=lacazettealex&amp;nat=France&amp;dob=28-May-1991%20(30)&amp;ht=175cm&amp;goal=1" class="playerName flex">
+                                        <img class="img" src="../images/Players/Alexandre Lacazette.png" alt="Photo for Alexandre Lacazette">
+                                        <span class="highlight">Alexandre Lacazette</span>
                                     </a>
                                 </td>
                                 <td class="time">
@@ -425,8 +293,8 @@
                         </tbody>
                     </table>
                     <h2>Latest Matches</h2>
-                    <div id="no_matches" style="padding: 0; text-align: center; margin-bottom: 2rem;">N/A</div>
-                    <section class="matches" style="display: none;">
+                    <div id="no_matches">N/A</div>
+                    <section class="matches">
                         <time>
                             Saturday 12 September 2020
                         </time>
@@ -453,37 +321,37 @@
                             </li>
                         </ul>
                     </section>
-                    <a href="../matches.html" style="text-align: left;">View All Matches</a>
+                    <a href="../matches.html">View All Matches</a>
                 </div>
             </div>
             <div class="squad">
                 <h2>Goalkeepers</h2>
-                <ul class="squad-list" style="margin-bottom: 2rem;">
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Bernd%20Leno&no=1&cl=Arsenal&po=Goalkeeper&fb=bernd.leno.official&tw=Bernd_Leno&inst=berndleno1&nat=Germany&dob=04-Mar-1992%20(30)&ht=190cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">1.</div>
-                                    <h4 style="margin-bottom: 0.25rem; padding: 0;">Bernd Leno</h4>
+                <ul class="squad-list">
+                    <li>
+                        <a href="../players/index.html?na=Bernd%20Leno&no=1&cl=Arsenal&po=Goalkeeper&fb=bernd.leno.official&tw=Bernd_Leno&inst=berndleno1&nat=Germany&dob=04-Mar-1992%20(30)&ht=190cm">
+                            <header>
+                                <div>
+                                    <div class="pos">1.</div>
+                                    <h4>Bernd Leno</h4>
                                     <div>Goalkeeper</div>
                                 </div>
-                                <img src="../images/Players/Bernd Leno.png" alt="Photo for Bernd Leno" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Bernd Leno.png" alt="Photo for Bernd Leno">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">Germany</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
@@ -491,122 +359,122 @@
                     </li>
                 </ul>
                 <h2>Defenders</h2>
-                <ul class="squad-list" style="margin-bottom: 2rem;">
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Hector%20Bellerin&no=2&cl=Arsenal&po=Defender&nat=Spain&dob=19-Mar-1995&ht=178cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">2.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Hector Bellerin</h4>
+                <ul class="squad-list">
+                    <li>
+                        <a href="../players/index.html?na=Hector%20Bellerin&no=2&cl=Arsenal&po=Defender&nat=Spain&dob=19-Mar-1995&ht=178cm">
+                            <header>
+                                <div>
+                                    <div class="pos">2.</div>
+                                    <h4>Hector Bellerin</h4>
                                     <div>Defender</div>
                                 </div>
-                                <img src="../images/Players/Hector Bellerin.png" alt="Photo for Hector Bellerin" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Hector Bellerin.png" alt="Photo for Hector Bellerin">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">Spain</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Kieran%20Tierney&no=3&cl=Arsenal&po=Defender&nat=Scotland&dob=05-Jun-1997&ht=178cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">3.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Kieran Tierney</h4>
+                    <li>
+                        <a href="../players/index.html?na=Kieran%20Tierney&no=3&cl=Arsenal&po=Defender&nat=Scotland&dob=05-Jun-1997&ht=178cm">
+                            <header>
+                                <div>
+                                    <div class="pos">3.</div>
+                                    <h4>Kieran Tierney</h4>
                                     <div>Defender</div>
                                 </div>
-                                <img src="../images/Players/Kieran Tierney.png" alt="Photo for Kieran Tierney" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Kieran Tierney.png" alt="Photo for Kieran Tierney">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">Scotland</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Gabriel%20Magalhães&no=6&cl=Arsenal&po=Defender&nat=Brazil&dob=19-Dec-1997&ht=190cm&goal=1" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">6.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Gabriel Magalhães</h4>
+                    <li>
+                        <a href="../players/index.html?na=Gabriel%20Magalhães&no=6&cl=Arsenal&po=Defender&nat=Brazil&dob=19-Dec-1997&ht=190cm&goal=1">
+                            <header>
+                                <div>
+                                    <div class="pos">6.</div>
+                                    <h4>Gabriel Magalhães</h4>
                                     <div>Defender</div>
                                 </div>
-                                <img src="../images/Players/Gabriel Magalhães.png" alt="Photo for Gabriel Magalhães" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Gabriel Magalhães.png" alt="Photo for Gabriel Magalhães">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">Brazil</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">1</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Rob%20Holding&no=16&cl=Arsenal&po=Defender&nat=England&dob=20-Sep-1995&ht=189cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">16.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Rob Holding</h4>
+                    <li>
+                        <a href="../players/index.html?na=Rob%20Holding&no=16&cl=Arsenal&po=Defender&nat=England&dob=20-Sep-1995&ht=189cm">
+                            <header>
+                                <div>
+                                    <div class="pos">16.</div>
+                                    <h4>Rob Holding</h4>
                                     <div>Defender</div>
                                 </div>
-                                <img src="../images/Players/Rob Holding.png" alt="Photo for Rob Holding" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Rob Holding.png" alt="Photo for Rob Holding">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">England</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
@@ -614,122 +482,122 @@
                     </li>
                 </ul>
                 <h2>Midfielders</h2>
-                <ul class="squad-list" style="margin-bottom: 2rem;">
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Dani%20Ceballos&no=8&cl=Arsenal&po=Midfielder&tw=DaniCeballos46&inst=danifuli10&nat=Spain&dob=07-Aug-1996&ht=179cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">8.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Dani Ceballos</h4>
+                <ul class="squad-list">
+                    <li>
+                        <a href="../players/index.html?na=Dani%20Ceballos&no=8&cl=Arsenal&po=Midfielder&tw=DaniCeballos46&inst=danifuli10&nat=Spain&dob=07-Aug-1996&ht=179cm">
+                            <header>
+                                <div>
+                                    <div class="pos">8.</div>
+                                    <h4>Dani Ceballos</h4>
                                     <div>Midfielder</div>
                                 </div>
-                                <img src="../images/Players/Dani Ceballos.png" alt="Photo for Dani Ceballos" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Dani Ceballos.png" alt="Photo for Dani Ceballos">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">Spain</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Ainsley%20Maitland-Niles&no=15&cl=Arsenal&po=Midfielder&tw=MaitlandNiles&inst=maitlandniles&nat=England&dob=29-Aug-1997&ht=177cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">15.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Ainsley Maitland-Niles</h4>
+                    <li>
+                        <a href="../players/index.html?na=Ainsley%20Maitland-Niles&no=15&cl=Arsenal&po=Midfielder&tw=MaitlandNiles&inst=maitlandniles&nat=England&dob=29-Aug-1997&ht=177cm">
+                            <header>
+                                <div>
+                                    <div class="pos">15.</div>
+                                    <h4>Ainsley Maitland-Niles</h4>
                                     <div>Midfielder</div>
                                 </div>
-                                <img src="../images/Players/Ainsley Maitland-Niles.png" alt="Photo for Ainsley Maitland-Niles" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Ainsley Maitland-Niles.png" alt="Photo for Ainsley Maitland-Niles">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">England</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Mohamed%20Elneny&no=25&cl=Arsenal&po=Midfielder&nat=Egypt&dob=11-Jul-1992&ht=180cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">25.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Mohamed Elneny</h4>
+                    <li>
+                        <a href="../players/index.html?na=Mohamed%20Elneny&no=25&cl=Arsenal&po=Midfielder&nat=Egypt&dob=11-Jul-1992&ht=180cm">
+                            <header>
+                                <div>
+                                    <div class="pos">25.</div>
+                                    <h4>Mohamed Elneny</h4>
                                     <div>Midfielder</div>
                                 </div>
-                                <img src="../images/Players/Mohamed Elneny.png" alt="Photo for Mohamed Elneny" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Mohamed Elneny.png" alt="Photo for Mohamed Elneny">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">Egypt</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Granit%20Xhaka&no=34&cl=Arsenal&po=Midfielder&nat=Switzerland&dob=27-Sep-1992&ht=185cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">34.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Granit Xhaka</h4>
+                    <li>
+                        <a href="../players/index.html?na=Granit%20Xhaka&no=34&cl=Arsenal&po=Midfielder&nat=Switzerland&dob=27-Sep-1992&ht=185cm">
+                            <header>
+                                <div>
+                                    <div class="pos">34.</div>
+                                    <h4>Granit Xhaka</h4>
                                     <div>Midfielder</div>
                                 </div>
-                                <img src="../images/Players/Granit Xhaka.png" alt="Photo for Granit Xhaka" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Granit Xhaka.png" alt="Photo for Granit Xhaka">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">Switzerland</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
@@ -738,151 +606,151 @@
                 </ul>
                 <h2>Forwards</h2>
                 <ul class="squad-list">
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Alexandre%20Lacazette&no=9&cl=Arsenal&po=Forward&fb=AlexandreLacazetteOfficiel&tw=LacazetteAlex&inst=lacazettealex&nat=France&dob=28-May-1991%20(30)&ht=175cm&goal=1" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">9.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Alexandre Lacazette</h4>
+                    <li>
+                        <a href="../players/index.html?na=Alexandre%20Lacazette&no=9&cl=Arsenal&po=Forward&fb=AlexandreLacazetteOfficiel&tw=LacazetteAlex&inst=lacazettealex&nat=France&dob=28-May-1991%20(30)&ht=175cm&goal=1">
+                            <header>
+                                <div>
+                                    <div class="pos">9.</div>
+                                    <h4>Alexandre Lacazette</h4>
                                     <div>Forward</div>
                                 </div>
-                                <img src="../images/Players/Alexandre Lacazette.png" alt="Photo for Alexandre Lacazette" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Alexandre Lacazette.png" alt="Photo for Alexandre Lacazette">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">France</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">1</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Willian&no=12&cl=Arsenal&po=Forward&nat=Brazil&dob=09-Aug-1988&ht=175cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">12.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Willian</h4>
+                    <li>
+                        <a href="../players/index.html?na=Willian&no=12&cl=Arsenal&po=Forward&nat=Brazil&dob=09-Aug-1988&ht=175cm">
+                            <header>
+                                <div>
+                                    <div class="pos">12.</div>
+                                    <h4>Willian</h4>
                                     <div>Forward</div>
                                 </div>
-                                <img src="../images/Players/Willian.png" alt="Photo for Willian" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Willian.png" alt="Photo for Willian">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">Brazil</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Pierre-Emerick%20Aubameyang&no=14&cl=Arsenal&po=Forward&nat=Gabon&dob=18-Jun-1989&ht=187cm&goal=1" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">14.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Pierre-Emerick Aubameyang</h4>
+                    <li>
+                        <a href="../players/index.html?na=Pierre-Emerick%20Aubameyang&no=14&cl=Arsenal&po=Forward&nat=Gabon&dob=18-Jun-1989&ht=187cm&goal=1">
+                            <header>
+                                <div>
+                                    <div class="pos">14.</div>
+                                    <h4>Pierre-Emerick Aubameyang</h4>
                                     <div>Forward</div>
                                 </div>
-                                <img src="../images/Players/Pierre-Emerick Aubameyang.png" alt="Photo for Pierre-Emerick Aubameyang" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Pierre-Emerick Aubameyang.png" alt="Photo for Pierre-Emerick Aubameyang">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">Gabon</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">1</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Nicolas%20Pépé&no=19&cl=Arsenal&po=Forward&nat=Cote%20D’Ivoire&dob=29-May-1995&ht=183cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">19.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Nicolas Pépé</h4>
+                    <li>
+                        <a href="../players/index.html?na=Nicolas%20Pépé&no=19&cl=Arsenal&po=Forward&nat=Cote%20D’Ivoire&dob=29-May-1995&ht=183cm">
+                            <header>
+                                <div>
+                                    <div class="pos">19.</div>
+                                    <h4>Nicolas Pépé</h4>
                                     <div>Forward</div>
                                 </div>
-                                <img src="../images/Players/Nicolas Pépé.png" alt="Photo for Nicolas Pépé" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Nicolas Pépé.png" alt="Photo for Nicolas Pépé">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">Cote D’Ivoire</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li style="border: 1px solid var(--separator-color); border-radius: 3px;">
-                        <a href="../players/index.html?na=Eddie%20Nketiah&no=30&cl=Arsenal&po=Forward&nat=England&dob=30-May-1999&ht=175cm" style="display: block;">
-                            <header style="position: relative; background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%); color: var(--white); border-radius: 3px; padding: 1rem; height: 11rem;">
-                                <div style="width: 40%;">
-                                    <div class="pos" style="margin-bottom: 0.25rem; color: inherit;">30.</div>
-                                    <h4 style="margin-bottom: 0.5rem; padding: 0;">Eddie Nketiah</h4>
+                    <li>
+                        <a href="../players/index.html?na=Eddie%20Nketiah&no=30&cl=Arsenal&po=Forward&nat=England&dob=30-May-1999&ht=175cm">
+                            <header>
+                                <div>
+                                    <div class="pos">30.</div>
+                                    <h4>Eddie Nketiah</h4>
                                     <div>Forward</div>
                                 </div>
-                                <img src="../images/Players/Eddie Nketiah.png" alt="Photo for Eddie Nketiah" style="position: absolute; right: 1rem; bottom: 0; max-width: 60%; max-height: 95%; -o-object-fit: contain; object-fit: contain;">
+                                <img src="../images/Players/Eddie Nketiah.png" alt="Photo for Eddie Nketiah">
                             </header>
                             <div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Nationality</span>
                                     <span class="highlight">England</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Appearances</span>
                                     <span class="highlight">38</span>
                                 </div>
-                                <div class="flex" style="padding: 0.25rem 1rem; border-bottom: 1px solid var(--separator-color); justify-content: space-between;">
+                                <div class="flex">
                                     <span>Goals</span>
                                     <span class="highlight">0</span>
                                 </div>
-                                <div style="padding: 1rem; text-align: right;" class="highlight">
-                                    <span style="margin-right: 0.25rem;">View Player</span>
+                                <div class="highlight">
+                                    <span>View Player</span>
                                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </div>
                             </div>
@@ -891,7 +759,7 @@
                 </ul>
             </div>
             <div class="results flex">
-                <section class="matches" style="flex: 1;">
+                <section class="matches">
                     <time>
                         Saturday 12 September 2020
                     </time>

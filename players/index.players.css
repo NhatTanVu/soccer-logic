@@ -182,6 +182,19 @@ main > section.flex {
             table-layout: fixed;
         }
 
+            main > section.flex > .right.vertical-flex > table > colgroup > col:first-of-type {
+                width: 25%;
+            }
+
+            main > section.flex > .right.vertical-flex > table > colgroup > col:nth-of-type(2) {
+                width: 45%;
+            }
+
+            main > section.flex > .right.vertical-flex > table > colgroup > col:nth-of-type(3),
+            main > section.flex > .right.vertical-flex > table > colgroup > col:nth-of-type(4) {
+                width: 15%;
+            }
+
             main > section.flex > .right.vertical-flex > table tbody tr td {
                 padding-right: 0;
                 overflow: hidden;
