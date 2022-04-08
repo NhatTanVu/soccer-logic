@@ -55,14 +55,14 @@ window.onload = function () {
         if (team == 'Arsenal') {
             no_latest_goals.style.display = "none";
             latest_goals.style.display = "table";
-            document.querySelector("[data-tab-content='squad']").style.display = "block";
+            document.querySelector("[data-tab-content='squad']").style.visibility = "visible";
         }
         if (team == 'Arsenal' || team == 'Fulham') {
             no_matches.style.display = "none";
             document.querySelectorAll(".matches").forEach(function (item) {
                 item.style.display = "block";
             });
-            document.querySelector("[data-tab-content='results']").style.display = "block";
+            document.querySelector("[data-tab-content='results']").style.visibility = "visible";
         }
     }
 };

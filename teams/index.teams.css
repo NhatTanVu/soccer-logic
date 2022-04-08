@@ -1,13 +1,15 @@
 /* Main */
+main h2 {
+    white-space: initial;
+}
+
 main > header.hero {
     background: linear-gradient(90deg,var(--active-text-color),var(--active-row-background-color) 45%);
     position: relative;
 }
 
     main > header.hero > .imgContainer {
-        padding-left: 3rem;
-        padding-top: 1rem;
-        width: 10.8rem;
+        flex: 0 0 10.8rem;
         height: 10.8rem;
         margin-right: 4.25rem;
         margin-left: 4.25rem;
@@ -26,57 +28,53 @@ main > header.hero {
             left: 12.5%;
         }
 
-    main > header.hero > .club_info {
-        line-height: 2rem;
+    main > header.hero > .club_info > span.club_name {
+        line-height: 5rem;
+        font-size: 5rem;
+        display: block;
+        color: var(--active-text-color);
+        margin-bottom: 1rem;
     }
 
-        main > header.hero > .club_info > span.club_name {
-            line-height: 5rem;
-            font-size: 5rem;
+    main > header.hero > .club_info > #stadium_name + div > span {
+        margin-right: 0.25rem;
+    }
+
+    main > header.hero > .club_info > #stadium_name + div > h4 {
+        display: inline-block;
+    }
+
+    main > header.hero > .club_info > .socialOptions.flex {
+        --gap: 1rem;
+        padding-top: 1rem;
+    }
+
+        main > header.hero > .club_info > .socialOptions.flex a#club_facebook,
+        main > header.hero > .club_info > .socialOptions.flex a#club_twitter,
+        main > header.hero > .club_info > .socialOptions.flex a#club_instagram {
+            border-radius: 100%;
+            background: #fff;
             display: block;
-            color: var(--active-text-color);
-            margin-bottom: 1rem;
+            padding: 1rem;
         }
 
-        main > header.hero > .club_info > #stadium_name + div > span {
-            margin-right: 0.25rem;
-        }
-
-        main > header.hero > .club_info > #stadium_name + div > h4 {
-            display: inline-block;
-        }
-
-        main > header.hero > .club_info > .socialOptions.flex {
-            --gap: 1rem;
-            padding: 1rem 1rem 0 0;
-        }
-
-            main > header.hero > .club_info > .socialOptions.flex a#club_facebook,
-            main > header.hero > .club_info > .socialOptions.flex a#club_twitter,
-            main > header.hero > .club_info > .socialOptions.flex a#club_instagram {
-                border-radius: 100%;
-                background: #fff;
-                display: block;
-                padding: 1rem;
+            main > header.hero > .club_info > .socialOptions.flex a#club_facebook > svg {
+                fill: #4267B2;
             }
 
-                main > header.hero > .club_info > .socialOptions.flex a#club_facebook > svg {
-                    fill: #4267B2;
-                }
-
-                main > header.hero > .club_info > .socialOptions.flex a#club_twitter > svg {
-                    fill: #1DA1F2;
-                }
-
-                main > header.hero > .club_info > .socialOptions.flex a#club_instagram > svg {
-                    fill: var(--text-color);
-                }
-
-            main > header.hero > .club_info > .socialOptions.flex a > svg {
-                width: 1.25rem;
-                height: 1.25rem;
-                display: block;
+            main > header.hero > .club_info > .socialOptions.flex a#club_twitter > svg {
+                fill: #1DA1F2;
             }
+
+            main > header.hero > .club_info > .socialOptions.flex a#club_instagram > svg {
+                fill: var(--text-color);
+            }
+
+        main > header.hero > .club_info > .socialOptions.flex a > svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            display: block;
+        }
 
     main > header.hero > img.club_photo {
         position: absolute;
@@ -89,109 +87,115 @@ main > header.hero {
 
 main ul.tab-list > li[data-tab-content='squad'],
 main ul.tab-list > li[data-tab-content='results'] {
-    display: none;
+    visibility: hidden;
 }
 
 /* Overview tab */
-main .overview.flex > .left {
-    flex: 1;
+main .overview.grid {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr;
 }
 
-    main .overview.flex > .left > h2:first-of-type + div {
-        margin-bottom: 2rem;
+    main .overview.grid > .left-upper,
+    main .overview.grid > .left-lower {
+        grid-column: 1;
     }
 
-    main .overview.flex > .left > h2:nth-of-type(2) + table {
+    main .overview.grid > .right {
+        grid-column: 2;
+        grid-row: 1/3;
+    }
+
+    main .overview.grid > .left-lower > table {
         margin-bottom: 1rem;
     }
 
-        main .overview.flex > .left > h2:nth-of-type(2) + table #current_standing {
+        main .overview.grid > .left-lower > table #current_standing {
             color: var(--active-text-color);
             font-weight: bold;
             background-color: rgba(var(--active-row-background-color-opacity), 0.4);
         }
 
-main .overview.flex > .right {
-    flex: 2;
-}
-
-    main .overview.flex > .right > div#no_latest_goals {
-        margin-bottom: 2rem;
-        text-align: center;
-        padding: 0;
+    main .overview.grid > .right {
+        flex: 2;
     }
 
-    main .overview.flex > .right > table#latest_goals {
-        margin-bottom: 2rem;
-        text-align: left;
-        display: none;
-    }
-
-        main .overview.flex > .right > table#latest_goals .time {
+        main .overview.grid > .right > div#no_latest_goals {
+            margin-bottom: 2rem;
             text-align: center;
+            padding: 0;
         }
 
-        main .overview.flex > .right > table#latest_goals a.playerName.flex {
-            --gap: 0;
+        main .overview.grid > .right > table#latest_goals {
+            margin-bottom: 2rem;
+            text-align: left;
+            display: none;
         }
 
-            main .overview.flex > .right > table#latest_goals a.playerName.flex > img {
-                width: 4rem;
-                height: 4rem;
-                margin-right: 1rem;
-                margin-bottom: -0.75rem;
+            main .overview.grid > .right > table#latest_goals .time {
+                text-align: center;
             }
 
-    main .overview.flex > .right > div#no_matches {
-        padding: 0;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
+            main .overview.grid > .right > table#latest_goals a.playerName.flex {
+                --gap: 0;
+            }
 
-    main .overview.flex > .right > section.matches {
-        text-align: center;
-        padding: 0;
-        margin-bottom: 1rem;
-        display: none;
-    }
+                main .overview.grid > .right > table#latest_goals a.playerName.flex > img {
+                    width: 4rem;
+                    height: 4rem;
+                    margin-right: 1rem;
+                    margin-bottom: -0.75rem;
+                }
 
-        main .overview.flex > .right > section.matches > time {
-            font-size: 1.5rem;
-            padding-bottom: 1rem;
+        main .overview.grid > .right > div#no_matches {
+            padding: 0;
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
-        main .overview.flex > .right > section.matches > ul > li > a > div:first-of-type > div > span {
-            font-size: 1.1rem;
+        main .overview.grid > .right > section.matches {
+            text-align: center;
+            padding: 0;
+            margin-bottom: 1rem;
+            display: none;
         }
+
+            main .overview.grid > .right > section.matches > time {
+                font-size: 1.5rem;
+                padding-bottom: 1rem;
+            }
+
+            main .overview.grid > .right > section.matches > ul > li > a > div:first-of-type > div > span {
+                font-size: 1.1rem;
+            }
 
 /* Squad tab */
-main .squad ul.squad-list {
+main .squad ul.squad-list.grid {
+    --gap: 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
     justify-content: space-between;
 }
 
-    main .squad ul.squad-list:not(:last-of-type) {
+    main .squad ul.squad-list.grid:not(:last-of-type) {
         margin-bottom: 2rem;
     }
 
-    main .squad ul.squad-list > li {
+    main .squad ul.squad-list.grid > li {
         border: 1px solid var(--separator-color);
         border-radius: 3px;
     }
 
-        main .squad ul.squad-list > li > a {
+        main .squad ul.squad-list.grid > li > a {
             display: block;
         }
 
-            main .squad ul.squad-list > li > a:hover,
-            main .squad ul.squad-list > li > a:focus {
+            main .squad ul.squad-list.grid > li > a:hover,
+            main .squad ul.squad-list.grid > li > a:focus {
                 text-decoration: none;
             }
 
-            main .squad ul.squad-list > li > a > header {
+            main .squad ul.squad-list.grid > li > a > header {
                 position: relative;
                 background: linear-gradient(270deg,var(--active-text-color),var(--active-row-background-color) 45%);
                 color: var(--white);
@@ -200,21 +204,21 @@ main .squad ul.squad-list {
                 height: 11rem;
             }
 
-                main .squad ul.squad-list > li > a > header > div {
+                main .squad ul.squad-list.grid > li > a > header > div {
                     width: 40%;
                 }
 
-                    main .squad ul.squad-list > li > a > header > div > div.pos {
+                    main .squad ul.squad-list.grid > li > a > header > div > div.pos {
                         margin-bottom: 0.25rem;
                         color: inherit;
                     }
 
-                    main .squad ul.squad-list > li > a > header > div > h4 {
+                    main .squad ul.squad-list.grid > li > a > header > div > h4 {
                         margin-bottom: 0.5rem;
                         padding: 0;
                     }
 
-                main .squad ul.squad-list > li > a > header > img {
+                main .squad ul.squad-list.grid > li > a > header > img {
                     position: absolute;
                     right: 1rem;
                     bottom: 0;
@@ -224,24 +228,135 @@ main .squad ul.squad-list {
                     object-fit: contain;
                 }
 
-            main .squad ul.squad-list > li > a > div > div.flex {
+            main .squad ul.squad-list.grid > li > a > div > div.flex {
                 padding: 0.25rem 1rem;
                 border-bottom: 1px solid var(--separator-color);
                 justify-content: space-between;
             }
 
-            main .squad ul.squad-list > li > a > div > div:last-of-type {
+            main .squad ul.squad-list.grid > li > a > div > div:last-of-type {
                 padding: 1rem;
                 text-align: right;
             }
 
-                main .squad ul.squad-list > li > a > div > div:last-of-type > span {
+                main .squad ul.squad-list.grid > li > a > div > div:last-of-type > span {
                     margin-right: 0.25rem;
                 }
 
 /* Results tab */
 main .results section.matches {
-    padding: 1rem;
+    padding: 0;
     margin-bottom: 1rem;
     flex: 1;
+}
+
+/* -------------------- */
+/* Mobile + Tablet view */
+/* -------------------- */
+@media only screen and (max-width : 1023px) {
+    main > header.hero > img.club_photo {
+        display: none;
+    }
+
+    /* Overview tab */
+    main ul.tab-list + .tab-content > .overview.grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+        main ul.tab-list + .tab-content > .overview.grid > .left-upper {
+            grid-row: 1;
+        }
+
+        main ul.tab-list + .tab-content > .overview.grid > .right {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        main ul.tab-list + .tab-content > .overview.grid > .left-lower {
+            grid-row: 3;
+        }
+
+    /* Squad tab */
+    main .squad ul.squad-list.grid {
+        --gap: 1rem;
+        grid-template-columns: repeat( auto-fill, minmax(250px, 1fr) );
+    }
+}
+
+/* ------------------- */
+/* Tablet view         */
+/* ------------------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    main > header.hero > .imgContainer {
+        margin-right: 3rem;
+        margin-left: 3rem;
+    }
+
+    main > header.hero > .club_info > span.club_name {
+        line-height: 3rem;
+        font-size: 3rem;
+    }
+
+    /* Overview tab */
+    main .overview.grid > .right > section.matches > time {
+        font-size: 1.3rem;
+    }
+
+    /* Results tab */
+    main .results section.matches > time {
+        font-size: 1.6rem;
+        padding-bottom: 1rem;
+    }
+
+    main .results section.matches > ul > li > a > div:first-of-type > div > span {
+        font-size: 1.3rem;
+    }
+}
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > header.hero > .imgContainer {
+        margin-right: 1rem;
+        margin-left: 0;
+        flex: 0 0 6.5rem;
+        height: 6.5rem;
+    }
+
+    main > header.hero > .club_info > span.club_name {
+        line-height: 1.8rem;
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+    }
+
+    main > header.hero > .club_info > .socialOptions.flex {
+        padding-top: 0.75rem;
+    }
+
+        main > header.hero > .club_info > .socialOptions.flex a > svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        main > header.hero > .club_info > .socialOptions.flex a#club_facebook,
+        main > header.hero > .club_info > .socialOptions.flex a#club_twitter,
+        main > header.hero > .club_info > .socialOptions.flex a#club_instagram {
+            padding: 0.75rem;
+        }
+
+    main .overview.grid > .right > section.matches > time {
+        font-size: 1.2rem;
+    }
+
+    /* Results tab */
+    main .results section.matches > time {
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    main .results section.matches > ul > li > a > div:first-of-type > div > span {
+        font-size: 1.2rem;
+    }
 }
