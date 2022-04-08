@@ -331,6 +331,14 @@ main .results section.matches {
         margin-bottom: 0.75rem;
     }
 
+    main > header.hero > .club_info > #stadium_name + div > span {
+        display: none;
+    }
+
+    main > header.hero > .club_info > #stadium_name + div > h4 {
+        word-break: break-all;
+    }
+
     main > header.hero > .club_info > .socialOptions.flex {
         padding-top: 0.75rem;
     }
