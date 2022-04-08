@@ -87,7 +87,7 @@ main > header.hero {
 
 main ul.tab-list > li[data-tab-content='squad'],
 main ul.tab-list > li[data-tab-content='results'] {
-    visibility: hidden;
+    display: none;
 }
 
 /* Overview tab */
@@ -128,16 +128,13 @@ main .overview.grid {
 
         main .overview.grid > .right > table#latest_goals {
             margin-bottom: 2rem;
-            text-align: left;
+            text-align: center;
             display: none;
         }
 
-            main .overview.grid > .right > table#latest_goals .time {
-                text-align: center;
-            }
-
             main .overview.grid > .right > table#latest_goals a.playerName.flex {
                 --gap: 0;
+                text-align: left;
             }
 
                 main .overview.grid > .right > table#latest_goals a.playerName.flex > img {
@@ -256,6 +253,10 @@ main .results section.matches {
 @media only screen and (max-width : 1023px) {
     main > header.hero > img.club_photo {
         display: none;
+    }
+
+    main ul.tab-list > li {
+        flex-basis: 33%;
     }
 
     /* Overview tab */
