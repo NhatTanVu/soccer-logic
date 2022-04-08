@@ -247,6 +247,10 @@ main .results section.matches {
     flex: 1;
 }
 
+    main .results section.matches > time {
+        padding-bottom: 1rem;
+    }
+
 /* -------------------- */
 /* Mobile + Tablet view */
 /* -------------------- */
