@@ -96,14 +96,17 @@
                 <div class="vertical-flex popup hide" id="user-menu">
                     <div class="content">
                         <ul>
-                            <li>
-                                <a href="./sign-in.html"><span>Sign In</span></a>
+                            <li id="sign_in">
+                                <a href="../users/sign-in.html"><span>Sign In</span></a>
                             </li>
-                            <li class="active">
-                                <a href="./register.html"><span>Register</span></a>
+                            <li id="register">
+                                <a href="../users/register.html"><span>Register</span></a>
                             </li>
                             <li>
-                                <a href="./feedback.html"><span>Feedback</span></a>
+                                <a href="../users/feedback.html"><span>Feedback</span></a>
+                            </li>
+                            <li id="sign_out">
+                                <a href="#"><span>Sign Out</span></a>
                             </li>
                         </ul>
                     </div>
@@ -164,7 +167,7 @@
                     <div id="summary_message" class="highlight">&nbsp;</div>
                 </div>
                 <div>
-                    <button id="submit_button" class="form-button" type="submit"><span>Register</span><span class="hideSmall">&#8594; Sign In</span></button>
+                    <button id="submit_button" class="form-button" type="submit"><span>Register</span><span class="hideSmall"> &#8594; Sign In</span></button>
                     <button id="cancel_button" class="form-button" onclick="onCancel.call(this, event);">Cancel</button>
                 </div>
             </form>
