@@ -157,6 +157,7 @@ main > header.hero {
 
     main > header.hero > .filler-row {
         grid-column: 1 / span 3;
+        height: 0.5rem;
     }
 
 main > .tab-content > .details::before,
