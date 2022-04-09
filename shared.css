@@ -333,12 +333,13 @@ body > header {
         }
 
             body > header > .navigation-bar > .left > #menu {
+                height: 1.5rem;
                 display: none;
             }
 
             body > header > .navigation-bar > .left > #menu-close-button svg {
-                width: 1rem;
-                height: 1rem;
+                width: 1.5rem;
+                height: 1.5rem;
                 display: block;
             }
 
@@ -607,10 +608,6 @@ main table {
             font-weight: normal;
         }
 
-            main table > thead > tr > th > .short {
-                display: none;
-            }
-
     main table tr > * {
         padding: 0.75rem 0.625rem;
     }
@@ -618,6 +615,10 @@ main table {
     main table tbody > tr {
         border-bottom: 1px solid var(--separator-color);
     }
+
+main .short {
+    display: none;
+}
 
 /* -------------------- */
 /* Mobile + Tablet view */
@@ -653,13 +654,7 @@ main table {
 
     /* Header */
     body > header > .navigation-bar > .left > #menu {
-        height: 1.25rem;
         display: block;
-    }
-
-    body > header > .navigation-bar > .left > #menu-close-button svg {
-        width: 1.25rem;
-        height: 1.25rem;
     }
 
     body > header > .navigation-bar > .left > .logo {
@@ -736,11 +731,11 @@ main table {
         display: none;
     }
 
-    main table > thead > tr > th > .short {
+    main .short {
         display: block;
     }
 
-    main table > thead > tr > th > .full {
+    main .full {
         display: none;
     }
 }
@@ -767,17 +762,16 @@ main table {
 
         /* Header */
         body > header > .navigation-bar > .left > #menu {
-            height: 1rem;
             display: block;
         }
 
         body > header > .navigation-bar > .left > .logo {
             margin: 0 0 0 1rem;
-            height: 1.33rem;
+            height: 2rem;
         }
 
             body > header > .navigation-bar > .left > .logo > h1 {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
 
         body > header > .navigation-bar > .left > ul.navigation-menu {
@@ -931,11 +925,11 @@ main table {
         display: none;
     }
 
-    main table > thead > tr > th > .short {
+    main .short {
         display: block;
     }
 
-    main table > thead > tr > th > .full {
+    main .full {
         display: none;
     }
 }

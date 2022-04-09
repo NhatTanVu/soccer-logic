@@ -223,7 +223,7 @@ main > .tab-content > .details > ul {
         }
 
         main > .tab-content > .details > ul > li > div.content {
-            margin-left: 6rem;
+            margin-left: 5rem;
             padding: 1rem;
             --gap: 1rem;
             height: 100%;
@@ -423,4 +423,54 @@ main > .tab-content > .line-ups > div.row-1 {
                 main > .tab-content > .line-ups > div.row-2 > div > ul > li > a > img + span > span.name + span.flex {
                     flex-direction: row;
                 }
+
+            main > .tab-content > .line-ups > div.row-2 > div > ul > li > a > div.number {
+                width: 1.5rem;
+            }
+}
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > header.hero {
+        grid-template-columns: 1fr 6rem 1fr;
+    }
+
+        main > header.hero > .main-row.flex > img {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+
+        main > header.hero > .main-row.flex > h1 {
+            font-size: 1.5rem;
+        }
+
+        main > header.hero > .middle-column {
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+        }
+
+        main > header.hero > :not(.main-row.flex):not(.filler-row):not(.row-2) {
+            padding-top: 0.25rem;
+        }
+
+        main > header.hero > .row-2 {
+            padding-top: 0.25rem;
+        }
+
+        main > header.hero > .row-3.home-team,
+        main > header.hero > .row-4.home-team {
+            padding-right: 0.25rem;
+        }
+
+        main > header.hero > .row-3.away-team,
+        main > header.hero > .row-4.away-team {
+            padding-left: 0.25rem;
+        }
+
+    main > .tab-content > .line-ups > div.row-2 > div > ul > li > a > img {
+        margin: 0 0.5rem;
+        align-self: end;
+    }
 }
