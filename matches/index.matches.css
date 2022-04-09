@@ -79,6 +79,11 @@ main > header.hero {
         padding: 0 1rem;
     }
 
+        main > header.hero > .row-3.away-team > div:not(:last-of-type),
+        main > header.hero > .row-4.away-team > div:not(:last-of-type) {
+            margin-bottom: 0.5rem;
+        }
+
         main > header.hero > .row-3.away-team > div.flex > a {
             flex: 1;
             padding: 0 0.25rem;
@@ -479,7 +484,7 @@ main > .tab-content > .line-ups > div.row-1 {
 
         main > header.hero > .row-3.away-team,
         main > header.hero > .row-4.away-team {
-            padding: 0 0.25rem;
+            padding-left: 0.25rem;
         }
 
     main > .tab-content > .line-ups > div.row-2 > div > ul > li > a > img {
