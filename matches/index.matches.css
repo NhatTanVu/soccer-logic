@@ -47,6 +47,12 @@ main > header.hero {
         text-align: center;
     }
 
+        main > header.hero > .middle-column > .highlight {
+            color: var(--active-yellow-text-color);
+            font-weight: bold;
+            font-size: inherit;
+        }
+
     main > header.hero > :not(.main-row.flex) {
         background-color: var(--active-text-color);
         opacity: 0.95;
@@ -70,11 +76,17 @@ main > header.hero {
     main > header.hero > .row-3.away-team,
     main > header.hero > .row-4.away-team {
         flex: 1;
-        padding-left: 1rem;
+        padding: 0 1rem;
     }
 
-        main > header.hero > .row-3.away-team > div > span {
+        main > header.hero > .row-3.away-team > div.flex > a {
+            flex: 1;
             padding: 0 0.25rem;
+        }
+
+        main > header.hero > .row-4.away-team > div.flex > a {
+            flex: 1;
+            padding: 0 0.25rem 0 0;
         }
 
     main > header.hero > .timeline {
@@ -113,16 +125,16 @@ main > header.hero {
             }
 
                 main > header.hero > .timeline > .line > div.ko {
-                    color: #E09F1F;
+                    color: var(--active-yellow-text-color);
                 }
 
                 main > header.hero > .timeline > .line > div.ht {
-                    color: #E09F1F;
+                    color: var(--active-yellow-text-color);
                     left: 47%;
                 }
 
                 main > header.hero > .timeline > .line > div.ft {
-                    color: #E09F1F;
+                    color: var(--active-yellow-text-color);
                     left: 91%;
                 }
 
@@ -251,7 +263,7 @@ main > .tab-content > .details > ul {
         main > .tab-content > .details > ul > li.ko > div.meta,
         main > .tab-content > .details > ul > li.ht > div.meta,
         main > .tab-content > .details > ul > li.ft > div.meta {
-            color: #E09F1F;
+            color: var(--active-yellow-text-color);
         }
 
     main > .tab-content > .details > ul#second-half > li.ht > div.meta,
@@ -467,7 +479,7 @@ main > .tab-content > .line-ups > div.row-1 {
 
         main > header.hero > .row-3.away-team,
         main > header.hero > .row-4.away-team {
-            padding-left: 0.25rem;
+            padding: 0 0.25rem;
         }
 
     main > .tab-content > .line-ups > div.row-2 > div > ul > li > a > img {
