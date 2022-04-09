@@ -57,8 +57,9 @@ main > section .statsHero {
     }
 
         main > section .statsHero > a > .badge-image {
-            width: 7.25rem;
-            height: 7.25rem;
+            width: 7rem;
+            height: 7rem;
+            display: block;
         }
 
     main > section .statsHero .heroBadgeContainer {
@@ -86,7 +87,7 @@ main > section .statsHero {
         right: 1rem;
         bottom: 0;
         max-width: 60%;
-        max-height: 95%;
+        max-height: 90%;
         -o-object-fit: contain;
         object-fit: contain;
     }
