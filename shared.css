@@ -322,7 +322,7 @@ body > header {
     padding: 0 1rem;
     background-color: var(--white);
     box-shadow: 0 3px 2px var(--box-shadow-color);
-    z-index: 2;
+    z-index: 10;
 }
 
     body > header > .navigation-bar {
