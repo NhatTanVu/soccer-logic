@@ -194,6 +194,7 @@ form {
         form input::placeholder {
             color: var(--text-color);
             font-style: italic;
+            font-size: 0.8em;
         }
 
         form textarea:focus,
