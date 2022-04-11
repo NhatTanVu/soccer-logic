@@ -27,6 +27,7 @@
 
     <script src="https://kit.fontawesome.com/224f0fc815.js" crossorigin="anonymous"></script>
     <script src="shared.js" defer></script>
+    <script src="teams.js" defer></script>
 </head>
 <body>
     <header>
@@ -117,8 +118,14 @@
         <header class="hero">
             <div class="background"></div>
             <h1>Teams</h1>
+            <div class="search_container">
+                <input id="search_text" type="text" placeholder="Search for a Team" />
+                <div id="search_button" role="button" tabindex="0">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
         </header>
-        <section class="clubs">
+        <section id="teams">
             <ul>
                 <li class="card">
                     <a href="./teams/index.html?team=Arsenal">
