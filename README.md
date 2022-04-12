@@ -18,13 +18,13 @@
 <a href="https://nhattanvu.github.io/soccer-logic/stats.html"><kbd><img src="https://github.com/NhatTanVu/soccer-logic/blob/main/screenshots/5.%20Statistics%20Page.png?raw=true" alt="Statistics Page" height="500"/></kbd></a>
 
 5. **Team List Page**\
-<a href="https://nhattanvu.github.io/soccer-logic/teams.html"><kbd><img src="https://github.com/NhatTanVu/soccer-logic/blob/main/screenshots/6.%20Team%20Page.png?raw=true" alt="Team List Page" height="500"/></kbd></a>
+<a href="https://nhattanvu.github.io/soccer-logic/teams.html"><kbd><img src="https://github.com/NhatTanVu/soccer-logic/blob/main/screenshots/6.%20Team%20List%20Page.png?raw=true" alt="Team List Page" height="500"/></kbd></a>
 
 6. **Team Details Page**\
 <a href="https://nhattanvu.github.io/soccer-logic/teams/index.html?team=Arsenal"><kbd><img src="https://github.com/NhatTanVu/soccer-logic/blob/main/screenshots/7a.%20Team%20Details%20Page%20-%20Overview%20Tab.png?raw=true" alt="Team Details Page" height="500"/></kbd></a>
 
 7. **Player List Page**\
-<a href="https://nhattanvu.github.io/soccer-logic/players.html"><kbd><img src="https://github.com/NhatTanVu/soccer-logic/blob/main/screenshots/8.%20Players%20List%20Page.png?raw=true" alt="Player List Page" height="500"/></kbd></a>
+<a href="https://nhattanvu.github.io/soccer-logic/players.html"><kbd><img src="https://github.com/NhatTanVu/soccer-logic/blob/main/screenshots/8.%20Player%20List%20Page.png?raw=true" alt="Player List Page" height="500"/></kbd></a>
 
 8. **Player Details Page**\
 <a href="https://nhattanvu.github.io/soccer-logic/players/index.html?na=Alexandre%20Lacazette&no=9&cl=Arsenal&po=Forward&fb=AlexandreLacazetteOfficiel&tw=LacazetteAlex&inst=lacazettealex&nat=France&dob=28-May-1991%20(30)&ht=175cm&goal=1"><kbd><img src="https://github.com/NhatTanVu/soccer-logic/blob/main/screenshots/9.%20Player%20Details%20Page.png?raw=true" alt="Player Details Page" height="500"/></kbd></a>
