@@ -126,7 +126,7 @@ document.getElementById("menu").onclick = function(e) {
 };
 document.getElementById("menu-close-button").onclick = function(e) {
     document.querySelector(".navigation-menu").classList.toggle("mobile");
-    document.querySelector(".overlay").classList.toggle("mobile");
+    document.querySelector("body > header > .navigation-bar > .left > .overlay").classList.toggle("mobile");
     document.querySelector("#menu-close-button").classList.toggle("mobile");
 };
 document.querySelector("#sign_out a").onclick = function (e) {

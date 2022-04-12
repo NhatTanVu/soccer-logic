@@ -78,6 +78,7 @@ body {
     font-weight: 400;
     background-color: var(--background-color);
     color: var(--text-color);
+    position: relative;
 }
 
 h1 {
@@ -194,7 +195,6 @@ form {
         form input::placeholder {
             color: var(--text-color);
             font-style: italic;
-            font-size: 0.8em;
         }
 
         form textarea:focus,
@@ -233,7 +233,12 @@ form {
     text-align: center;
     border-radius: 3px;
     font-size: 1.2rem;
+    padding: 0 1rem;
 }
+
+    .form-button:not(:last-of-type) {
+        margin-right: 1rem;
+    }
 
     .form-button:not(:disabled):not(.disabled):hover, .form-button:not(:disabled):not(.disabled):focus {
         text-decoration: none;
@@ -391,7 +396,6 @@ body > header {
                             border-bottom: 0.25rem solid var(--active-text-color);
                         }
 
-            body > header > .navigation-bar > .left > .overlay,
             body > header > .navigation-bar > .left > #menu-close-button {
                 display: none;
             }
@@ -630,6 +634,65 @@ main .short {
     display: none;
 }
 
+body > .overlay,
+body > header > .navigation-bar > .left > .overlay {
+    display: none;
+    z-index: 12;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0.75;
+}
+
+    body > .overlay.show,
+    body > header > .navigation-bar > .left > .overlay.mobile {
+        display: block;
+    }
+
+body > .dialog {
+    display: none;
+    background: var(--white);
+    border-radius: 4px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 14;
+    min-height: 30%;
+    max-height: 50%;
+    min-width: 30%;
+    max-width: 50%;
+    flex-direction: column;
+}
+
+    body > .dialog > .title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 1rem;
+        color: var(--active-text-color);
+        flex: 0 0 auto;
+    }
+
+    body > .dialog > .content {
+        padding: 1rem;
+        overflow: auto;
+        flex: 1;
+    }
+
+    body > .dialog > .buttons {
+        padding: 1rem;
+        flex: 0 0 auto;
+        text-align: right;
+    }
+
+    body > .dialog.show {
+        display: flex;
+    }
+
 /* -------------------- */
 /* Mobile + Tablet view */
 /* -------------------- */
@@ -644,8 +707,12 @@ main .short {
         ul.tab-list > li:last-of-type {
             margin-right: -0.25rem;
         }
-}
 
+    body > .dialog > .title,
+    body > .dialog > .content {
+        padding: 0.5rem;
+    }
+}
 /* ------------------- */
 /* Tablet view         */
 /* ------------------- */
@@ -716,18 +783,6 @@ main .short {
                     border-bottom: 0;
                 }
 
-    body > header > .navigation-bar > .left > .overlay.mobile {
-        display: block;
-        z-index: 12;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--black);
-        opacity: 0.75;
-    }
-
     body > header > .navigation-bar > .left > #menu-close-button.mobile {
         position: fixed;
         top: 1rem;
@@ -749,7 +804,6 @@ main .short {
         display: none;
     }
 }
-
 /* ------------------- */
 /* Mobile view         */
 /* ------------------- */
@@ -827,18 +881,6 @@ main .short {
                         border-left: 0.25rem solid var(--active-text-color);
                         border-bottom: 0;
                     }
-
-        body > header > .navigation-bar > .left > .overlay.mobile {
-            display: block;
-            z-index: 12;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--black);
-            opacity: 0.75;
-        }
 
         body > header > .navigation-bar > .left > #menu-close-button.mobile {
             position: fixed;
@@ -920,6 +962,15 @@ main .short {
         footer.flex > div:last-of-type {
             text-align: inherit;
         }
+
+    body > .dialog {
+        width: calc(100% - 2rem);
+        margin: 1rem;
+        max-width: none;
+        flex-direction: column;
+        left: 0;
+        transform: translate(0, -50%);
+    }
 
     /* Main */
     main::before {
