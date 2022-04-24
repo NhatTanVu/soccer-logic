@@ -74,16 +74,18 @@ function displayAuthInfo() {
     }
 }
 
-document.getElementById("league-selector").onclick = function(e) {
-    document.querySelectorAll(".popup").forEach(function(item) {
+/* Events */
+document.getElementById("league-selector").onclick = function (e) {
+    document.querySelectorAll(".popup").forEach(function (item) {
         if (item.id != "league-selector-popup")
             item.classList.add("hide");
     });
     document.querySelector("#league-selector > svg").classList.toggle("rotate");
     document.querySelector("#league-selector-popup").classList.toggle("hide");
+    e.stopPropagation();
 };
-document.querySelectorAll("#league-selector-popup li").forEach(function(item) {
-    item.addEventListener('click', function(e) {
+document.querySelectorAll("#league-selector-popup li").forEach(function (item) {
+    item.addEventListener('click', function (e) {
         if (document.querySelector("#league-selector-popup li.active"))
             document.querySelector("#league-selector-popup li.active").classList.remove("active");
         var element = e.target;
@@ -98,41 +100,62 @@ document.querySelectorAll("#league-selector-popup li").forEach(function(item) {
         document.getElementById("league-selector").click();
     });
 });
-document.querySelectorAll(".tab-list li").forEach(function(item) {
-    item.addEventListener('click', function(e) {
+document.querySelectorAll(".tab-list li").forEach(function (item) {
+    item.addEventListener('click', function (e) {
         if (document.querySelector(".tab-list li.active"))
             document.querySelector(".tab-list li.active").classList.remove("active");
         var element = e.target;
         while (element.tagName.toLowerCase() != "li") element = element.parentElement;
         element.classList.add("active");
         var tabContent = element.getAttribute("data-tab-content");
-        document.querySelectorAll(".tab-content  > *").forEach(function(item2) {
+        document.querySelectorAll(".tab-content  > *").forEach(function (item2) {
             item2.style.display = "none";
         });
         document.querySelector(".tab-content  > ." + tabContent).style.display = null;
     });
 });
-document.getElementById("user").onclick = function(e) {
-    document.querySelectorAll(".popup").forEach(function(item) {
+document.getElementById("user").onclick = function (e) {
+    document.querySelectorAll(".popup").forEach(function (item) {
         if (item.id != "user-menu")
             item.classList.add("hide");
     });
     document.querySelector("#user-menu").classList.toggle("hide");
+    e.stopPropagation();
 };
-document.getElementById("menu").onclick = function(e) {
+document.getElementById("menu").onclick = function (e) {
     document.querySelector(".navigation-menu").classList.toggle("mobile");
     document.querySelector(".overlay").classList.toggle("mobile");
     document.querySelector("#menu-close-button").classList.toggle("mobile");
 };
-document.getElementById("menu-close-button").onclick = function(e) {
+document.getElementById("menu-close-button").onclick = function (e) {
     document.querySelector(".navigation-menu").classList.toggle("mobile");
     document.querySelector("body > header > .navigation-bar > .left > .overlay").classList.toggle("mobile");
     document.querySelector("#menu-close-button").classList.toggle("mobile");
 };
 document.querySelector("#sign_out a").onclick = function (e) {
-    clearAuthInfo(true); return false;
+    clearAuthInfo(true);
+    e.stopPropagation();
 };
+document.addEventListener("click", (event) => {
+    var withinBoundaries = false;
+    document.querySelectorAll(".popup").forEach(function (item) {
+        if (!item.classList.contains("hide")) {
+            withinBoundaries |= event.composedPath().includes(item);
+        }
+    });
+    if (!withinBoundaries) {
+        document.querySelectorAll(".popup").forEach(function (item) {
+            if (!item.classList.contains("hide")) {
+                item.classList.add("hide");
+                if (item.id == "league-selector-popup") {
+                    document.querySelector("#league-selector > svg").classList.remove("rotate");
+                }
+            }
+        });
+    }
+});
 
+/* Auto-run code */
 if (document.querySelector(".tab-list li.active"))
     document.querySelector(".tab-list li.active").click();
 displayAuthInfo();
