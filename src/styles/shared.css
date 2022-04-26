@@ -342,7 +342,9 @@ body > #__next > header {
 
             body > #__next > header > .navigation-bar > .left > #menu {
                 height: 1.5rem;
+                width: 1.5rem;
                 display: none;
+                position: relative;
             }
 
             body > #__next > header > .navigation-bar > .left > #menu-close-button svg {
@@ -359,8 +361,10 @@ body > #__next > header {
                 text-decoration: none;
             }
 
-                body > #__next > header > .navigation-bar > .left > .logo > img {
-                    height: 100%;
+                body > #__next > header > .navigation-bar > .left > .logo > span {
+                    height: 2rem;
+                    width: 2rem;
+                    position: relative;
                 }
 
             body > #__next > header > .navigation-bar > .left > ul.navigation-menu {
@@ -419,12 +423,14 @@ body > #__next > header {
                     align-items: center;
                 }
 
-                    body > #__next > header > .navigation-bar > .right > button#league-selector > div > img {
+                    body > #__next > header > .navigation-bar > .right > button#league-selector > div > span:first-of-type {
                         height: 2rem;
+                        width: 2rem;
                         margin-right: 0.25rem;
+                        position: relative;
                     }
 
-                    body > #__next > header > .navigation-bar > .right > button#league-selector > div > span {
+                    body > #__next > header > .navigation-bar > .right > button#league-selector > div > span:last-of-type {
                         font-size: 1.2rem;
                         color: var(--navigation-menu-color);
                         white-space: nowrap;
@@ -480,12 +486,6 @@ body > #__next > header {
                         padding-right: 0.5rem;
                     }
 
-                        body > #__next > header > .navigation-bar > .right > .popup > .content li img {
-                            height: 2rem;
-                            vertical-align: middle;
-                            margin-right: 0.25rem;
-                        }
-
                         body > #__next > header > .navigation-bar > .right > .popup > .content li span {
                             vertical-align: middle;
                             font-size: 1.2rem;
@@ -510,6 +510,14 @@ body > #__next > header {
                                 color: var(--active-text-color);
                             }
 
+                body > #__next > header > .navigation-bar > .right > .popup#league-selector-popup > .content li span:first-of-type {
+                    height: 2rem;
+                    width: 2rem;
+                    position: relative;
+                    vertical-align: middle;
+                    margin-right: 0.25rem;
+                }
+
             body > #__next > header > .navigation-bar > .right > #user {
                 display: block;
                 line-height: 3.5rem;
@@ -517,8 +525,9 @@ body > #__next > header {
             }
 
                 body > #__next > header > .navigation-bar > .right > #user > .avatar {
-                    height: 3.25rem;
-                    width: 3.25rem;
+                    height: 2rem;
+                    width: 2rem;
+                    padding: 0.3755rem;
                     margin: 0.25rem 0 0.25rem 0.25rem;
                     font-size: 2rem;
                     line-height: 2.75rem;
@@ -567,8 +576,10 @@ footer.flex {
                 text-decoration: none;
             }
 
-                footer.flex > div:first-of-type > .logo > img {
+                footer.flex > div:first-of-type > .logo > span {
                     height: 1.3rem;
+                    width: 1.3rem;
+                    position: relative;
                 }
 
                 footer.flex > div:first-of-type > .logo > h1 {
@@ -901,11 +912,7 @@ body .dialog {
                 height: 2.75rem;
             }
 
-                body > #__next > header > .navigation-bar > .right > button#league-selector > div > img {
-                    height: 2rem;
-                }
-
-                body > #__next > header > .navigation-bar > .right > button#league-selector span {
+                body > #__next > header > .navigation-bar > .right > button#league-selector span:last-of-type {
                     display: none;
                 }
 
@@ -921,8 +928,9 @@ body .dialog {
             }
 
                 body > #__next > header > .navigation-bar > .right > #user > .avatar {
-                    height: 2.25rem;
-                    width: 2.25rem;
+                    height: 1.2rem;
+                    width: 1.2rem;
+                    padding: 0.2rem 0.3rem 0.4rem 0.3rem;
                     font-size: 1.2rem;
                     line-height: 1.75rem;
                     border: 0.2rem solid var(--text-color);
