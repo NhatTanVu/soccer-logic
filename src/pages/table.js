@@ -72,7 +72,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Manchester%20City">
                                 <a>
                                     <span>
-                                        <Image alt="Manchester City logo" src="/images/Teams/Manchester City.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Manchester City logo" src="/images/Teams/Manchester City.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Manchester City
                                 </a>
@@ -118,7 +118,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Manchester%20United">
                                 <a>
                                     <span>
-                                        <Image alt="Manchester United logo" src="/images/Teams/Manchester United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Manchester United logo" src="/images/Teams/Manchester United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Manchester United
                                 </a>
@@ -164,7 +164,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Liverpool">
                                 <a>
                                     <span>
-                                        <Image alt="Liverpool logo" src="/images/Teams/Liverpool.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Liverpool logo" src="/images/Teams/Liverpool.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Liverpool
                                 </a>
@@ -210,7 +210,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Chelsea">
                                 <a>
                                     <span>
-                                        <Image alt="Chelsea logo" src="/images/Teams/Chelsea.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Chelsea logo" src="/images/Teams/Chelsea.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Chelsea
                                 </a>
@@ -256,7 +256,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Leicester%20City">
                                 <a>
                                     <span>
-                                        <Image alt="Leicester City logo" src="/images/Teams/Leicester City.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Leicester City logo" src="/images/Teams/Leicester City.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Leicester City
                                 </a>
@@ -302,7 +302,7 @@ export default function Table() {
                             <Link href="/teams/details?team=West%20Ham%20United">
                                 <a>
                                     <span>
-                                        <Image alt="West Ham United logo" src="/images/Teams/West Ham United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="West Ham United logo" src="/images/Teams/West Ham United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     West Ham United
                                 </a>
@@ -348,7 +348,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Tottenham%20Hotspur">
                                 <a>
                                     <span>
-                                        <Image alt="Tottenham Hotspur logo" src="/images/Teams/Tottenham Hotspur.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Tottenham Hotspur logo" src="/images/Teams/Tottenham Hotspur.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Tottenham Hotspur
                                 </a>
@@ -394,7 +394,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Arsenal">
                                 <a>
                                     <span>
-                                        <Image alt="Arsenal logo" src="/images/Teams/Arsenal.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Arsenal logo" src="/images/Teams/Arsenal.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Arsenal
                                 </a>
@@ -440,7 +440,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Leeds%20United">
                                 <a>
                                     <span>
-                                        <Image alt="Leeds United logo" src="/images/Teams/Leeds United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Leeds United logo" src="/images/Teams/Leeds United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Leeds United
                                 </a>
@@ -486,7 +486,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Everton">
                                 <a>
                                     <span>
-                                        <Image alt="Everton logo" src="/images/Teams/Everton.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Everton logo" src="/images/Teams/Everton.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Everton
                                 </a>
@@ -532,7 +532,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Aston%20Villa">
                                 <a>
                                     <span>
-                                        <Image alt="Aston Villa logo" src="/images/Teams/Aston Villa.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Aston Villa logo" src="/images/Teams/Aston Villa.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Aston Villa
                                 </a>
@@ -578,7 +578,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Newcastle%20United">
                                 <a>
                                     <span>
-                                        <Image alt="Newcastle United logo" src="/images/Teams/Newcastle United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Newcastle United logo" src="/images/Teams/Newcastle United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Newcastle United
                                 </a>
@@ -624,7 +624,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Wolverhampton%20Wanderers">
                                 <a>
                                     <span>
-                                        <Image alt="Wolverhampton Wanderers logo" src="/images/Teams/Wolverhampton Wanderers.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Wolverhampton Wanderers logo" src="/images/Teams/Wolverhampton Wanderers.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Wolverhampton Wanderers
                                 </a>
@@ -670,7 +670,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Crystal%20Palace">
                                 <a>
                                     <span>
-                                        <Image alt="Crystal Palace logo" src="/images/Teams/Crystal Palace.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Crystal Palace logo" src="/images/Teams/Crystal Palace.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Crystal Palace
                                 </a>
@@ -716,7 +716,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Southampton">
                                 <a>
                                     <span>
-                                        <Image alt="Southampton logo" src="/images/Teams/Southampton.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Southampton logo" src="/images/Teams/Southampton.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Southampton
                                 </a>
@@ -762,7 +762,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Brighton%20and%20Hove%20Albion">
                                 <a>
                                     <span>
-                                        <Image alt="Brighton and Hove Albion logo" src="/images/Teams/Brighton and Hove Albion.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Brighton and Hove Albion logo" src="/images/Teams/Brighton and Hove Albion.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Brighton and Hove Albion
                                 </a>
@@ -808,7 +808,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Burnley">
                                 <a>
                                     <span>
-                                        <Image alt="Burnley logo" src="/images/Teams/Burnley.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Burnley logo" src="/images/Teams/Burnley.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Burnley
                                 </a>
@@ -854,7 +854,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Fulham">
                                 <a>
                                     <span>
-                                        <Image alt="Fulham logo" src="/images/Teams/Fulham.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Fulham logo" src="/images/Teams/Fulham.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Fulham
                                 </a>
@@ -900,7 +900,7 @@ export default function Table() {
                             <Link href="/teams/details?team=West%20Bromwich%20Albion">
                                 <a>
                                     <span>
-                                        <Image alt="West Bromwich Albion logo" src="/images/Teams/West Bromwich Albion.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="West Bromwich Albion logo" src="/images/Teams/West Bromwich Albion.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     West Bromwich Albion
                                 </a>
@@ -946,7 +946,7 @@ export default function Table() {
                             <Link href="/teams/details?team=Sheffield%20United">
                                 <a>
                                     <span>
-                                        <Image alt="Sheffield United logo" src="/images/Teams/Sheffield United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image alt="Sheffield United logo" src="/images/Teams/Sheffield United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     Sheffield United
                                 </a>

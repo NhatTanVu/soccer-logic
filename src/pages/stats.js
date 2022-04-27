@@ -47,7 +47,7 @@ export default function Statistics() {
                                     <Link href="/teams/details?team=Tottenham%20Hotspur">
                                         <a>
                                             <span className={localStyles["badge-image"]}>
-                                                <Image src="/images/Teams/Tottenham Hotspur.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                                <Image src="/images/Teams/Tottenham Hotspur.png" layout="fill" objectFit="contain" objectPosition="left" />
                                             </span>
                                         </a>
                                     </Link>
@@ -56,7 +56,7 @@ export default function Statistics() {
                                     <Link href="/players/details?na=Harry%20Kane&no=10&cl=Tottenham%20Hotspur&po=Forward&nat=England&dob=28-Jul-1993&ht=188cm&goal=23">
                                         <a>
                                             <span className={localStyles["statsCardImg"]}>
-                                                <Image src="/images/players/Harry Kane.png" layout="fill" objectFit="contains" objectPosition="left" alt="Photo for Harry Kane" />
+                                                <Image src="/images/players/Harry Kane.png" layout="fill" objectFit="contain" objectPosition="left" alt="Photo for Harry Kane" />
                                             </span>
                                         </a>
                                     </Link>
@@ -68,7 +68,7 @@ export default function Statistics() {
                                     <Link href="/teams/details?team=Liverpool">
                                         <a>
                                             <span className={localStyles["badge-image"]}>
-                                                <Image src="/images/Teams/Liverpool.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                                <Image src="/images/Teams/Liverpool.png" layout="fill" objectFit="contain" objectPosition="left" />
                                             </span>
                                         </a>
                                     </Link>
@@ -95,7 +95,7 @@ export default function Statistics() {
                                     <Link href="/teams/details?team=Manchester%20United">
                                         <a>
                                             <span className={localStyles["badge-image"]}>
-                                                <Image src="/images/Teams/Manchester United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                                <Image src="/images/Teams/Manchester United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                             </span>
                                         </a>
                                     </Link>
@@ -140,7 +140,7 @@ export default function Statistics() {
                                     <Link href="/teams/details?team=Aston%20Villa">
                                         <a>
                                             <span className={localStyles["badge-image"]}>
-                                                <Image src="/images/Teams/Aston Villa.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                                <Image src="/images/Teams/Aston Villa.png" layout="fill" objectFit="contain" objectPosition="left" />
                                             </span>
                                         </a>
                                     </Link>
@@ -149,7 +149,7 @@ export default function Statistics() {
                                     <Link href="/players/details?na=John%20McGinn&no=7&cl=Aston%20Villa&po=Midfielder&nat=Scotland&dob=18-Oct-1994&ht=178cm">
                                         <a>
                                             <span className={localStyles["statsCardImg"]}>
-                                                <Image src="/images/players/John McGinn.png" layout="fill" objectFit="contains" objectPosition="left" alt="Photo for John McGinn" />
+                                                <Image src="/images/players/John McGinn.png" layout="fill" objectFit="contain" objectPosition="left" alt="Photo for John McGinn" />
                                             </span>
                                         </a>
                                     </Link>
@@ -161,7 +161,7 @@ export default function Statistics() {
                                     <Link href="/teams/details?team=Crystal%20Palace">
                                         <a>
                                             <span className={localStyles["badge-image"]}>
-                                                <Image src="/images/Teams/Crystal Palace.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                                <Image src="/images/Teams/Crystal Palace.png" layout="fill" objectFit="contain" objectPosition="left" />
                                             </span>
                                         </a>
                                     </Link>
@@ -188,7 +188,7 @@ export default function Statistics() {
                                     <Link href="/teams/details?team=Manchester%20United">
                                         <a>
                                             <span className={localStyles["badge-image"]}>
-                                                <Image src="/images/Teams/Manchester United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                                <Image src="/images/Teams/Manchester United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                             </span>
                                         </a>
                                     </Link>
@@ -233,7 +233,7 @@ export default function Statistics() {
                                     <Link href="/teams/details?team=Wolverhampton%20Wanderers">
                                         <a>
                                             <span className={localStyles["badge-image"]}>
-                                                <Image src="/images/Teams/Wolverhampton Wanderers.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                                <Image src="/images/Teams/Wolverhampton Wanderers.png" layout="fill" objectFit="contain" objectPosition="left" />
                                             </span>
                                         </a>
                                     </Link>
@@ -242,7 +242,7 @@ export default function Statistics() {
                                     <Link href="/players/details?na=Raúl%20Jiménez&no=9&cl=Wolverhampton%20Wanderers&po=Forward&nat=Mexico&dob=05-May-1991&ht=190cm">
                                         <a>
                                             <span className={localStyles["statsCardImg"]}>
-                                                <Image src="/images/players/Raúl Jiménez.png" layout="fill" objectFit="contains" objectPosition="left" alt="Photo for Raúl Jiménez" />
+                                                <Image src="/images/players/Raúl Jiménez.png" layout="fill" objectFit="contain" objectPosition="left" alt="Photo for Raúl Jiménez" />
                                             </span>
                                         </a>
                                     </Link>
@@ -254,7 +254,7 @@ export default function Statistics() {
                                     <Link href="/teams/details?team=Aston%20Villa">
                                         <a>
                                             <span className={localStyles["badge-image"]}>
-                                                <Image src="/images/Teams/Aston Villa.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                                <Image src="/images/Teams/Aston Villa.png" layout="fill" objectFit="contain" objectPosition="left" />
                                             </span>
                                         </a>
                                     </Link>
@@ -281,7 +281,7 @@ export default function Statistics() {
                                     <Link href="/teams/details?team=West%20Ham%20United">
                                         <a>
                                             <span className={localStyles["badge-image"]}>
-                                                <Image src="/images/Teams/West Ham United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                                <Image src="/images/Teams/West Ham United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                             </span>
                                         </a>
                                     </Link>
@@ -333,7 +333,7 @@ export default function Statistics() {
                                 <Link href="/teams/details?team=Manchester%20City">
                                     <a>
                                         <span className={localStyles["badge-image"]}>
-                                            <Image src="/images/Teams/Manchester City.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/Manchester City.png" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                     </a>
                                 </Link>
@@ -343,7 +343,7 @@ export default function Statistics() {
                                 <Link href="/teams/details?team=Manchester%20United">
                                     <a title="Manchester United" className={localStyles["statsBadge"]}>
                                         <span className={localStyles["badge-image"]}>
-                                            <Image src="/images/Teams/Manchester United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/Manchester United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                     </a>
                                 </Link>
@@ -366,7 +366,7 @@ export default function Statistics() {
                                 <Link href="/teams/details?team=Leicester%20City">
                                     <a title="Leicester City" className={localStyles["statsBadge"]}>
                                         <span className={localStyles["badge-image"]}>
-                                            <Image src="/images/Teams/Leicester City.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/Leicester City.png" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                     </a>
                                 </Link>
@@ -407,7 +407,7 @@ export default function Statistics() {
                                 <Link href="/teams/details?team=Manchester%20City">
                                     <a>
                                         <span className={localStyles["badge-image"]}>
-                                            <Image src="/images/Teams/Manchester City.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/Manchester City.png" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                     </a>
                                 </Link>
@@ -417,7 +417,7 @@ export default function Statistics() {
                                 <Link href="/teams/details?team=Manchester%20United">
                                     <a title="Manchester United" className={localStyles["statsBadge"]}>
                                         <span className={localStyles["badge-image"]}>
-                                            <Image src="/images/Teams/Manchester United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/Manchester United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                     </a>
                                 </Link>
@@ -440,7 +440,7 @@ export default function Statistics() {
                                 <Link href="/teams/details?team=Leicester%20City">
                                     <a title="Leicester City" className={localStyles["statsBadge"]}>
                                         <span className={localStyles["badge-image"]}>
-                                            <Image src="/images/Teams/Leicester City.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/Leicester City.png" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                     </a>
                                 </Link>
@@ -481,7 +481,7 @@ export default function Statistics() {
                                 <Link href="/teams/details?team=Sheffield%20United">
                                     <a>
                                         <span className={localStyles["badge-image"]}>
-                                            <Image src="/images/Teams/Sheffield United.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/Sheffield United.png" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                     </a>
                                 </Link>
@@ -491,7 +491,7 @@ export default function Statistics() {
                                 <Link href="/teams/details?team=West%20Bromwich%20Albion">
                                     <a title="West Bromwich Albion" className={localStyles["statsBadge"]}>
                                         <span className={localStyles["badge-image"]}>
-                                            <Image src="/images/Teams/West Bromwich Albion.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/West Bromwich Albion.png" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                     </a>
                                 </Link>
@@ -514,7 +514,7 @@ export default function Statistics() {
                                 <Link href="/teams/details?team=Fulham">
                                     <a title="Fulham" className={localStyles["statsBadge"]}>
                                         <span className={localStyles["badge-image"]}>
-                                            <Image src="/images/Teams/Fulham.png" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/Fulham.png" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                     </a>
                                 </Link>

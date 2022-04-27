@@ -1,0 +1,116 @@
+/* Main */
+main > header.hero {
+    position: relative;
+    z-index: 1;
+}
+
+    main > header.hero > .background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        opacity: 0.2;
+    }
+
+    main > header.hero > .search_container {
+        margin: 1rem 0 0 3rem;
+        position: relative;
+        width: 25.5rem;
+    }
+
+        main > header.hero > .search_container > input::placeholder {
+            color: var(--white);
+            font-style: italic;
+            font-size: 0.8em;
+            opacity: 1;
+        }
+
+        main > header.hero > .search_container > input {
+            border: 0;
+            color: #fff;
+            border-radius: 2rem;
+            box-shadow: 0 1px 12px 0 rgba(0, 0, 0, .5);
+            background-color: rgba(var(--active-row-background-color-opacity), 0.8);
+            font-size: 1.5rem;
+            padding: 0 3.5rem 0 2rem;
+            height: 3.5rem;
+            width: 100%;
+        }
+
+        main > header.hero > .search_container > #search_button {
+            width: 2.5rem;
+            height: 2.5rem;
+            position: absolute;
+            border-radius: 100%;
+            right: 0.5rem;
+            top: 0.5rem;
+            margin-top: 0;
+            background-color: var(--white);
+            color: var(--active-text-color);
+            transition: all 0.2s;
+        }
+
+            main > header.hero > .search_container > #search_button > svg {
+                width: 50%;
+                height: 50%;
+                transform: translate(50%, 50%);
+            }
+
+            main > header.hero > .search_container > #search_button:hover,
+            main > header.hero > .search_container > #search_button:focus {
+                background-color: var(--active-row-background-color);
+                color: var(--white);
+                cursor: pointer;
+            }
+
+main > table#players {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+    main > table#players tbody tr > *:first-of-type {
+        padding: 0.75rem 0.625rem 0 0.625rem;
+    }
+
+    main > table#players tbody > tr td a {
+        display: flex;
+        align-items: center;
+        color: var(--active-text-color);
+        font-size: 1.1rem;
+    }
+
+        main > table#players tbody > tr td a span {
+            padding-bottom: 0.625rem;
+        }
+
+        main > table#players tbody > tr td a .img {
+            width: 4rem;
+            height: 4rem;
+            margin-right: 1rem;
+            position: relative;
+        }
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > table#players tr .position {
+        display: none;
+    }
+
+    main > header.hero {
+        flex-direction: column;
+        align-items: initial;
+        justify-content: center;
+    }
+
+        main > header.hero > .search_container {
+            margin-left: 0;
+            width: 100%;
+        }
+}

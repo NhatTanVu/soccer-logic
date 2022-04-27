@@ -41,20 +41,20 @@ export default function Matches() {
                                     <div className="flex">
                                         <span>Fulham</span>
                                         <span>
-                                            <Image src="/images/Teams/Fulham.png" alt="Fulham logo" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/Fulham.png" alt="Fulham logo" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                     </div>
                                     <div className={`${localStyles["score"]} flex ${localStyles["flex"]}`}><span>0</span><span>3</span></div>
                                     <div className="flex">
                                         <span>
-                                            <Image src="/images/Teams/Arsenal.png" alt="Arsenal logo" layout="fill" objectFit="contains" objectPosition="left" />
+                                            <Image src="/images/Teams/Arsenal.png" alt="Arsenal logo" layout="fill" objectFit="contain" objectPosition="left" />
                                         </span>
                                         <span>Arsenal</span>
                                     </div>
                                 </div>
                                 <div className="flex">
                                     <span>
-                                        <Image src="/images/field.png" alt="Craven Cottage, London" layout="fill" objectFit="contains" objectPosition="left" />
+                                        <Image src="/images/field.png" alt="Craven Cottage, London" layout="fill" objectFit="contain" objectPosition="left" />
                                     </span>
                                     <span>Craven Cottage, <strong>London</strong></span>
                                 </div>

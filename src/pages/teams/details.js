@@ -3,18 +3,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/layout'
 
-export default function MatchDetails() {
+export default function TeamDetails() {
     return (
-        <Layout selectedMenu="Matches">
+        <Layout selectedMenu="Teams">
             <Head>
-                <meta name="description" content="SoccerLogic | Match Details" />
+                <meta name="description" content="SoccerLogic | Team Details" />
                 <meta
                     property="og:description"
-                    content="SoccerLogic | Match Details" />
+                    content="SoccerLogic | Team Details" />
                 <meta
                     property="og:image"
                     content="https://github.com/NhatTanVu/soccer-logic/blob/main/screenshots/preview.jpg?raw=true" />
-                <title>SoccerLogic | Match Details</title>
+                <title>SoccerLogic | Team Details</title>
             </Head>
         </Layout>
     )
