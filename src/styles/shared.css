@@ -642,7 +642,7 @@ main table {
     }
 
 main .short {
-    display: none;
+    display: none !important;
 }
 
 body .overlay,
@@ -804,15 +804,15 @@ body .dialog {
     }
 
     main .hideMed {
-        display: none;
+        display: none !important;
     }
 
     main .short {
-        display: block;
+        display: block !important;
     }
 
     main .full {
-        display: none;
+        display: none !important;
     }
 }
 /* ------------------- */
@@ -998,14 +998,14 @@ body .dialog {
         }
 
     main .hideSmall {
-        display: none;
+        display: none !important;
     }
 
     main .short {
-        display: block;
+        display: block !important;
     }
 
     main .full {
-        display: none;
+        display: none !important;
     }
 }

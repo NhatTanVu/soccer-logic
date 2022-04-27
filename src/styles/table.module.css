@@ -1,0 +1,107 @@
+/* Main */
+main > table.card {
+    margin-bottom: 2rem;
+}
+
+    main > table.card tr > *.team {
+        text-align: left;
+    }
+
+        main > table.card tr > *.team * {
+            vertical-align: middle;
+        }
+
+        main > table.card tr > *.team > a {
+            display: flex;
+            width: 100%;
+            align-items: center;
+        }
+
+            main > table.card tr > *.team > a > img,
+            main > table.card tr > *.team > a > span {
+                width: 2rem;
+                height: 2rem;
+                margin-right: 1rem;
+                display: inline-block;
+                position: relative;
+            }
+
+    main > table.card tbody tr > *.team {
+        font-size: 1.1rem;
+        color: var(--active-text-color);
+    }
+
+    main > table.card tr > *.form {
+        display: flex;
+        justify-content: center;
+    }
+
+    main > table.card tr > *.point {
+        color: var(--active-text-color);
+        font-weight: bold;
+    }
+
+a.bubble {
+    width: 2.5rem;
+    height: 2.5rem;
+    text-decoration: none;
+    color: inherit;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+    a.bubble:not(:last-of-type) {
+        margin-right: 0.25rem;
+    }
+
+    a.bubble.win {
+        background-color: #13cf00;
+    }
+
+        a.bubble.win::after {
+            content: 'W';
+        }
+
+    a.bubble.lose {
+        background-color: #d81920;
+    }
+
+        a.bubble.lose::after {
+            content: 'L';
+        }
+
+    a.bubble.draw {
+        background-color: #76766f;
+    }
+
+        a.bubble.draw::after {
+            content: 'D';
+        }
+
+/* ------------------- */
+/* table.cardt view         */
+/* ------------------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    main > table.card tr > *.form.hideMed {
+        display: none;
+    }
+}
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > table.card tr > *.team > a > img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.25rem;
+        display: inline-block;
+    }
+
+    main > table.card tr > *.form.hideSmall {
+        display: none;
+    }
+}
