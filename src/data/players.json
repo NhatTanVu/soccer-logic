@@ -1,0 +1,352 @@
+[
+  {
+    "number": 47,
+    "name": "Aboubakar Kamara",
+    "position": "Forward",
+    "team": "Fulham",
+    "nationality": "Mauritania",
+    "dob": "07-Mar-1995",
+    "height": "177cm"
+  },
+  {
+    "number": 15,
+    "name": "Ainsley Maitland-Niles",
+    "position": "Midfielder",
+    "team": "Arsenal",
+    "nationality": "England",
+    "dob": "29-Aug-1997",
+    "height": "177cm"
+  },
+  {
+    "number": 9,
+    "name": "Aleksandar Mitrovic",
+    "position": "Forward",
+    "team": "Fulham",
+    "nationality": "Serbia",
+    "dob": "16-Sep-1994",
+    "height": "189cm"
+  },
+  {
+    "number": 9,
+    "name": "Alexandre Lacazette",
+    "position": "Forward",
+    "team": "Arsenal",
+    "nationality": "France",
+    "dob": "28-May-1991 (30)",
+    "height": "175cm",
+    "fb": "AlexandreLacazetteOfficiel",
+    "tw": "LacazetteAlex",
+    "inst": "lacazettealex",
+    "goal": 1
+  },
+  {
+    "number": 29,
+    "name": "André-Frank Zambo Anguissa",
+    "position": "Midfielder",
+    "team": "Fulham",
+    "nationality": "Cameroon",
+    "dob": "16-Nov-1995",
+    "height": "184cm"
+  },
+  {
+    "number": 1,
+    "name": "Bernd Leno",
+    "position": "Goalkeeper",
+    "team": "Arsenal",
+    "nationality": "Germany",
+    "dob": "04-Mar-1992 (30)",
+    "height": "190cm",
+    "fb": "bernd.leno.official",
+    "tw": "Bernd_Leno",
+    "inst": "berndleno1"
+  },
+  {
+    "number": 14,
+    "name": "Bobby De Cordova-Reid",
+    "position": "Forward",
+    "team": "Fulham",
+    "nationality": "Jamaica",
+    "dob": "02-Feb-1993",
+    "height": "170cm"
+  },
+  {
+    "number": 18,
+    "name": "Bruno Fernandes",
+    "position": "Midfielder",
+    "team": "Manchester United",
+    "nationality": "Portugal",
+    "dob": "08-Sep-1994 (27)",
+    "height": "179cm",
+    "goal": 18
+  },
+  {
+    "number": 23,
+    "name": "Conor Gallagher",
+    "position": "Midfielder",
+    "team": "Crystal Palace",
+    "nationality": "England",
+    "dob": "06-Feb-2000 (22)",
+    "height": "182cm"
+  },
+  {
+    "number": 8,
+    "name": "Dani Ceballos",
+    "position": "Midfielder",
+    "team": "Arsenal",
+    "nationality": "Spain",
+    "dob": "07-Aug-1996",
+    "height": "179cm",
+    "tw": "DaniCeballos46",
+    "inst": "danifuli10"
+  },
+  {
+    "number": 4,
+    "name": "Denis Odoi",
+    "position": "Defender",
+    "team": "Fulham",
+    "nationality": "Ghana",
+    "dob": "27-May-1988",
+    "height": "178cm"
+  },
+  {
+    "number": 30,
+    "name": "Eddie Nketiah",
+    "position": "Forward",
+    "team": "Arsenal",
+    "nationality": "England",
+    "dob": "30-May-1999",
+    "height": "175cm"
+  },
+  {
+    "number": 4,
+    "name": "Ezri Konsa",
+    "position": "Defender",
+    "team": "Aston Villa",
+    "nationality": "England",
+    "dob": "23-Oct-1997",
+    "height": "183cm"
+  },
+  {
+    "number": 6,
+    "name": "Gabriel Magalhães",
+    "position": "Defender",
+    "team": "Arsenal",
+    "nationality": "Brazil",
+    "dob": "19-Dec-1997",
+    "height": "190cm",
+    "goal": 1
+  },
+  {
+    "number": 34,
+    "name": "Granit Xhaka",
+    "position": "Midfielder",
+    "team": "Arsenal",
+    "nationality": "Switzerland",
+    "dob": "27-Sep-1992",
+    "height": "185cm"
+  },
+  {
+    "number": 21,
+    "name": "Harrison Reed",
+    "position": "Midfielder",
+    "team": "Fulham",
+    "nationality": "England",
+    "dob": "27-Jan-1995",
+    "height": "181cm"
+  },
+  {
+    "number": 10,
+    "name": "Harry Kane",
+    "position": "Forward",
+    "team": "Tottenham Hotspur",
+    "nationality": "England",
+    "dob": "28-Jul-1993",
+    "height": "188cm",
+    "goal": 23
+  },
+  {
+    "number": 5,
+    "name": "Harry Maguire",
+    "position": "Defender",
+    "team": "Manchester United",
+    "nationality": "England",
+    "dob": "05-Mar-1993 (29)",
+    "height": "194cm"
+  },
+  {
+    "number": 2,
+    "name": "Hector Bellerin",
+    "position": "Defender",
+    "team": "Arsenal",
+    "nationality": "Spain",
+    "dob": "19-Mar-1995",
+    "height": "178cm"
+  },
+  {
+    "number": 17,
+    "name": "Ivan Cavaleiro",
+    "position": "Forward",
+    "team": "Fulham",
+    "nationality": "Portugal",
+    "dob": "18-Oct-1993",
+    "height": "175cm"
+  },
+  {
+    "number": 23,
+    "name": "Joe Bryan",
+    "position": "Defender",
+    "team": "Fulham",
+    "nationality": "England",
+    "dob": "17-Sep-1993",
+    "height": "173cm"
+  },
+  {
+    "number": 7,
+    "name": "John McGinn",
+    "position": "Midfielder",
+    "team": "Aston Villa",
+    "nationality": "Scotland",
+    "dob": "18-Oct-1994",
+    "height": "178cm"
+  },
+  {
+    "number": 25,
+    "name": "Josh Onomah",
+    "position": "Midfielder",
+    "team": "Fulham",
+    "nationality": "England",
+    "dob": "27-Apr-1997",
+    "height": "185cm"
+  },
+  {
+    "number": 3,
+    "name": "Kieran Tierney",
+    "position": "Defender",
+    "team": "Arsenal",
+    "nationality": "Scotland",
+    "dob": "05-Jun-1997",
+    "height": "178cm"
+  },
+  {
+    "number": 12,
+    "name": "Marek Rodák",
+    "position": "Goalkeeper",
+    "team": "Fulham",
+    "nationality": "Slovakia",
+    "dob": "13-Dec-1996",
+    "height": "194cm"
+  },
+  {
+    "number": 3,
+    "name": "Michael Hector",
+    "position": "Defender",
+    "team": "Fulham",
+    "nationality": "Jamaica",
+    "dob": "19-Jul-1992",
+    "height": "193cm"
+  },
+  {
+    "number": 9,
+    "name": "Michail Antonio",
+    "position": "Forward",
+    "team": "West Ham United",
+    "nationality": "Jamaica",
+    "dob": "28-Mar-1990",
+    "height": "180cm"
+  },
+  {
+    "number": 25,
+    "name": "Mohamed Elneny",
+    "position": "Midfielder",
+    "team": "Arsenal",
+    "nationality": "Egypt",
+    "dob": "11-Jul-1992",
+    "height": "180cm"
+  },
+  {
+    "number": 11,
+    "name": "Mohamed Salah",
+    "position": "Forward",
+    "team": "Liverpool",
+    "nationality": "Egypt",
+    "dob": "15-Jun-1992 (29)",
+    "height": "175cm",
+    "fb": "momosalah",
+    "tw": "mosalah",
+    "inst": "mosalah",
+    "goal": 22
+  },
+  {
+    "number": 7,
+    "name": "Neeskens Kebano",
+    "position": "Midfielder",
+    "team": "Fulham",
+    "nationality": "DR Congo",
+    "dob": "10-Mar-1992",
+    "height": "170cm"
+  },
+  {
+    "number": 19,
+    "name": "Nicolas Pépé",
+    "position": "Forward",
+    "team": "Arsenal",
+    "nationality": "Cote D’Ivoire",
+    "dob": "29-May-1995",
+    "height": "183cm"
+  },
+  {
+    "number": 14,
+    "name": "Pierre-Emerick Aubameyang",
+    "position": "Forward",
+    "team": "Arsenal",
+    "nationality": "Gabon",
+    "dob": "18-Jun-1989",
+    "height": "187cm",
+    "goal": 1
+  },
+  {
+    "number": 9,
+    "name": "Raúl Jiménez",
+    "position": "Forward",
+    "team": "Wolverhampton Wanderers",
+    "nationality": "Mexico",
+    "dob": "05-May-1991",
+    "height": "190cm"
+  },
+  {
+    "number": 16,
+    "name": "Rob Holding",
+    "position": "Defender",
+    "team": "Arsenal",
+    "nationality": "England",
+    "dob": "20-Sep-1995",
+    "height": "189cm"
+  },
+  {
+    "number": 13,
+    "name": "Tim Ream",
+    "position": "Defender",
+    "team": "Fulham",
+    "nationality": "United States",
+    "dob": "05-Oct-1987",
+    "height": "186cm"
+  },
+  {
+    "number": 10,
+    "name": "Tom Cairney",
+    "position": "Midfielder",
+    "team": "Fulham",
+    "nationality": "Scotland",
+    "dob": "20-Jan-1991",
+    "height": "186cm"
+  },
+  {
+    "number": 12,
+    "name": "Willian",
+    "position": "Forward",
+    "team": "Arsenal",
+    "nationality": "Brazil",
+    "dob": "09-Aug-1988",
+    "height": "175cm"
+  }
+]

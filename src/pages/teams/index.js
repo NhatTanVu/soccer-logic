@@ -6,11 +6,11 @@ import localStyles from '../../styles/teams.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightToBracket, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useMediaQuery } from 'react-responsive'
-import teamData from '../data/teams.json';
-import React, { useState, useEffect } from 'react';
+import teamsData from '../../data/teams.json'
+import React, { useState, useEffect } from 'react'
 
 export default function Teams() {
-    const allTeamNames = Object.keys(teamData).sort();
+    const allTeamNames = Object.keys(teamsData).sort();
     const isDesktop = useMediaQuery({ minWidth: 1023.1 });
     const [teamNames, setTeamNames] = useState([]);
     const [searchText, setSearchText] = useState("");
@@ -73,7 +73,7 @@ export default function Teams() {
                                     <div className={localStyles["clubInfo"]}>
                                         <div className={localStyles["nameContainer"]}>
                                             <h4 className={localStyles["clubName"]}>{name}</h4>
-                                            <div className={localStyles["stadiumName"]}>{teamData[name].stadium_name}</div>
+                                            <div className={localStyles["stadiumName"]}>{teamsData[name].stadium_name}</div>
                                         </div>
                                         <FontAwesomeIcon icon={faArrowRightToBracket} />
                                     </div>

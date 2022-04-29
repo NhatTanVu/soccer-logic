@@ -1,0 +1,374 @@
+/* Main */
+main > header.hero {
+    background: linear-gradient(90deg,var(--active-text-color),var(--active-row-background-color) 45%);
+    position: relative;
+}
+
+    main > header.hero > .imgContainer {
+        padding-left: 3rem;
+        padding-top: 1rem;
+        display: inline-block;
+        height: 100%;
+        margin-right: 2rem;
+    }
+
+        main > header.hero > .imgContainer > #player_photo {
+            display: block;
+            position: relative;
+            width: 17rem;
+            height: 17rem;
+        }
+
+    main > header.hero > div > .player_number {
+        line-height: 4rem;
+        font-size: 4rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    main > header.hero .player_name {
+        line-height: 5rem;
+        font-size: 5rem;
+        display: block;
+        color: var(--active-text-color);
+    }
+
+    main > header.hero > a.club_link {
+        bottom: -1.25rem;
+        left: 1.25rem;
+        width: 5.4rem;
+        height: 5.4rem;
+        position: absolute;
+        border-radius: 100%;
+        background: #fff;
+        z-index: 1;
+        box-shadow: 0 3px 2px var(--box-shadow-color);
+    }
+
+        main > header.hero > a.club_link > .club_photo {
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            width: 70%;
+            height: 70%;
+            margin: 0;
+        }
+
+    main > header.hero > h1.player_number {
+        font-size: 7rem;
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        line-height: 7rem;
+        background-color: var(--active-text-color);
+        color: transparent;
+        text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+    }
+
+main > section.flex {
+    --gap: 0;
+    align-items: start;
+    margin-bottom: 2rem;
+}
+
+    /* Fallback for Flex --gap */
+    main > section.flex > * + * {
+        margin-left: 2rem;
+    }
+
+    main > section.flex > .left {
+        --gap: 0;
+        flex: 0 1 20rem;
+    }
+
+        main > section.flex > .left > .row-1,
+        main > section.flex > .left > .row-2,
+        main > section.flex > .left > #follow_player {
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        main > section.flex > .left > .row-1 > .club_link {
+            --gap: 0;
+        }
+
+            /* Fallback for Flex --gap */
+            main > section.flex > .left > .row-1 > .club_link > * + * {
+                margin-left: 0.25rem;
+            }
+
+            main > section.flex > .left > .row-1 > .club_link > .club_name {
+                text-align: right;
+            }
+
+            main > section.flex > .left > .row-1 > .club_link > .club_photo,
+            main > section.flex > .right > table a.club_link > .club_photo {
+                height: 2rem;
+                width: 2rem;
+                position: relative;
+            }
+
+        main > section.flex > .left > #follow_player > .socialOptions {
+            --gap: 0;
+            padding: 1rem 1rem 0 1rem;
+        }
+
+            /* Fallback for Flex --gap */
+            main > section.flex > .left > #follow_player > .socialOptions > * + * {
+                margin-left: 1rem;
+            }
+
+            main > section.flex > .left > #follow_player > .socialOptions svg {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            main > section.flex > .left > #follow_player > .socialOptions a#player_facebook > svg {
+                fill: #4267B2;
+            }
+
+            main > section.flex > .left > #follow_player > .socialOptions a#player_twitter > svg {
+                fill: #1DA1F2;
+            }
+
+            main > section.flex > .left > #follow_player > .socialOptions a#player_instagram > svg {
+                fill: var(--text-color);
+            }
+
+    main > section.flex > .right {
+        --gap: 0;
+        flex: 1;
+        padding: 1rem;
+    }
+
+        /* Fallback for Flex --gap */
+        main > section.flex > .right > * + * {
+            margin-top: 1rem;
+        }
+
+        main > section.flex > .right > h3 {
+            padding-bottom: 0;
+        }
+
+        main > section.flex > .right > div.flex {
+            --gap: 0;
+            justify-content: space-between;
+            padding: 1rem;
+            border: 1px solid var(--separator-color);
+            border-radius: 3px;
+        }
+
+            /* Fallback for Flex --gap */
+            main > section.flex > .right > div.flex > * + * {
+                margin-left: 1rem;
+            }
+
+            main > section.flex > .right > div.flex > span.flex {
+                --gap: 0;
+                justify-content: space-between;
+                flex: 1;
+            }
+
+                main > section.flex > .right > div.flex > span.flex:not(:last-of-type) {
+                    border-right: 1px solid var(--separator-color);
+                    padding-right: 1rem;
+                }
+
+        main > section.flex > .right > table {
+            border: 1px solid var(--separator-color);
+            border-radius: 3px;
+            text-align: left;
+            overflow: inherit;
+            table-layout: fixed;
+        }
+
+            main > section.flex > .right > table > colgroup > col:first-of-type {
+                width: 25%;
+            }
+
+            main > section.flex > .right > table > colgroup > col:nth-of-type(2) {
+                width: 45%;
+            }
+
+            main > section.flex > .right > table > colgroup > col:nth-of-type(3),
+            main > section.flex > .right > table > colgroup > col:nth-of-type(4) {
+                width: 15%;
+            }
+
+            main > section.flex > .right > table tbody tr td {
+                padding-right: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            main > section.flex > .right > table a.club_link {
+                --gap: 0;
+            }
+
+                /* Fallback for Flex --gap */
+                main > section.flex > .right > table a.club_link > * + * {
+                    margin-left: 0.25rem;
+                }
+
+                main > section.flex > .right > table a.club_link .club_name {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+/* ------------------- */
+/* Tablet view         */
+/* ------------------- */
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+    main > header.hero > .imgContainer {
+        padding-left: 1rem;
+        padding-top: 1rem;
+        display: inline-block;
+        height: 100%;
+        margin-right: 1rem;
+    }
+
+    main > header.hero > div > .player_number {
+        line-height: 4rem;
+        font-size: 4rem;
+    }
+
+    main > header.hero .player_name {
+        line-height: 3rem;
+        font-size: 3rem;
+    }
+
+    main > header.hero > a.club_link {
+        left: 1rem;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    main > header.hero > h1.player_number {
+        display: none;
+    }
+
+    main > section.flex {
+        --gap: 0;
+        flex-direction: column;
+        align-items: initial;
+    }
+
+        /* Fallback for Flex --gap */
+        main > section.flex > * + * {
+            margin-left: 0;
+        }
+
+        main > section.flex > .left {
+            order: 1;
+            flex: 1;
+            margin-top: 1rem;
+        }
+
+        main > section.flex > .right {
+            order: 0;
+        }
+
+            main > section.flex > .right > div.flex {
+                flex-direction: column;
+                align-items: initial;
+            }
+
+                /* Fallback for Flex --gap */
+                main > section.flex > .right > div.flex > * + * {
+                    margin-left: 0;
+                    margin-top: 1rem;
+                }
+
+                main > section.flex > .right > div.flex > span.flex:not(:last-of-type) {
+                    border-right: 0;
+                    padding-right: 0;
+                    border-bottom: 1px solid var(--separator-color);
+                    padding-bottom: 1rem;
+                }
+
+            main > section.flex > .right > table tr > * {
+                padding-left: 0.5rem;
+            }
+}
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > header.hero > .imgContainer {
+        padding-left: 0;
+        padding-top: 2.25rem;
+        display: inline-block;
+        height: 100%;
+        margin-right: 0.5rem;
+    }
+
+        main > header.hero > .imgContainer > #player_photo {
+            width: 11.75rem;
+            height: 11.75rem;
+        }
+
+    main > header.hero > div > .player_number {
+        line-height: 2.25rem;
+        font-size: 2.25rem;
+    }
+
+    main > header.hero .player_name {
+        line-height: 1.8rem;
+        font-size: 1.8rem;
+    }
+
+    main > header.hero > a.club_link {
+        display: none;
+    }
+
+    main > header.hero > h1.player_number {
+        display: none;
+    }
+
+    main > section.flex {
+        --gap: 0;
+        flex-direction: column;
+        align-items: initial;
+    }
+
+        /* Fallback for Flex --gap */
+        main > section.flex > * + * {
+            margin-left: 0;
+        }
+
+        main > section.flex > .left {
+            order: 1;
+            flex: 1;
+            margin-top: 1rem;
+        }
+
+        main > section.flex > .right {
+            order: 0;
+        }
+
+            main > section.flex > .right > div.flex {
+                flex-direction: column;
+                align-items: initial;
+            }
+
+                /* Fallback for Flex --gap */
+                main > section.flex > .right > div.flex > * + * {
+                    margin-left: 0;
+                    margin-top: 1rem;
+                }
+
+                main > section.flex > .right > div.flex > span.flex:not(:last-of-type) {
+                    border-right: 0;
+                    padding-right: 0;
+                    border-bottom: 1px solid var(--separator-color);
+                    padding-bottom: 1rem;
+                }
+
+            main > section.flex > .right > table tr > * {
+                padding-left: 0.25rem;
+            }
+}

@@ -6,8 +6,8 @@ import localStyles from '../../styles/players.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useMediaQuery } from 'react-responsive'
-import allPlayers from '../data/players.json';
-import React, { useState, useEffect } from 'react';
+import allPlayers from '../../data/players.json'
+import React, { useState, useEffect } from 'react'
 
 export default function Players() {
     const isDesktop = useMediaQuery({ minWidth: 1023.1 });
