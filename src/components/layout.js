@@ -20,7 +20,7 @@ export default function Layout({ children, selectedMenu }) {
                 <meta
                     property="og:image"
                     content="https://github.com/NhatTanVu/soccer-logic/blob/main/screenshots/preview.jpg?raw=true" />
-                <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
                 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&display=swap" />
                 <link rel="stylesheet" media="print" onLoad="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&display=swap" />
@@ -103,7 +103,7 @@ export default function Layout({ children, selectedMenu }) {
                                 </ul>
                             </div>
                         </div>
-                        <button id="user" onClick={() => { setIsUserPopupOpened(!isUserPopupOpened); setIsLeagueSelectorPopupOpened(false); }}>
+                        <button id="user" onClick={() => { setIsUserPopupOpened(!isUserPopupOpened); setIsLeagueSelectorPopupOpened(false); }} className={selectedMenu == "User" ? "active" : ""}>
                             <FontAwesomeIcon icon={faUser} className="avatar" />
                         </button>
                         <div className={`vertical-flex popup ${!isUserPopupOpened ? "hide" : ""}`} id="user-menu">

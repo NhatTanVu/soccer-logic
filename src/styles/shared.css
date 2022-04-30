@@ -240,11 +240,12 @@ form {
         margin-right: 1rem;
     }
 
-    .form-button:not(:disabled):not(.disabled):hover, .form-button:not(:disabled):not(.disabled):focus {
-        text-decoration: none;
-        background-color: rgba(var(--active-row-background-color-opacity), 0.4);
-        color: var(--active-text-color);
-        outline: none;
+    .form-button:not(:disabled):not(.disabled):hover, .form-button:not(:disabled):not(.disabled):focus,
+    .form-button.active {
+        text-decoration: none !important;
+        background-color: rgba(var(--active-row-background-color-opacity), 0.4) !important;
+        color: var(--active-text-color) !important;
+        outline: none !important;
     }
 
     .form-button:disabled,

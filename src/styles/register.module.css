@@ -1,0 +1,120 @@
+/* Main */
+main > section.flex {
+    --gap: 0;
+    justify-content: center;
+    margin: 0 auto 2rem auto;
+    max-width: 60rem;
+}
+
+    main > section.flex > form#register_form {
+        flex: 1;
+    }
+
+        main > section.flex > form#register_form > div:not(:last-of-type) {
+            padding-bottom: 1rem;
+        }
+
+            main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex {
+                --gap: 0;
+                padding-bottom: 1rem;
+            }
+
+                /* Fallback for Flex --gap */
+                main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * + * {
+                    margin-left: 1rem;
+                }
+
+                main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * {
+                    flex: 1;
+                }
+
+                    main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row {
+                        --gap: 0;
+                    }
+
+                        /* Fallback for Flex --gap */
+                        main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row > * + * {
+                            margin-left: 0.25rem;
+                        }
+
+                        main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row > label {
+                            white-space: nowrap;
+                            flex: 3;
+                        }
+
+                            main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row > label + * {
+                                flex: 7;
+                            }
+
+                        main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row > #gender-group.flex > * {
+                            flex: 1;
+                            --gap: 0;
+                        }
+
+                            /* Fallback for Flex --gap */
+                            main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row > #gender-group.flex > * > * + * {
+                                margin-left: 0.25rem;
+                            }
+
+                            /* Fallback for Flex --gap */
+                            main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row > #gender-group.flex > * + * {
+                                margin-left: 0.75rem;
+                            }
+
+            main > section.flex > form#register_form > div:not(:last-of-type) > #summary_message {
+                text-align: center;
+                visibility: hidden;
+            }
+
+        main > section.flex > form#register_form > div:last-of-type {
+            text-align: center;
+        }
+
+            main > section.flex > form#register_form > div:last-of-type > button {
+                width: 25%;
+            }
+
+                main > section.flex > form#register_form > div:last-of-type > button#submit_button {
+                    margin-right: 1rem;
+                }
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex {
+        flex-direction: column;
+        align-items: initial;
+    }
+
+        /* Fallback for Flex --gap */
+        main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * + * {
+            margin-left: 0;
+            margin-top: 1rem;
+        }
+
+        main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row {
+            flex-direction: column;
+            align-items: initial;
+            height: auto;
+        }
+
+            main > section.flex > form#register_form > div:not(:last-of-type) > div:not(#summary_message).flex > * > .row > label {
+                margin-bottom: 0.5rem;
+            }
+
+    main > section.flex > form#register_form > div:last-of-type {
+        display: flex;
+        flex-direction: column;
+    }
+
+        main > section.flex > form#register_form > div:last-of-type > button {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+            main > section.flex > form#register_form > div:last-of-type > button#submit_button {
+                margin: 0 auto 1rem auto;
+            }
+}

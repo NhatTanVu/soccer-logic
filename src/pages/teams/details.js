@@ -5,6 +5,7 @@ import Layout from '../../components/layout'
 import localStyles from '../../styles/teams.details.module.css'
 import localMatchesStyles from '../../styles/matches.module.css'
 import teamsData from '../../data/teams.json'
+import playersData from '../../data/players.json'
 import React, { useState, useEffect } from 'react'
 import Router, { useRouter } from 'next/router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,15 +13,25 @@ import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
 export default function TeamDetails() {
     const [activeTab, setActiveTab] = useState("overview");
-    const {query, isReady} = useRouter();
+    const { query, isReady } = useRouter();
     const [team, setTeam] = useState();
     const [teamDetails, setTeamDetails] = useState();
+    const [teamPlayers, setTeamPlayers] = useState([]);
+    const [goalKeepers, setGoalKeepers] = useState([]);
+    const [defenders, setDefenders] = useState([]);
+    const [midfielders, setMidfielders] = useState([]);
+    const [forwards, setForwards] = useState([]);
 
     useEffect(() => {
         if (isReady) {
             if (teamsData[query.team]) {
                 setTeam(query.team);
                 setTeamDetails(teamsData[query.team]);
+                setTeamPlayers(playersData.filter(p => p.team == query.team));
+                setGoalKeepers(playersData.filter(p => p.team == query.team && p.position == "Goalkeeper").sort((a, b) => a.number > b.number ? 1 : -1));
+                setDefenders(playersData.filter(p => p.team == query.team && p.position == "Defender").sort((a, b) => a.number > b.number ? 1 : -1));
+                setMidfielders(playersData.filter(p => p.team == query.team && p.position == "Midfielder").sort((a, b) => a.number > b.number ? 1 : -1));
+                setForwards(playersData.filter(p => p.team == query.team && p.position == "Forward").sort((a, b) => a.number > b.number ? 1 : -1));
             }
             else {
                 Router.push('/teams');
@@ -87,7 +98,7 @@ export default function TeamDetails() {
                     <span>Overview</span>
                 </li>
                 <li role="tab" tabIndex="0" className={activeTab == "squad" ? "active" : ""}
-                    style={{ display: team == "Arsenal" ? "block" : "none" }}
+                    style={{ display: (teamPlayers.length > 0) ? "block" : "none" }}
                     onClick={() => { setActiveTab("squad"); }}>
                     <span>Squad</span>
                 </li>
@@ -312,494 +323,162 @@ export default function TeamDetails() {
                     </div>
                 </div>
                 <div className={localStyles["squad"]} style={{ display: activeTab == "squad" ? "block" : "none" }}>
-                    <h2>Goalkeepers</h2>
-                    <ul className={`${localStyles["squad-list"]} ${localStyles["grid"]} grid`}>
-                        <li>
-                            <Link href="/players/details?name=Bernd%20Leno">
-                                <a>
-                                    <header>
+                    {goalKeepers.length > 0 && <h2>Goalkeepers</h2>}
+                    {goalKeepers.length > 0 && <ul className={`${localStyles["squad-list"]} ${localStyles["grid"]} grid`}>
+                        {goalKeepers.map((player) => {
+                            return <li>
+                                <Link href={`/players/details?name=${player.name}`}>
+                                    <a>
+                                        <header>
+                                            <div>
+                                                <div className={localStyles["pos"]}>{player.number}.</div>
+                                                <h4>{player.name}</h4>
+                                                <div>{player.position}</div>
+                                            </div>
+                                            <span className={localStyles["img"]}>
+                                                <Image src={`/images/Players/${player.name}.png`} alt={`Photo for ${player.name}`} layout="fill" objectFit="contain" objectPosition="left" />
+                                            </span>
+                                        </header>
                                         <div>
-                                            <div className={localStyles["pos"]}>1.</div>
-                                            <h4>Bernd Leno</h4>
-                                            <div>Goalkeeper</div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Nationality</span>
+                                                <span className="highlight">{player.nationality}</span>
+                                            </div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Appearances</span>
+                                                <span className="highlight">38</span>
+                                            </div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Goals</span>
+                                                <span className="highlight">{player.goal}</span>
+                                            </div>
+                                            <div className="highlight">
+                                                <span>View Player</span>
+                                                <FontAwesomeIcon icon={faArrowRightToBracket} />
+                                            </div>
                                         </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Bernd Leno.png" alt="Photo for Bernd Leno" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">Germany</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                    </ul>
-                    <h2>Defenders</h2>
-                    <ul className={`${localStyles["squad-list"]} ${localStyles["grid"]} grid`}>
-                        <li>
-                            <Link href="/players/details?name=Hector%20Bellerin">
-                                <a>
-                                    <header>
+                                    </a>
+                                </Link>
+                            </li>;
+                        })}
+                    </ul>}
+                    {defenders.length > 0 && <h2>Defenders</h2>}
+                    {defenders.length > 0 && <ul className={`${localStyles["squad-list"]} ${localStyles["grid"]} grid`}>
+                        {defenders.map((player) => {
+                            return <li>
+                                <Link href={`/players/details?name=${player.name}`}>
+                                    <a>
+                                        <header>
+                                            <div>
+                                                <div className={localStyles["pos"]}>{player.number}.</div>
+                                                <h4>{player.name}</h4>
+                                                <div>{player.position}</div>
+                                            </div>
+                                            <span className={localStyles["img"]}>
+                                                <Image src={`/images/Players/${player.name}.png`} alt={`Photo for ${player.name}`} layout="fill" objectFit="contain" objectPosition="left" />
+                                            </span>
+                                        </header>
                                         <div>
-                                            <div className={localStyles["pos"]}>2.</div>
-                                            <h4>Hector Bellerin</h4>
-                                            <div>Defender</div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Nationality</span>
+                                                <span className="highlight">{player.nationality}</span>
+                                            </div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Appearances</span>
+                                                <span className="highlight">38</span>
+                                            </div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Goals</span>
+                                                <span className="highlight">{player.goal}</span>
+                                            </div>
+                                            <div className="highlight">
+                                                <span>View Player</span>
+                                                <FontAwesomeIcon icon={faArrowRightToBracket} />
+                                            </div>
                                         </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Hector Bellerin.png" alt="Photo for Hector Bellerin" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">Spain</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/players/details?name=Kieran%20Tierney">
-                                <a>
-                                    <header>
+                                    </a>
+                                </Link>
+                            </li>;
+                        })}
+                    </ul>}
+                    {midfielders.length > 0 && <h2>Midfielders</h2>}
+                    {midfielders.length > 0 && <ul className={`${localStyles["squad-list"]} ${localStyles["grid"]} grid`}>
+                        {midfielders.map((player) => {
+                            return <li>
+                                <Link href={`/players/details?name=${player.name}`}>
+                                    <a>
+                                        <header>
+                                            <div>
+                                                <div className={localStyles["pos"]}>{player.number}.</div>
+                                                <h4>{player.name}</h4>
+                                                <div>{player.position}</div>
+                                            </div>
+                                            <span className={localStyles["img"]}>
+                                                <Image src={`/images/Players/${player.name}.png`} alt={`Photo for ${player.name}`} layout="fill" objectFit="contain" objectPosition="left" />
+                                            </span>
+                                        </header>
                                         <div>
-                                            <div className={localStyles["pos"]}>3.</div>
-                                            <h4>Kieran Tierney</h4>
-                                            <div>Defender</div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Nationality</span>
+                                                <span className="highlight">{player.nationality}</span>
+                                            </div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Appearances</span>
+                                                <span className="highlight">38</span>
+                                            </div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Goals</span>
+                                                <span className="highlight">{player.goal}</span>
+                                            </div>
+                                            <div className="highlight">
+                                                <span>View Player</span>
+                                                <FontAwesomeIcon icon={faArrowRightToBracket} />
+                                            </div>
                                         </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Kieran Tierney.png" alt="Photo for Kieran Tierney" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">Scotland</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/players/details?name=Gabriel%20Magalhães">
-                                <a>
-                                    <header>
+                                    </a>
+                                </Link>
+                            </li>;
+                        })}
+                    </ul>}
+                    {forwards.length > 0 && <h2>Forwards</h2>}
+                    {forwards.length > 0 && <ul className={`${localStyles["squad-list"]} ${localStyles["grid"]} grid`}>
+                        {forwards.map((player) => {
+                            return <li>
+                                <Link href={`/players/details?name=${player.name}`}>
+                                    <a>
+                                        <header>
+                                            <div>
+                                                <div className={localStyles["pos"]}>{player.number}.</div>
+                                                <h4>{player.name}</h4>
+                                                <div>{player.position}</div>
+                                            </div>
+                                            <span className={localStyles["img"]}>
+                                                <Image src={`/images/Players/${player.name}.png`} alt={`Photo for ${player.name}`} layout="fill" objectFit="contain" objectPosition="left" />
+                                            </span>
+                                        </header>
                                         <div>
-                                            <div className={localStyles["pos"]}>6.</div>
-                                            <h4>Gabriel Magalhães</h4>
-                                            <div>Defender</div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Nationality</span>
+                                                <span className="highlight">{player.nationality}</span>
+                                            </div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Appearances</span>
+                                                <span className="highlight">38</span>
+                                            </div>
+                                            <div className={`${localStyles["flex"]} flex`}>
+                                                <span>Goals</span>
+                                                <span className="highlight">{player.goal}</span>
+                                            </div>
+                                            <div className="highlight">
+                                                <span>View Player</span>
+                                                <FontAwesomeIcon icon={faArrowRightToBracket} />
+                                            </div>
                                         </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Gabriel Magalhães.png" alt="Photo for Gabriel Magalhães" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">Brazil</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">1</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/players/details?name=Rob%20Holding">
-                                <a>
-                                    <header>
-                                        <div>
-                                            <div className={localStyles["pos"]}>16.</div>
-                                            <h4>Rob Holding</h4>
-                                            <div>Defender</div>
-                                        </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Rob Holding.png" alt="Photo for Rob Holding" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">England</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                    </ul>
-                    <h2>Midfielders</h2>
-                    <ul className={`${localStyles["squad-list"]} ${localStyles["grid"]} grid`}>
-                        <li>
-                            <Link href="/players/details?name=Dani%20Ceballos">
-                                <a>
-                                    <header>
-                                        <div>
-                                            <div className={localStyles["pos"]}>8.</div>
-                                            <h4>Dani Ceballos</h4>
-                                            <div>Midfielder</div>
-                                        </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Dani Ceballos.png" alt="Photo for Dani Ceballos" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">Spain</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/players/details?name=Ainsley%20Maitland-Niles">
-                                <a>
-                                    <header>
-                                        <div>
-                                            <div className={localStyles["pos"]}>15.</div>
-                                            <h4>Ainsley Maitland-Niles</h4>
-                                            <div>Midfielder</div>
-                                        </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Ainsley Maitland-Niles.png" alt="Photo for Ainsley Maitland-Niles" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">England</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/players/details?name=Mohamed%20Elneny">
-                                <a>
-                                    <header>
-                                        <div>
-                                            <div className={localStyles["pos"]}>25.</div>
-                                            <h4>Mohamed Elneny</h4>
-                                            <div>Midfielder</div>
-                                        </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Mohamed Elneny.png" alt="Photo for Mohamed Elneny" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">Egypt</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/players/details?name=Granit%20Xhaka">
-                                <a>
-                                    <header>
-                                        <div>
-                                            <div className={localStyles["pos"]}>34.</div>
-                                            <h4>Granit Xhaka</h4>
-                                            <div>Midfielder</div>
-                                        </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Granit Xhaka.png" alt="Photo for Granit Xhaka" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">Switzerland</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                    </ul>
-                    <h2>Forwards</h2>
-                    <ul className={`${localStyles["squad-list"]} ${localStyles["grid"]} grid`}>
-                        <li>
-                            <Link href="/players/details?name=Alexandre%20Lacazette">
-                                <a>
-                                    <header>
-                                        <div>
-                                            <div className={localStyles["pos"]}>9.</div>
-                                            <h4>Alexandre Lacazette</h4>
-                                            <div>Forward</div>
-                                        </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Alexandre Lacazette.png" alt="Photo for Alexandre Lacazette" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">France</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">1</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/players/details?name=Willian">
-                                <a>
-                                    <header>
-                                        <div>
-                                            <div className={localStyles["pos"]}>12.</div>
-                                            <h4>Willian</h4>
-                                            <div>Forward</div>
-                                        </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Willian.png" alt="Photo for Willian" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">Brazil</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/players/details?name=Pierre-Emerick%20Aubameyang">
-                                <a>
-                                    <header>
-                                        <div>
-                                            <div className={localStyles["pos"]}>14.</div>
-                                            <h4>Pierre-Emerick Aubameyang</h4>
-                                            <div>Forward</div>
-                                        </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Pierre-Emerick Aubameyang.png" alt="Photo for Pierre-Emerick Aubameyang" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">Gabon</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">1</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/players/details?name=Nicolas%20Pépé">
-                                <a>
-                                    <header>
-                                        <div>
-                                            <div className={localStyles["pos"]}>19.</div>
-                                            <h4>Nicolas Pépé</h4>
-                                            <div>Forward</div>
-                                        </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Nicolas Pépé.png" alt="Photo for Nicolas Pépé" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">Cote D’Ivoire</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/players/details?name=Eddie%20Nketiah">
-                                <a>
-                                    <header>
-                                        <div>
-                                            <div className={localStyles["pos"]}>30.</div>
-                                            <h4>Eddie Nketiah</h4>
-                                            <div>Forward</div>
-                                        </div>
-                                        <span className={localStyles["img"]}>
-                                            <Image src="/images/Players/Eddie Nketiah.png" alt="Photo for Eddie Nketiah" layout="fill" objectFit="contain" objectPosition="left" />
-                                        </span>
-                                    </header>
-                                    <div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Nationality</span>
-                                            <span className="highlight">England</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Appearances</span>
-                                            <span className="highlight">38</span>
-                                        </div>
-                                        <div className={`${localStyles["flex"]} flex`}>
-                                            <span>Goals</span>
-                                            <span className="highlight">0</span>
-                                        </div>
-                                        <div className="highlight">
-                                            <span>View Player</span>
-                                            <FontAwesomeIcon icon={faArrowRightToBracket} />
-                                        </div>
-                                    </div>
-                                </a>
-                            </Link>
-                        </li>
-                    </ul>
+                                    </a>
+                                </Link>
+                            </li>;
+                        })}
+                    </ul>}
                 </div>
                 <div className={localStyles["results"]} style={{ display: activeTab == "results" ? "block" : "none" }}>
                     <section className={`${localMatchesStyles["matches"]} ${localStyles["matches"]}`}>

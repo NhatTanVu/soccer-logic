@@ -1,0 +1,99 @@
+/* Main */
+main > section.flex {
+    --gap: 0;
+    align-items: stretch;
+    margin: 0 auto 2rem auto;
+    max-width: 60rem;
+}
+
+    /* Fallback for Flex --gap */
+    main > section.flex > * + * {
+        margin-left: 1rem; /* https://stackoverflow.com/questions/65452057/flexbox-gap-workaround-for-safari */
+    }
+
+    main > section.flex > form#sign_in_form {
+        --gap: 0;
+        flex: 2;
+    }
+
+        main > section.flex > form#sign_in_form > div:not(:last-of-type) {
+            padding-bottom: 1rem;
+        }
+
+            main > section.flex > form#sign_in_form .form-group > label {
+                margin-bottom: 0.5rem;
+            }
+
+        main > section.flex > form#sign_in_form div #summary_message {
+            flex: 1;
+            padding-right: 1rem;
+            visibility: hidden;
+        }
+
+        main > section.flex > form#sign_in_form div button#sign_in_button {
+            flex: 1;
+        }
+
+    main > section.flex > #no_account {
+        --gap: 0;
+        flex: 1;
+        padding: 1rem;
+    }
+
+        main > section.flex > #no_account > h2 {
+            padding: 0.75rem 0 1.75rem 0;
+        }
+
+        main > section.flex > #no_account > div {
+            flex: 1;
+            justify-content: center;
+        }
+
+            main > section.flex > #no_account > div > #register_button {
+                width: 50%;
+            }
+
+/* ------------------- */
+/* Mobile view         */
+/* ------------------- */
+@media only screen and (max-width : 767px) {
+    main > section.flex {
+        --gap: 0;
+        align-items: initial;
+        margin: 0 0 2rem 0;
+        max-width: none;
+        flex-direction: column;
+    }
+
+        /* Fallback for Flex --gap */
+        main > section.flex > * + * {
+            margin-left: 0;
+            margin-top: 1rem;
+        }
+
+        main > section.flex > form#sign_in_form,
+        main > section.flex > #no_account {
+            flex: 0;
+        }
+
+            main > section.flex > form#sign_in_form > div:not(:last-of-type) {
+                padding-bottom: 0;
+            }
+
+            main > section.flex > #no_account > h2 {
+                padding: 0 0 1rem 0;
+            }
+
+            main > section.flex > #no_account > hr {
+                margin-bottom: 1rem;
+            }
+
+            main > section.flex > form#sign_in_form div {
+                flex-direction: column;
+            }
+
+                main > section.flex > form#sign_in_form div button#sign_in_button {
+                    width: 50%;
+                    margin-top: 1rem;
+                }
+}
