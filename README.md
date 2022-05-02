@@ -1,4 +1,4 @@
-<p align="center"><a href="https://soccer-logic.vercel.app/><kbd><img src="https://raw.githubusercontent.com/NhatTanVu/soccer-logic/main/HTML/images/logo.png" alt="My Album logo" width="70"/></kbd></a></p>
+<p align="center"><a href="https://soccer-logic.vercel.app/"><kbd><img src="https://raw.githubusercontent.com/NhatTanVu/soccer-logic/main/HTML/images/logo.png" alt="My Album logo" width="70"/></kbd></a></p>
 <h1 align="center">Soccer Logic</h1>
 <p align="center">View latest soccer match updates website<br/><sub><sup><i>-- Inspired by <a href="https://www.premierleague.com/results">Premier League website</a></i></sup></sub></p>
 
