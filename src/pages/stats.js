@@ -33,7 +33,7 @@ export default function Statistics() {
                             <li className={localStyles["statsHero"]}>
                                 <div className={localStyles["statsInfo"]}>
                                     <div className={localStyles["pos"]}>1.</div>
-                                    <Link href="/players/details?na=Harry%20Kane&no=10&cl=Tottenham%20Hotspur&po=Forward&nat=England&dob=28-Jul-1993&ht=188cm&goal=23">
+                                    <Link href="/players/details?name=Harry%20Kane">
                                         <a className={localStyles["statsName"]}>Harry Kane</a>
                                     </Link>
                                     <Link href="/teams/details?team=Tottenham%20Hotspur">
@@ -53,10 +53,10 @@ export default function Statistics() {
                                     </Link>
                                 </div>
                                 <div className={localStyles["imgCropContainer"]}>
-                                    <Link href="/players/details?na=Harry%20Kane&no=10&cl=Tottenham%20Hotspur&po=Forward&nat=England&dob=28-Jul-1993&ht=188cm&goal=23">
+                                    <Link href="/players/details?name=Harry%20Kane">
                                         <a>
                                             <span className={localStyles["statsCardImg"]}>
-                                                <Image src="/images/players/Harry Kane.png" layout="fill" objectFit="contain" objectPosition="left" alt="Photo for Harry Kane" />
+                                                <Image src="/images/Players/Harry Kane.png" layout="fill" objectFit="contain" objectPosition="left" alt="Photo for Harry Kane" />
                                             </span>
                                         </a>
                                     </Link>
@@ -74,7 +74,7 @@ export default function Statistics() {
                                     </Link>
                                 </div>
                                 <div className={localStyles["teamInfo"]}>
-                                    <Link href="/players/details?na=Mohamed%20Salah&no=11&cl=Liverpool&po=Forward&fb=momosalah&tw=mosalah&inst=mosalah&nat=Egypt&dob=15-Jun-1992%20(29)&ht=175cm&goal=22">
+                                    <Link href="/players/details?name=Mohamed%20Salah">
                                         <a className={localStyles["statsName"]}>
                                             Mohamed Salah
                                         </a>
@@ -101,7 +101,7 @@ export default function Statistics() {
                                     </Link>
                                 </div>
                                 <div className={localStyles["teamInfo"]}>
-                                    <Link href="/players/details?na=Bruno%20Fernandes&no=18&cl=Manchester%20United&po=Midfielder&nat=Portugal&dob=08-Sep-1994%20(27)&ht=179cm&goal=18">
+                                    <Link href="/players/details?name=Bruno%20Fernandes">
                                         <a className={localStyles["statsName"]}>
                                             Bruno Fernandes
                                         </a>
@@ -126,7 +126,7 @@ export default function Statistics() {
                             <li className={localStyles["statsHero"]}>
                                 <div className={localStyles["statsInfo"]}>
                                     <div className={localStyles["pos"]}>1.</div>
-                                    <Link href="/players/details?na=John%20McGinn&no=7&cl=Aston%20Villa&po=Midfielder&nat=Scotland&dob=18-Oct-1994&ht=178cm">
+                                    <Link href="/players/details?name=John%20McGinn">
                                         <a className={localStyles["statsName"]}>John McGinn</a>
                                     </Link>
                                     <Link href="/teams/details?team=Aston%20Villa">
@@ -146,10 +146,10 @@ export default function Statistics() {
                                     </Link>
                                 </div>
                                 <div className={localStyles["imgCropContainer"]}>
-                                    <Link href="/players/details?na=John%20McGinn&no=7&cl=Aston%20Villa&po=Midfielder&nat=Scotland&dob=18-Oct-1994&ht=178cm">
+                                    <Link href="/players/details?name=John%20McGinn">
                                         <a>
                                             <span className={localStyles["statsCardImg"]}>
-                                                <Image src="/images/players/John McGinn.png" layout="fill" objectFit="contain" objectPosition="left" alt="Photo for John McGinn" />
+                                                <Image src="/images/Players/John McGinn.png" layout="fill" objectFit="contain" objectPosition="left" alt="Photo for John McGinn" />
                                             </span>
                                         </a>
                                     </Link>
@@ -167,7 +167,7 @@ export default function Statistics() {
                                     </Link>
                                 </div>
                                 <div className={localStyles["teamInfo"]}>
-                                    <Link href="/players/details?na=Conor%20Gallagher&no=23&cl=Crystal%20Palace&po=Midfielder&nat=England&dob=06-Feb-2000%20(22)&ht=182cm">
+                                    <Link href="/players/details?name=Conor%20Gallagher">
                                         <a className={localStyles["statsName"]}>
                                             Conor Gallagher
                                         </a>
@@ -194,7 +194,7 @@ export default function Statistics() {
                                     </Link>
                                 </div>
                                 <div className={localStyles["teamInfo"]}>
-                                    <Link href="/players/details?na=Harry%20Maguire&no=5&cl=Manchester%20United&po=Defender&nat=England&dob=05-Mar-1993%20(29)&ht=194cm">
+                                    <Link href="/players/details?name=Harry%20Maguire">
                                         <a className={localStyles["statsName"]}>
                                             Harry Maguire
                                         </a>
@@ -219,7 +219,7 @@ export default function Statistics() {
                             <li className={localStyles["statsHero"]}>
                                 <div className={localStyles["statsInfo"]}>
                                     <div className={localStyles["pos"]}>1.</div>
-                                    <Link href="/players/details?na=Raúl%20Jiménez&no=9&cl=Wolverhampton%20Wanderers&po=Forward&nat=Mexico&dob=05-May-1991&ht=190cm">
+                                    <Link href="/players/details?name=Raúl%20Jiménez">
                                         <a className={localStyles["statsName"]}>Raúl Jiménez</a>
                                     </Link>
                                     <Link href="/teams/details?team=Wolverhampton%20Wanderers">
@@ -239,10 +239,10 @@ export default function Statistics() {
                                     </Link>
                                 </div>
                                 <div className={localStyles["imgCropContainer"]}>
-                                    <Link href="/players/details?na=Raúl%20Jiménez&no=9&cl=Wolverhampton%20Wanderers&po=Forward&nat=Mexico&dob=05-May-1991&ht=190cm">
+                                    <Link href="/players/details?name=Raúl%20Jiménez">
                                         <a>
                                             <span className={localStyles["statsCardImg"]}>
-                                                <Image src="/images/players/Raúl Jiménez.png" layout="fill" objectFit="contain" objectPosition="left" alt="Photo for Raúl Jiménez" />
+                                                <Image src="/images/Players/Raúl Jiménez.png" layout="fill" objectFit="contain" objectPosition="left" alt="Photo for Raúl Jiménez" />
                                             </span>
                                         </a>
                                     </Link>
@@ -260,7 +260,7 @@ export default function Statistics() {
                                     </Link>
                                 </div>
                                 <div className={localStyles["teamInfo"]}>
-                                    <Link href="/players/details?na=Ezri%20Konsa&no=4&cl=Aston%20Villa&po=Defender&nat=England&dob=23-Oct-1997&ht=183cm">
+                                    <Link href="/players/details?name=Ezri%20Konsa">
                                         <a className={localStyles["statsName"]}>
                                             Ezri Konsa
                                         </a>
@@ -287,7 +287,7 @@ export default function Statistics() {
                                     </Link>
                                 </div>
                                 <div className={localStyles["teamInfo"]}>
-                                    <Link href="/players/details?na=Michail%20Antonio&no=9&cl=West%20Ham%20United&po=Forward&nat=Jamaica&dob=28-Mar-1990%20(31)&ht=180cm">
+                                    <Link href="/players/details?name=Michail%20Antonio">
                                         <a className={localStyles["statsName"]}>
                                             Michail Antonio
                                         </a>
