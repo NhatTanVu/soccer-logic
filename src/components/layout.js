@@ -107,7 +107,7 @@ export default function Layout({ children, selectedMenu }) {
                                             <span>
                                                 <Image src={`/images/Championships/${league}.png`} alt={league} layout="fill" objectFit='contain' objectPosition="left" />
                                             </span>
-                                            <span>Premier League</span>
+                                            <span>{league}</span>
                                         </li>
                                     })}
                                 </ul>
