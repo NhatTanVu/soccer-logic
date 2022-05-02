@@ -63,7 +63,6 @@ main > section.flex {
 
             main > section.flex > form#register_form > div:not(:last-of-type) > #summary_message {
                 text-align: center;
-                visibility: hidden;
             }
 
         main > section.flex > form#register_form > div:last-of-type {

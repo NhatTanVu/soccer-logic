@@ -27,7 +27,6 @@ main > section.flex {
         main > section.flex > form#sign_in_form div #summary_message {
             flex: 1;
             padding-right: 1rem;
-            visibility: hidden;
         }
 
         main > section.flex > form#sign_in_form div button#sign_in_button {

@@ -530,18 +530,29 @@ body > #__next > header {
                     width: 2rem;
                     padding: 0.3755rem;
                     margin: 0.25rem 0 0.25rem 0.25rem;
-                    font-size: 2rem;
-                    line-height: 2.75rem;
-                    text-align: center;
                     display: block;
                     color: var(--text-color);
                     border: 0.25rem solid var(--text-color);
                     border-radius: 100%;
+                    position: relative;
+                }
+
+                body > #__next > header > .navigation-bar > .right > #user > .avatar-image {
+                    height: 3.25rem;
+                    width: 3.25rem;
+                    margin: 0.25rem 0 0.25rem 0.25rem;
+                    display: block;
+                    border: 0.25rem solid var(--text-color);
+                    border-radius: 100%;
+                    position: relative;
                 }
 
                 body > #__next > header > .navigation-bar > .right > #user.active > .avatar,
                 body > #__next > header > .navigation-bar > .right > #user:hover > .avatar,
-                body > #__next > header > .navigation-bar > .right > #user:focus > .avatar {
+                body > #__next > header > .navigation-bar > .right > #user:focus > .avatar,
+                body > #__next > header > .navigation-bar > .right > #user.active > .avatar-image,
+                body > #__next > header > .navigation-bar > .right > #user:hover > .avatar-image,
+                body > #__next > header > .navigation-bar > .right > #user:focus > .avatar-image {
                     border: 0.25rem solid var(--active-text-color);
                 }
 
@@ -932,8 +943,12 @@ body .dialog {
                     height: 1.2rem;
                     width: 1.2rem;
                     padding: 0.2rem 0.3rem 0.4rem 0.3rem;
-                    font-size: 1.2rem;
-                    line-height: 1.75rem;
+                    border: 0.2rem solid var(--text-color);
+                }
+
+                body > #__next > header > .navigation-bar > .right > #user > .avatar-image {
+                    height: 2.25rem;
+                    width: 2.25rem;
                     border: 0.2rem solid var(--text-color);
                 }
 

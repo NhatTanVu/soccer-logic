@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../pages/_redux/authSlice'
 
 export default function Layout({ children, selectedMenu }) {
     const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -11,6 +13,14 @@ export default function Layout({ children, selectedMenu }) {
     const [isUserPopupOpened, setIsUserPopupOpened] = useState(false);
     const [selectedLeague, setSelectedLeague] = useState("Premier League");
     const allLeagues = ["Premier League", "Bundesliga", "La Liga", "Serie A"];
+
+    const auth = useSelector(state =>
+        state.auth
+    )
+    const dispatch = useDispatch()
+    const signOutButtonClick = (e) => {
+        dispatch(logout());
+    };
 
     return (
         <>
@@ -104,29 +114,34 @@ export default function Layout({ children, selectedMenu }) {
                             </div>
                         </div>
                         <button id="user" onClick={() => { setIsUserPopupOpened(!isUserPopupOpened); setIsLeagueSelectorPopupOpened(false); }} className={selectedMenu == "User" ? "active" : ""}>
-                            <FontAwesomeIcon icon={faUser} className="avatar" />
+                            {!auth.isAuth ?
+                                <FontAwesomeIcon icon={faUser} className="avatar" /> :
+                                <div className="avatar-image">
+                                    <Image src="/images/image-avatar.png" layout="fill" objectFit='contain' objectPosition="left" />
+                                </div>
+                            }
                         </button>
                         <div className={`vertical-flex popup ${!isUserPopupOpened ? "hide" : ""}`} id="user-menu">
                             <div className="content">
                                 <ul>
-                                    <li id="sign_in">
+                                    {!auth.isAuth && <li>
                                         <Link href="/users/sign-in">
                                             <a><span>Sign In</span></a>
                                         </Link>
-                                    </li>
-                                    <li id="register">
+                                    </li>}
+                                    {!auth.isAuth && <li>
                                         <Link href="/users/register">
                                             <a><span>Register</span></a>
                                         </Link>
-                                    </li>
+                                    </li>}
                                     <li>
                                         <Link href="/users/feedback">
                                             <a><span>Feedback</span></a>
                                         </Link>
                                     </li>
-                                    <li id="sign_out">
-                                        <a href="#"><span>Sign Out</span></a>
-                                    </li>
+                                    {auth.isAuth && <li>
+                                        <a href="#" onClick={signOutButtonClick}><span>Sign Out</span></a>
+                                    </li>}
                                 </ul>
                             </div>
                         </div>
