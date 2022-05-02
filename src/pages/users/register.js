@@ -3,7 +3,7 @@ import Layout from '../../components/layout'
 import localStyles from '../../styles/register.module.css'
 import React, { useState, useRef } from 'react'
 import Router from 'next/router'
-import { login } from '../_redux/authSlice'
+import { login } from '../../redux/authSlice'
 import { useDispatch } from 'react-redux'
 
 export default function Register() {

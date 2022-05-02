@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux'
-import { logout } from '../pages/_redux/authSlice'
+import { logout } from '../redux/authSlice'
 
 export default function Layout({ children, selectedMenu }) {
     const [isMenuOpened, setIsMenuOpened] = useState(false);

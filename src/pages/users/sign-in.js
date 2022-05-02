@@ -4,7 +4,7 @@ import Layout from '../../components/layout'
 import localStyles from '../../styles/signin.module.css'
 import React, { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import { login } from '../_redux/authSlice'
+import { login } from '../../redux/authSlice'
 import Router from 'next/router'
 
 export default function SignIn() {

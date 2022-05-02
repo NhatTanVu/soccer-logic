@@ -1,7 +1,7 @@
 import '../styles/shared.css'
 
 import { Provider } from 'react-redux'
-import store from './_redux/store'
+import store from '../redux/store'
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
