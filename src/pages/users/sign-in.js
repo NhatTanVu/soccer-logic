@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../../components/layout'
+import Dialog from '../../components/dialog'
 import localStyles from '../../styles/signin.module.css'
 import React, { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux'
@@ -19,10 +20,26 @@ export default function SignIn() {
         if (formRef.current.reportValidity()) {
             if (signInInfo.email == "test@gmail.com" && signInInfo.password == "test") {
                 dispatch(login(true, "test@gmail.com", "Test", "User"));
-                setSummaryMessage("Signed In. Redirect in 3s...");
-                setTimeout(function () {
-                    Router.push('/');
-                }, 3000);
+                setSummaryMessage("");
+                let timeLeft = 3000;
+                let message = "Signed In. Redirect in {0}s...";
+                showDialog({
+                    title: "Sign In",
+                    content: message.replace("{0}", timeLeft / 1000)
+                });
+                let handle = setInterval(function () {
+                    if (timeLeft > 0) {
+                        timeLeft -= 1000;
+                        showDialog({
+                            title: "Sign In",
+                            content: message.replace("{0}", timeLeft / 1000)
+                        });
+                    }
+                    else {
+                        clearInterval(handle);
+                        Router.push('/');
+                    }
+                }, 1000);
             }
             else {
                 setSummaryMessage("<span style='color: var(--errors-color);'>Invalid email or password!</span>");
@@ -44,6 +61,10 @@ export default function SignIn() {
             });
         }
     };
+    const [dialog, showDialog] = useState({
+        title: "",
+        content: ""
+    });
 
     return (
         <Layout selectedMenu="User">
@@ -87,6 +108,7 @@ export default function SignIn() {
                     </div>
                 </div>
             </section>
+            <Dialog title={dialog.title} content={dialog.content}></Dialog>
         </Layout>
     )
 }

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
+import Dialog from '../../components/dialog'
 import localStyles from '../../styles/register.module.css'
 import React, { useState, useRef } from 'react'
 import Router from 'next/router'
@@ -18,10 +19,26 @@ export default function Register() {
         if (formRef.current.reportValidity()) {
             console.log(JSON.stringify(registerInfo));
             dispatch(login(true, registerInfo.email, registerInfo.firstName, registerInfo.lastName));
-            setSummaryMessage("Registered & Signed In. Redirect in 3s...");
-            setTimeout(function () {
-                Router.push('/');
-            }, 3000);
+            //setSummaryMessage("Registered & Signed In. Redirect in 3s...");
+            let timeLeft = 3000;
+            let message = "Registered & Signed In. Redirect in {0}s...";
+            showDialog({
+                title: "Register",
+                content: message.replace("{0}", timeLeft / 1000)
+            });
+            let handle = setInterval(function () {
+                if (timeLeft > 0) {
+                    timeLeft -= 1000;
+                    showDialog({
+                        title: "Register",
+                        content: message.replace("{0}", timeLeft / 1000)
+                    });
+                }
+                else {
+                    clearInterval(handle);
+                    Router.push('/');
+                }
+            }, 1000);
         }
         e.preventDefault();
     };
@@ -84,6 +101,10 @@ export default function Register() {
             });
         }
     };
+    const [dialog, showDialog] = useState({
+        title: "",
+        content: ""
+    });
 
     return (
         <Layout selectedMenu="User">
@@ -154,6 +175,7 @@ export default function Register() {
                     </div>
                 </form>
             </section>
+            <Dialog title={dialog.title} content={dialog.content}></Dialog>
         </Layout>
     )
 }
